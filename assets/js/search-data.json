@@ -1,0 +1,191 @@
+{"0": {
+    "doc": "Announcements",
+    "title": "Announcements",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/announcements/",
+    
+    "relUrl": "/announcements/"
+  },"1": {
+    "doc": "Assignments",
+    "title": "Assignments",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/assignments/",
+    
+    "relUrl": "/assignments/"
+  },"2": {
+    "doc": "CS4530, Fall 2024",
+    "title": "CS4530, Fall 2024: Fundamentals of Software Engineering",
+    "content": "Announcements . ",
+    "url": "/CS4530-Fall-2024/#cs4530-fall-2024-fundamentals-of-software-engineering",
+    
+    "relUrl": "/#cs4530-fall-2024-fundamentals-of-software-engineering"
+  },"3": {
+    "doc": "CS4530, Fall 2024",
+    "title": "Overview",
+    "content": "Building, delivering and maintaining successful software products requires more than being good at programming. Software engineering encompasses the tools and processes that we use to design, construct and maintain programs over time. Software engineering has been said to consider the “multi person development of multi version programs.” Development processes that work well for a single developer do not scale to large or even medium-sized teams. Similarly, development processes that work well for quickly delivering a one-off program to a client cause chaos when applied to a codebase that needs to be maintained and updated over months and years. This class will begin to explore these tradeoffs throughout the entire software development lifecycle, with a particular focus on how these decisions affect the quality of the resulting software. This class will serve as an introduction to the field of software engineering, covering key topics such as: . | Requirements gathering and specification How to make sure that you build the product that your customer really wants | Designing code for reuse, for readability, and for scale How to avoid reinventing the wheel? What makes code readable? Where does performance fit into designs? When do we decide when to revisit old design decisions, and how do we replace them? Can we avoid the mistakes that past developers have made? | How to organize your development process to collaborate effectively How do we communicate our designs with others? How do we structure and coordinate development activities? How do we measure the performance of these processes, and tweak them over time? | How to ensure that your code works, is secure, and broadly speaking, “does the right thing” How do we measure different quality attributes like usability, scalability and performance? How do we minimize the cost of defects? How do we automatically test complex systems? Can we automatically prove the absence of some kinds of defects? | . ",
+    "url": "/CS4530-Fall-2024/#overview",
+    
+    "relUrl": "/#overview"
+  },"4": {
+    "doc": "CS4530, Fall 2024",
+    "title": "Course Outcomes",
+    "content": ". | Students will be able to define and describe the phases of the software engineering lifecycle (requirements, design, implementation, testing, deployment, maintenance) | Students will be able to explain the role of key processes and technologies in modern software development. | Students will be able to productively apply instances of major tools used in elementary SE tasks. | Students will design and implement a portfolio-worthy software engineering project in a small team environment that can be publicly showcased to recruiters. | . Course Delivery . The course will be delivered in a “traditional” lecture style. Prof Wand’s section will be entirely virtual, and the other sections will be entirely on-the-ground, with no virtual participation option. You must attend the section for which you have registered, and you may not partner with students in other sections for the term project. | Section | Instructor | Meeting Time | Meeting Place | . | 1 | Prof Bhutta | MR 11:45 am - 1:25 pm | West Village G 106 | . | 2 | Prof Bhutta | TF 9:50 am - 11:30 am | EXP 204 | . | 5 | Prof Bhutta | T 11:45 am - 1:25 pm &amp; R 2:50 pm - 4:30pm | Dodge Hall 230 | . | 8 | Prof Bhutta | TF 3:25 pm - 5:05 pm | Shillman Hall 425 | . | 9 | Prof Wand | W 6:00 pm - 9:20 pm | Online | . ",
+    "url": "/CS4530-Fall-2024/#course-outcomes",
+    
+    "relUrl": "/#course-outcomes"
+  },"5": {
+    "doc": "CS4530, Fall 2024",
+    "title": "Course Project",
+    "content": "The assignments and project for this class are designed to mirror the experiences of a software engineer joining a new development team: you will be “onboarded” to our codebase, make several individual contributions, and then form a team to propose, develop and implement new features. The codebase that we’ll be developing on is a Fake Stack Overflow project. You will get an opportunity to work with the starter code which provides basic skeleton for the app and then additional features will be proposed and implemented by you! All implementation will take place in the TypeScript programming language, using React for the user interface. At the end of the semester, the instructors and TAs will evaluate all of the student projects, and select the best (in terms of usability, code quality, test suite quality, and overall design) to showcase on course website. The project will provide hands-on experience to complement the skills taught in this class, requiring students to be able to: . | Work effectively in a small team | Enumerate and prioritize development tasks | Propose, design, implement and test a new feature in an existing non-toy software application | Write code that their team members can read and review | Review teammates’ code | Analyze a proposed software architecture | Use relevant software tools, such as: . | TypeScript | Visual Studio Code (or similar IDE) | Git | Mocha and Jest | Twilio’s Programmable Video API | Postman | . | . Select projects from Spring 2024 are hosted in our project showcase. Acknowledgements . This class and its contents were inspired by Software Engineering courses at various institutions, including: . | Columbia’s Software Engineering Course, COMS W4156 | CMU’s Software Engineering Course, 17-313 | GMU’s Web App Development Course, SWE 432 | NCSU’s Software Engineering Course, CSC 326 and its iTrust term project, also Chris Parnin’s DevOps course. | Past iterations of CS4530 at Northeastern: Spring 2024, Fall 2023, Spring 2023, Fall 2022, Spring 2022, Spring 2021 | Past iterations of CS5500 at Northeastern, as prepared by Mike Weintraub, Mike Shah, Frank Tip and Joydeep Mitra (Spring 2024). | . This website is built using Kevin Lin’s Just the Class Jekyll template. The term project, Covey.Town, is built using code from the Clowdr open source project. ",
+    "url": "/CS4530-Fall-2024/#course-project",
+    
+    "relUrl": "/#course-project"
+  },"6": {
+    "doc": "CS4530, Fall 2024",
+    "title": "CS4530, Fall 2024",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/",
+    
+    "relUrl": "/"
+  },"7": {
+    "doc": "Modules",
+    "title": "Modules",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/modules/",
+    
+    "relUrl": "/modules/"
+  },"8": {
+    "doc": "Policies",
+    "title": "Grading",
+    "content": "There will be individual projects (previously known as assignments) and a team project (in a group of 3-4 members). The overall grading breakdown is: . | 30% Individual project (10% for deliverable 1, 20% for deliverable 2) | 40% Team project (including peer evaluations / surveys) | 10% Participation in synchronous, in-class activities | 20% Exam | . Assignment of team project grades: In cases where team members do not equally contribute to the project, we may assign different grades to different individuals, up to an extreme of deducting 50% of the team project grade for a student (which might arise to 100% deduction for not contributing to the project at all). We will evaluate each individual’s contribution on the basis of a variety of factors, including progress reports at weekly meetings, through inspecting version control history, through each students’ self-reflection, and through each students’ peer evaluation {during and/or} at the end of the project. We will make regular efforts to collect and distribute this feedback throughout the project — our ultimate goal is for all students to participate and receive full marks. Assignment of final grades: Although each instructor will use the same lesson plans and assignments, we expect that there may be variation in grades when compared between sections. Hence, each instructor will assign final grades to students in their sections, and reserve the right to apply different curves than are used by the other instructors. With each graded assignment, students will be provided with the distribution of all grades in their section. Grading grievances: If you have concerns regarding the grading of your work, please let us know right away by opening a regrade request. All regrade requests must be submitted within 7 days from your receipt of the graded work. If your regrade request is closed and you feel that the response was not satisfactory, you may appeal to the instructor via email within 48 hours. ",
+    "url": "/CS4530-Fall-2024/policies/#grading",
+    
+    "relUrl": "/policies/#grading"
+  },"9": {
+    "doc": "Policies",
+    "title": "Homework policy",
+    "content": "Students must work individually on all homework assignments. We encourage you to have high-level discussions with other students in the class about the assignments, however, we require that when you turn in an assignment, it is only your work. That is, copying any part of another student’s assignment is strictly prohibited, and repercussions for doing so will be severe (up to and including failing the class outright). You are free to reuse small snippets of example code found on the Internet (e.g. via StackOverflow) provided that it is attributed. If you are concerned that by reusing and attributing that copied code it may appear that you didn’t complete the assignment yourself, then please raise a discussion with the instructor. Your work is late if it is not turned in by the deadline. | 10% will be deducted for late assignments turned in within 24 hours after the due date. | Assignments submitted more than 24 hours late will receive a zero. | . If you’re worried about being busy around the time of a HW submission, please plan ahead and get started early. Homework that does not compile or run will receive at most 50% credit. For fairness to all, there are no exceptions to the above rules. ",
+    "url": "/CS4530-Fall-2024/policies/#homework-policy",
+    
+    "relUrl": "/policies/#homework-policy"
+  },"10": {
+    "doc": "Policies",
+    "title": "In Class Activities:",
+    "content": "Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to participate in the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Each instructor may have a different style for assigning participation grades, but historical grading information suggests that each style results in a similar overall grade distribution. Participation grades will be posted on Canvas, and regularly updated. If you join class in person, you are strongly encouraged to bring your laptop or phone to class so that you can participate in the activities. Policy on remote attendance . If you are registered for an on-the-ground section but do not feel comfortable or are unable to attend in person, please contact your instructor in advance of class. We would like to provide the best and most comfortable learning experience, and encourage you to stay at home if advised by a medical professional. ",
+    "url": "/CS4530-Fall-2024/policies/#in-class-activities",
+    
+    "relUrl": "/policies/#in-class-activities"
+  },"11": {
+    "doc": "Policies",
+    "title": "Debugging",
+    "content": "One of the objectives of this class is to provide students with experiences writing new code for large, existing codebases. We anticipate that you may run into difficulties debugging the project code: it is often difficult to build debugging skills until you have a problem in front of you that requires them. The course staff is happy to help you with debugging, with the specific goal of helping you learn to successfully apply scientific debugging. Andreas Zeller’s Debugging Book provides an excellent guide to scientific debugging. The short version is roughly: if you can’t debug an issue in the first few minutes “just by looking at it”, it will be hard to keep all of the relevant information in your head at once, and a formal process to help you generate and refine guesses for why something is wrong can be immensely useful. The key idea is to create a debugging note file, where you track information like: . | What was the input/application state that caused the bug? | What was the behavior that I expected? | What was the behavior that I observed? | What are possible hypotheses for that behavior? | How have I tested those hypotheses, and what was the result? | . The overall goal with hypothesis formulation is to come up with possible causes for why the bug exists. Then, as long as those hypotheses are testable, we can prove or disprove them. Most hypotheses will be along the lines of “did I make an incorrect assumption about how a library or API works.” The devil is in enumerating all of the possible incorrect assumptions that you might have made, and testing them. The best way to attack these kinds of problems is to start with testing some high-level, general assumptions, and then refine them. If you come to us for debugging help, we will ask you to answer these 5 questions, as our goal is to help you get better at debugging and not to simply point out bugs that we might have seen before. We are happy to discuss the problematic behavior that you are observing, possible hypotheses for why that behavior is occurring, and strategies to test those hypotheses. In the past, students have found that using a variety of strategies to test their hypotheses (e.g. using a debugger, creating a minimized test case, measured application of console.log statements, internet research) are useful, and we would be happy to demonstrate these. We may not be able to stay with you while you work on refining your hypotheses and fixing the bug, but would be happy to continue following up if you get stuck again. ",
+    "url": "/CS4530-Fall-2024/policies/#debugging",
+    
+    "relUrl": "/policies/#debugging"
+  },"12": {
+    "doc": "Policies",
+    "title": "Classroom Environment",
+    "content": "To create and preserve a classroom atmosphere that optimizes teaching and learning, all participants share a responsibility in creating a civil and non-disruptive forum for the discussion of ideas. Students are expected to conduct themselves at all times in a manner that does not disrupt teaching or learning. Your comments to others should be constructive and free from harassing statements. You are encouraged to disagree with other students and the instructor, but such disagreements need to respectful and be based upon facts and documentation (rather than prejudices and personalities). The instructors reserve the right to interrupt conversations that deviate from these expectations. Repeated unprofessional or disrespectful conduct may result in a lower grade or more severe consequences. Part of the learning process in this course is respectful engagement of ideas with others. Please don’t be late. You are an essential part of the class. Your participation is an essential part of the class. If you are late, please be courteous to others when entering. BE PRESENT WHEN YOU ARE ATTENDING CLASS. Please do not distract yourself from the class by doing other activities such as phone calls, email, facebook, chat/IM/texting, games, web surfing – unless it has a direct bearing on the course. Then, by all means, surf away! . Attendance in the synchronous meetings is expected. Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to catch up on the materials discussed in the class. ",
+    "url": "/CS4530-Fall-2024/policies/#classroom-environment",
+    
+    "relUrl": "/policies/#classroom-environment"
+  },"13": {
+    "doc": "Policies",
+    "title": "Academic Integrity",
+    "content": "Students must work individually on all homework assignments. We encourage you to have high-level discussions with other students in the class about the assignments, however, we require that when you turn in an assignment, it is only your work. That is, copying any part of another student’s assignment is strictly prohibited. If you steal someone else’s work, you fail the class. You are responsible for protecting your work. If someone uses your work, with or without your permission, you fail the class. You are free to reuse small snippets of example code found on the Internet (e.g., via StackOverflow) provided that it is attributed. Use of co-pilot is also enrouraged. If you are concerned that by reusing and attributing that copied code it may appear that you didn’t complete the assignment yourself, then please raise a discussion with the instructor. If you are in doubt whether using others’ work is allowed, you should assume that it is NOT allowed unless the instructors confirm otherwise. ",
+    "url": "/CS4530-Fall-2024/policies/#academic-integrity",
+    
+    "relUrl": "/policies/#academic-integrity"
+  },"14": {
+    "doc": "Policies",
+    "title": "Accommodations for Disabilities",
+    "content": "Students who have disabilities who wish to receive academic services and/or accommodations should visit the Disability Resource Center at 20 Dodge Hall or call (617) 373-2675. Please be sure to provide your instructor with DRC’s accommodations letter early in the semester in order to avoid logistical challenges. This course includes a significant group project, and providing extensions for group work can be complex. As-per the DRC’s policy, it is the student’s responsibility to coordinate with the instructor in order to provide suitable accommodations. ",
+    "url": "/CS4530-Fall-2024/policies/#accommodations-for-disabilities",
+    
+    "relUrl": "/policies/#accommodations-for-disabilities"
+  },"15": {
+    "doc": "Policies",
+    "title": "Title IX Notice",
+    "content": "Title IX of the Education Amendments of 1972 protects individuals from sex or gender-based discrimination, including discrimination based on gender-identity, in educational programs and activities that receive federal financial assistance. Northeastern’s Title IX Policy prohibits Prohibited Offenses, which are defined as sexual harassment, sexual assault, relationship or domestic violence, and stalking. The Title IX Policy applies to the entire community, including students, faculty and staff of all gender identities. Faculty members are considered “responsible employees” at Northeastern University, meaning they are required to report all allegations of sex or gender-based discrimination to the Title IX Coordinator. If you or someone you know has been a survivor of a Prohibited Offense, confidential support and guidance can be found through University Health and Counseling Services staff and the Center for Spiritual Dialogue and Service clergy members. By law, those employees are not required to report allegations of sex or gender-based discrimination to the University. Alleged violations can be reported non-confidentially to the Title IX Coordinator within The Office for Gender Equity and Compliance at: titleix@northeastern.edu and/or through NUPD (Emergency 617.373.3333; Non-Emergency 617.373.2121). Reporting Prohibited Offenses to NUPD does NOT commit the victim/affected party to future legal action. In case of an emergency, please call 911. Please visit www.northeastern.edu/ouec for a complete list of reporting options and resources both on- and off-campus. ",
+    "url": "/CS4530-Fall-2024/policies/#title-ix-notice",
+    
+    "relUrl": "/policies/#title-ix-notice"
+  },"16": {
+    "doc": "Policies",
+    "title": "Policies",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/policies/",
+    
+    "relUrl": "/policies/"
+  },"17": {
+    "doc": "Other Resources",
+    "title": "Other Resources",
+    "content": "There are many articles, blogs, books and podcasts that are very interesting for more reading on the topics discussed in class. We’ll update this list as the semester goes, and if you have suggestions of materials to share, please let us know and we’ll add it to the list. Podcasts . The Software Engineering Radio podcast (also available wherever you get your podcasts) aims to produce educational material for professional softare developers, and includes conversations between experts and researchers on various software engineering topics. Here are a few of our favorites that are most relevant to topics that we cover in this class: . | Donny Nadolny on Debugging Distributed Systems, with Robert Blumen, 2017 | Jafar Soltani on Continuous Delivery for Multiplayer Games, with Nate Black, 2018 | Chris Richardson on Microservice Patterns, with Robert Blumen, 2019 | Margaret Burnett on Gender, Cognitive Styles and Usability Bugs, with Felienne Hermans, 2019 | Michaela Greiler on Code Reviews, with Felienne Hermans, 2020 | Ipek Ozkaya on Managing Technical Debt, 2021 | . Code style . | Research paper: To camelcase or under_score, Dave Binkley et al | Research paper: I know what you did last summer: an investigation of how developers spend their time, Minelli, Mocci and Lanza | Research paper: A metric for software readability, Buse and Weimer | Book (free via library): “Refactoring: Improving the Design of Existing Code” By Martin Fowler The definitive list of “code smells” that should be avoiding in programming, matched up with “refactoring” techniques to improve that code | . Debugging . | Book (free via library): “Effective Debugging: 66 Specific Ways to Debug Software and Systems” by Diomidis SpinellisA helpful guidebook for debugging, laying out different strategies that are effective for testing different kinds of debugging hypotheses. | . Design Patterns . | Book (free via library): “Design Patterns Explained: A New Perspective on Object-Oriented Design” by Alan Shalloway and James TrottIn-depth coverage of design patterns, considering why they are important in software development, how to apply them, and descriptions of some common patterns. | Book (free via library): “Refactoring to Patterns” by Joshua KerievskyA unification of the classic Gang of Four Design Patterns work with Fowler’s refactoring work, with practical example of how to introduce patterns into existing code bases to improve code quality. | “Fundamentals of Software Architecture” By Mark Richards and Neal Ford An overview of software architectural patterns and their role in successful software projects. | . Infrastructure + Operations . | Book (free via library) “Site Reliability Engineering” By Betsy Beyer, Chris Jones, Niall Richard Murphy, Jennifer Petoff Site Reliability Engineering is a topic very related to software engineering: while software engineers might focus primarily on the design and development of software systems, SRE’s are engineers who focus on the deployment, monitoring and maintenance of that software. This book documents the SRE practices at Google. | . JavaScript . | Book (free via library): “Modern JavaScript for the Impatient” by Cay Horstmann | . Program Understanding . | Book: “The Programmer’s Brain” by Felienne Hermans A survey of research on programming and cognition, covering topics such as how to read code more effectively and how to write code that is easier to read and share. | . ",
+    "url": "/CS4530-Fall-2024/resources/",
+    
+    "relUrl": "/resources/"
+  },"18": {
+    "doc": "Calendar",
+    "title": "Calendar",
+    "content": "Given the synchronization amongst the sections, and the academic calendar starting on a Wednesday, the course material generally is designed to run on weeks from Wednesday-Tuesday. We provide a schedule for each section: . ",
+    "url": "/CS4530-Fall-2024/calendar/",
+    
+    "relUrl": "/calendar/"
+  },"19": {
+    "doc": "Staff",
+    "title": "Staff",
+    "content": "For technical questions related to Covey.Town, please check piazza first (or post a query there). For discussing the course material or the individual projects, please feel free to attend whichever TA’s office hours are convenient. For project-related questions, please coordinate a time to chat directly with your assigned project mentor. ",
+    "url": "/CS4530-Fall-2024/staff/",
+    
+    "relUrl": "/staff/"
+  },"20": {
+    "doc": "Staff",
+    "title": "Office Hours",
+    "content": "All TA office hours will be held virtually. We will explore the option of holding in-person office hours too, subject to interest from students/TAs and availability of a room. Instructor office hours may be held in-person or remotely. TA Office Hours are hosted on Microsoft Teams, using the Khoury Office Hours app. Please see the user guide for information on how to log in and ask questions. ",
+    "url": "/CS4530-Fall-2024/staff/#office-hours",
+    
+    "relUrl": "/staff/#office-hours"
+  },"21": {
+    "doc": "Staff",
+    "title": "Schedule",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/staff/#schedule",
+    
+    "relUrl": "/staff/#schedule"
+  },"22": {
+    "doc": "Staff",
+    "title": "Instructors",
+    "content": "Adeel Bhutta . a.bhutta@northeastern.edu . Section: CS4530 Sections 1, 2, 5 &amp; 8 . Office Hours: . | In-Person: TBA, Meserve 337 | or by appointment | . Mitch Wand . wand@ccs.neu.edu . Section: CS4530 Section 9 . Office Hours: . | on Zoom, directly following class | . ",
+    "url": "/CS4530-Fall-2024/staff/#instructors",
+    
+    "relUrl": "/staff/#instructors"
+  },"23": {
+    "doc": "Staff",
+    "title": "Teaching Assistants",
+    "content": "Aryan Jain . jain.aryan@northeastern.edu . Bhupesh Digambar Patil . patil.bhu@northeastern.edu . Harikrishnan Unnikrishna Pillai . unnikrishnapillai.h@northeastern.edu . Hongyi Zhang . zhang.hongyi@northeastern.edu . Rumjhum Singru . singru.r@northeastern.edu . ",
+    "url": "/CS4530-Fall-2024/staff/#teaching-assistants",
+    
+    "relUrl": "/staff/#teaching-assistants"
+  },"24": {
+    "doc": "Code Style",
+    "title": "Code Style",
+    "content": "Programs are easier to read and to understand when they are written in a familiar style and follow standard coding conventions. Most organizations that develop software therefore require programmers to write programs that follow the organization’s preferred style and coding conventions. These conventions can be very elaborate. Many of the guidelines are, in fact, arbitrary. When you are working on a coding project with other developers, different developers often have preference for slightly different syntax, for instance: should our string literals be enclosed by single quotes (') or double quotes (\")? Should files be indented with spaces or tabs? In TypeScript, there are often multiple ways to accomplish the same goal, for instance, you could create a new empty array with the expression const myArray = new Array(), or const myArray = []. Sometimes there is no difference between these variants except for how it reads, and other times there may be unintended consequences of making the seemingly correct but subtly wrong choice. Thankfully, it is possible to write automated checkers (and, at times, fixers) for these style violations. All code that you write for this class will be checked by ESLint, and must be free of style warnings and errors. Our ESlint rules are derived from Airbnb’s JavaScript Style Guide, ESLint’s Recommended Rules, TypeScript/ESLint Recommended Rules, React ESLint Rules and React Hooks ESLint Rules. We do not suggest studying these lists directly, instead, begin writing code naturally, and allow your IDE’s built-in style checker to report issues as you find them. The most important rules to get started are: . | Indent using spaces, not tabs; use 2 spaces for each level of indentation | Enclose all string literals with single quotes, not double | Variables must be named using lowerCamelCase, types are named using UpperCamelCase. Constants (read-only variables that are assigned a static value once and not reused) must be named using UPPER_CASE_WITH_UNDERSCORES. | The maximum line length is 100 characters | . Naming . While the linter can automatically flag names that violate camelCase rules, it can not automatically determine that a name is “good” - this is a subjective judgement call. Please consider the following when choosing names: . | Names should be informative (e.g lineTooLong() rather than checkLineLength()) | Names for types are typically nouns or noun phrases. Interface names, however, might be adjectives (e.g. Serializable). Class names may be noun phrases that include the interface name (e.g. CuckooClock and DigitalClock for classes that implement the interface Clock). | Use noun-like names for functions or methods that return values (e.g. circleDiameter rather than calculateDiameter). (Exception: simple getters can still have names that begin with get). | Reserve verb-like names for functions that perform actions (e.g. addItem). | Use adjective phrases for predicates when possible (e.g. line.tooLong()) | Variable and property names should be descriptive of what the variable is for, and not be named after the type of the variable (which is captured in the variable’s type declaration) | Names for properties that are private must start with a _ | . Documentation and Comments . All public properties and methods (other than getters, setters, and constructors) must be documented using JSDoc-style comments that describes what the property/method does. Example: . /** The unique identifier for this player * */ private readonly _id: string; . /** * A handler to process a remote player's subscription to updates for a room * * @param socket the Socket object that we will use to communicate with the player */ . Consider adding comments within your code to describe non-obvious behavior, or to capture why the code is written the way that it is. Do not add comments that simply restate what can already be immediately discerned by reading the code. For example, here is a useful comment: . // No valid session exists for this token, hence this client's connection should be terminated socket.disconnect(true); return; . Here is a useless comment on the same code snippet: . // Disconnect the socket socket.disconnect(true); return; . Comments are for documentation, not for keeping track of old code you are no longer using (do not submit commented-out code). ",
+    "url": "/CS4530-Fall-2024/policies/style/",
+    
+    "relUrl": "/policies/style/"
+  },"25": {
+    "doc": "Textbooks",
+    "title": "Textbooks",
+    "content": "This class is a survey of many sub-areas of software engineering, and an unfortunate result of this is that there is no single textbook that is appropriate for this class. However, there are several texts that have chapters that are quite relevant, and most of these books are available for free for Northeastern students through O’Reilly’s Safari Books online. To create your account, first visit this page: https://www.safaribooksonline.com/library/view/temporary-access/ and then select “Not Listed? Click Here” for institution, then enter your @northeastern.edu email address. After this first account creation, you’ll be able to log in directly to Safari Books Online with your @northeastern.edu email and no need for 2FA (hooray!). The schedule will list which chapters of which texts are relevant for each lecture: . | “Software Engineering at Google” By Titus Winters, Tom Manshreck and Hyrum Wright This book is effectively a manual that describes the software engineering practices at Google, and the rationale behind those practices | “Effective Software Testing: A Developer’s Guide” by Mauricio Aniche (Not on Safari) A focused discussion of software testing concepts, with concrete examples using popular Java testing frameworks. | “The Programmer’s Brain” by Felienne Hermans (Not on Safari) A survey of research on programming and cognition, covering topics such as how to read code more effectively and how to write code that is easier to read and share. | “Fundamentals of Software Architecture” By Mark Richards and Neal Ford An overview of software architectural patterns and their role in successful software projects. | “Refactoring: Improving the Design of Existing Code” By Martin Fowler The definitive list of “code smells” that should be avoiding in programming, matched up with “refactoring” techniques to improve that code | “Learn React with TypeScript 3” by Carl RipponA solid reference for React, describing how to get started, plus more advanced features like React’s Router and testing using Jest | “Programming TypeScript” by Boris ChernyA useful introduction to TypeScript, written assuming familiarity with programming in languages like Java, C# or python. | . ",
+    "url": "/CS4530-Fall-2024/textbooks/",
+    
+    "relUrl": "/textbooks/"
+  },"26": {
+    "doc": "Tutorials",
+    "title": "Tutorials",
+    "content": " ",
+    "url": "/CS4530-Fall-2024/tutorials/",
+    
+    "relUrl": "/tutorials/"
+  }
+}
