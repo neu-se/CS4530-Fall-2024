@@ -38,10 +38,10 @@
   name: Tests with Larger Scope
   page: 
 7a:
-  name: Principles for Cloud Deployment
+  name: Continuous Development
   page: 
 7b:
-  name: Continuous Development
+  name: Principles for Cloud Deployment
   page: 
 8a:
   name: Work on project (Discuss project plan/revisions)
@@ -132,8 +132,5 @@ teamMeetings:
   name: Team Meetings
 midtermReview:
   name: Midterm Review
-thanksgivingNoClass:
-  name: Thanksgiving (No class)
-  type: holiday
 noClass:
   name: No Class
