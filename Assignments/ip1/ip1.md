@@ -102,7 +102,7 @@ To allow the client to display tags along with their descriptions, a new endpoin
 To ensure the new feature works correctly, the following tests will be conducted:
 * Unit Testing: Verify that the `getTags` function correctly handles the creation of new tags, removal of duplicates, and retrieval of existing tags.
 * Endpoint Testing: Test the `getTagByName` endpoint to ensure it accurately returns the correct tag data based on the provided name.
-* Integration Testing: Validate the interaction between the updated `getTags` function and the `addQuestion` endpoint to ensure the entire process of tag 
+* Integration Testing: Validate the interaction between the updated `getTags` function and the `addQuestion` endpoint to ensure the entire process of tag
 retrieval and creation functions smoothly.
 
 Grading for implementation tasks:
