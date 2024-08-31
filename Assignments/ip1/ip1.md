@@ -37,13 +37,31 @@ Start by downloading the [starter code]({{site.baseurl}}{% link /Assignments/ip1
 
 
 ## Submission Instructions & Grading
-You will submit your assignment using ...
+You will submit your assignment via GitHub Classroom.
 
 To submit your assignment: run the command `npm run zip` in the top-level directory of the handout. 
 
 This submission will be scored out of 100 points, 90 of which will be awarded for implementation of tasks and accompanying tests, and the remaining 10 for following style guidelines.
 
+* Testing
+You will be provided with starter code that includes a set of tests. Your task is to ensure that all existing tests pass and to create additional tests to cover any new functionality or edge cases.
+
 Your code will be evaluated for linter errors and warnings. Submissions that have *any* linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**. To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same eslint configuration that is used by our grading script.
+
+* Manual Grading
+Your code will be manually evaluated for conformance to our course style guide. This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:
+
+To receive all 10 points:
+* All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide
+* There are no unused local variables
+* All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describes what the property/method does, as defined in our style guide
+* The code and tests that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.
+
+
+We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.
+
+* Debugging : 
+If you need help troubleshooting a problem, be sure to follow all the steps outlined in the course's debugging policy. This will ensure that you've exhausted all initial debugging strategies before reaching out for assistance from TAs.
 
 ## Implementation Tasks
 This deliverable has four parts; each part will be graded on its own rubric. You should complete the assignment one part at a time, in the order presented here.
@@ -58,6 +76,11 @@ Create a new function called `filterQuestionsByAskedBy` in the `application.ts` 
 Modify the `getQuestionsByFilter` function within the questions controller to incorporate the new filtering functionality based on the `asked_by` field. This involves integrating the `filterQuestionsByAskedBy` function to ensure that the questions are filtered by the specified user before any other filtering operations.
 3. Testing the Implementation
 After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field, and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To demonstrate your understanding, add tests to `application.spec.ts`.
+
+Grading for implementation tasks:
+* Adding `filterQuestionsByAskedBy`: 5 points
+* Updating `getQuestionsByFilter`: 5 points
+* Testing: 3 points
 
 ### Task 2: Enhancing the Tags Model by Adding a Description Field
 The goal of this task is to enhance the existing Tags model by introducing a description field. This new field will allow users to have a descriptive overview of each tag, improving the user experience when interacting with tags. The following steps outline the modifications required in the server to accommodate this new field.
@@ -79,7 +102,13 @@ To allow the client to display tags along with their descriptions, a new endpoin
 To ensure the new feature works correctly, the following tests will be conducted:
 * Unit Testing: Verify that the `getTags` function correctly handles the creation of new tags, removal of duplicates, and retrieval of existing tags.
 * Endpoint Testing: Test the `getTagByName` endpoint to ensure it accurately returns the correct tag data based on the provided name.
-* Integration Testing: Validate the interaction between the updated `getTags` function and the `addQuestion` endpoint to ensure the entire process of tag retrieval and creation functions smoothly.
+* Integration Testing: Validate the interaction between the updated `getTags` function and the `addQuestion` endpoint to ensure the entire process of tag 
+retrieval and creation functions smoothly.
+
+Grading for implementation tasks:
+* Update `getTags`: 4 points
+* Add `getTagByName`: 4 points
+* Testing: 2 points
 
 ### Task 3: Implement Sorting by Most Views
 As part of this task, you will be working on a function to retrieve questions based on their view count. You are provided with the `getQuestionsByOrder` function which is currently designed to fetch questions from a database and sort them based on the specified order. The function currently supports fetching active, unanswered, and newest questions. Your task is to implement the logic for fetching the most viewed questions.
@@ -96,6 +125,12 @@ Modify the `getQuestionsByOrder` function within the same file (`application.ts`
 
 4. Testing the Implementation
 After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly sorted by most views, and that the existing sorting features (active, unanswered and newest) remain unaffected. To demonstrate your understanding, add tests to `application.spec.ts`.
+
+Grading for implementation tasks:
+* Update OrderType: 3 points
+* Add `getMostViewedQuestion`: 5 points
+* Update `getQuestionsByOrder`: 3 points
+* Testing: 2 points
 
 ### Task 4: Implement Upvoting and Downvoting Functionality
 The upvoting and downvoting features allow users to express their opinions on questions by adding or removing their votes. This functionality is crucial for a community-driven platform where user engagement and feedback are important.
@@ -133,16 +168,7 @@ Write tests in tests/question.spec.ts to verify the behavior of the upvote and d
 * Cancelling an upvote or downvote.
 * Handling edge cases such as missing parameters in requests.
 
-## Grading for this assignment
-* Task 1 Implementation : 2 points
-* Task 2 Implementation : 2 points
-* Task 3 Implementation : 2 points
-* Task 4 Implementation : 2 points
-* Style Guidelines : 10 points
-To receive all 10 points:
-* All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide
-* There are no unused local variables
-* All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describes what the property/method does, as defined in our style guide
-* The code and tests that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.
-
-We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.
+Grading for implementation tasks:
+* `addUpvoteToQuestion` and `addDownvoteToQuestion`: 30 points
+* Updating routes: 20 points
+* Testing: 4 points
