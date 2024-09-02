@@ -24,6 +24,7 @@ Contents:
     *   [Enums](#enums)
     *   [Any](#any)
     *   [Unknown](#unknown)
+    *   [Literal](#literal)
 *   [Variable declaration in typescript](#variable-declaration-in-typescript)
 *   [Objects](#objects)
 *   [Control Flow Statements](#control-flow-statements)
@@ -229,6 +230,20 @@ let b = a === 123           // boolean
 For the few cases where you have a value whose type you really don’t know ahead of time, don’t use any, and instead reach for unknown. Like any, it represents any value, but TypeScript won’t let you use an unknown type until you refine it by checking what it is.
 
 
+### Literal
+
+In addition to standard types like boolean or number, TypeScript also supports literal types. A literal type represents a specific value, not just a general type.
+
+Example:
+```typescript
+let e: true = true; // This is a literal type, constrained to the value true.
+let count: 10 = 10; // This can only ever be the number 10.
+let status: "pass" = "pass"; // This can only ever be the string "pass".
+```
+
+These types act like constants and can only have one exact value, adding stricter type safety to your code. If you try to modify them an error will be thrown.
+
+
 ## Variable declaration in typescript
 
 Variables can be declared in Typescript using one of 3 keywords:
@@ -387,6 +402,13 @@ do {
 
 } while(condition)
 ``` 
+
+Tips:
+
+- **Entry-Level Loops:** `for` and `while` loops are entry-level loops; they evaluate their condition before executing any statements.
+- **Exit-Level Loop:** The `do...while` loop is an exit-level loop; it will always execute the loop body at least once, regardless of the condition.
+
+
 ## Array Functions
 
 ForEach, Map, reduce, and filter are all array methods in JavaScript. Each one will iterate over an array and perform a transformation or computation. Each will return a new array based on the result of the function.
@@ -581,7 +603,7 @@ In Typescript/Javascript, Functions can be used as constructors for creating obj
 
 Examples:
 ```ts
-function Person(firstName: string, lastName: string): void {
+function Person(this: any, firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.getFullName = function(): string {
