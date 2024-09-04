@@ -89,6 +89,9 @@ cd ../testing
 npm install
 ```
 
+Once you install the dependencies, you might see the following ESlint errors in some files. The linter error indicates that the code contains carriage return characters (\r, represented as ␍) at the end of each line and usually happens when the file has Windows-style line endings (\r\n) instead of Unix-style line endings (\n). To fix this, you can click on the "CRLF" icon on the lower right corner of VSCode and change it to "LF". Note that this does not count as a linting error when grading.
+![alt text](error.png)
+
 ### 3. Populate the initial database
 
 1. In the `server` directory, run `npx ts-node populate_db.ts mongodb://127.0.0.1:27017/fake_so` to populate the `fake_so` database with data that follows the schema definition.
