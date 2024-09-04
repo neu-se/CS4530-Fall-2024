@@ -28,7 +28,7 @@ The objectives of this assignment are to:
 
 ## Getting started with this assignment
 
-Start by accepting our [invitation](https://classroom.github.com/a/tJB92sbe). It will create a Github repository for you which will include the starter code for this assignment. If you are new to Git, your may want to review [this getting starter page](https://classroom.github.com/a/Tc-II7x4) first!
+Start by accepting our [invitation](https://classroom.github.com/a/tJB92sbe). It will create a Github repository for you which will include the starter code for this assignment. If you are new to Git, you may want to review [this getting started page](https://classroom.github.com/a/Tc-II7x4) first!
 
 ### 1. Prerequisites
 
@@ -42,7 +42,7 @@ We use MongoDB as the NoSQL database to store data related to this application.
 
 1. Follow the [instructions in the official MongoDB documentation](https://www.mongodb.com/docs/manual/administration/install-community/) to install the free community edition.
 2. Choose 'Install on Linux', 'Install on macOS', or 'Install on Windows', depending on your system. (the following steps are for Windows)
-3. Scroll down to the section labeled 'Install MongoDB Community Edition.' and click on [MongoDBDownload Center](https://www.mongodb.com/try/download/community?tck=docs_server).
+3. Scroll down to the section labeled 'Install MongoDB Community Edition.' and click on [MongoDB Download Center](https://www.mongodb.com/try/download/community?tck=docs_server).
 4. For Windows, in the Package dropdown, select `msi`. Then download and run the installer.
 5. On Windows, select the _“Install MongoDB as a Service”_ checkbox and install. This will start MongoDB as a background service.
 6. Install "MongoDB Compass" if prompted.
@@ -112,9 +112,7 @@ Note: Right now, you may run into errors regarding unknown properties. Once you 
 - We use [cors](https://www.npmjs.com/package/cors) to regulate the permissible connections between the
   clients and the server. The current cors configuration allows all
   connections to the server for convenience. This is fine for a development environment. In a
-  production environment where the application is deployed on a cloud service, the CORS policy
-  needs to be specified more strictly. Read more about CORS [https://developer.mozilla.org/en-
-  US/docs/Web/HTTP/CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+  production environment where the application is deployed on a cloud service, the CORS policy needs to be specified more strictly. Read more about CORS [https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
 - We use [mockingoose](https://github.com/alonronin/mockingoose) to mock Mongoose functions when testing.
 
@@ -269,7 +267,7 @@ shown below:
 
 ![Class Diagram](class-diagram.png)
 
-The starter code package, of which this is a part, is divided into 3 main directories: _client_, _server_, and _testing_ .
+The starter code package, of which this is a part, is divided into 3 main directories: _client_, _server_, and _testing_.
 
 ### Client
 
