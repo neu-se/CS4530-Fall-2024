@@ -28,13 +28,13 @@ The objectives of this assignment are to:
 
 ## Getting started with this assignment
 
-Start by accepting our [invitation](https://classroom.github.com/a/tJB92sbe). It will create a Github repository for you which will include the starter code for this assignment. If you are new to Git, your may want to review [this getting starter page](https://classroom.github.com/a/Tc-II7x4) first!
+Start by accepting our [invitation](https://classroom.github.com/a/tJB92sbe). It will create a Github repository for you which will include the starter code for this assignment. If you are new to Git, you may want to review [this getting started page](https://classroom.github.com/a/Tc-II7x4) first!
 
 ### 1. Prerequisites
 
 #### 1.1 Install Node.js and npm
 
-If you haven't installed npm and node.js, follow the [tutorial on setting up a development environment for this class]({{site.baseurl}}{% link tutorials/week1-getting-started.md %})
+If you haven't installed npm and node.js, follow the [tutorial on setting up a development environment for this class](https://neu-se.github.io/CS4530-Fall-2024/tutorials/week1-getting-started)
 
 #### 1.2 Install MongoDB
 
@@ -42,7 +42,7 @@ We use MongoDB as the NoSQL database to store data related to this application.
 
 1. Follow the [instructions in the official MongoDB documentation](https://www.mongodb.com/docs/manual/administration/install-community/) to install the free community edition.
 2. Choose 'Install on Linux', 'Install on macOS', or 'Install on Windows', depending on your system. (the following steps are for Windows)
-3. Scroll down to the section labeled 'Install MongoDB Community Edition.' and click on [MongoDBDownload Center](https://www.mongodb.com/try/download/community?tck=docs_server).
+3. Scroll down to the section labeled 'Install MongoDB Community Edition.' and click on [MongoDB Download Center](https://www.mongodb.com/try/download/community?tck=docs_server).
 4. For Windows, in the Package dropdown, select `msi`. Then download and run the installer.
 5. On Windows, select the _“Install MongoDB as a Service”_ checkbox and install. This will start MongoDB as a background service.
 6. Install "MongoDB Compass" if prompted.
@@ -113,8 +113,7 @@ Note: Right now, you may run into errors regarding unknown properties. Once you 
   clients and the server. The current cors configuration allows all
   connections to the server for convenience. This is fine for a development environment. In a
   production environment where the application is deployed on a cloud service, the CORS policy
-  needs to be specified more strictly. Read more about CORS [https://developer.mozilla.org/en-
-  US/docs/Web/HTTP/CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+  needs to be specified more strictly. Read more about CORS [https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
 - We use [mockingoose](https://github.com/alonronin/mockingoose) to mock Mongoose functions when testing.
 
@@ -269,7 +268,7 @@ shown below:
 
 ![Class Diagram](class-diagram.png)
 
-The starter code package, of which this is a part, is divided into 3 main directories: _client_, _server_, and _testing_ .
+The starter code package, of which this is a part, is divided into 3 main directories: _client_, _server_, and _testing_.
 
 ### Client
 
@@ -467,7 +466,7 @@ Your code will be evaluated for linting errors and warnings. Submissions that ha
 
 #### Manual Grading
 
-Your code will be manually evaluated for conformance to our [course style guide]({{ site.baseurl }}{% link style.md %}). This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:
+Your code will be manually evaluated for conformance to our [course style guide](https://neu-se.github.io/CS4530-Fall-2024/policies/style/). This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:
 
 To receive all 10 points:
 
@@ -480,4 +479,4 @@ We will review your code and note each violation of this rubric. We will deduct 
 
 #### Debugging :
 
-If you need help troubleshooting a problem, be sure to follow all the steps outlined in the course's [debugging policy]({{ site.baseurl }}{% link debugging.md %}). This will ensure you have exhausted all initial debugging strategies before reaching out for assistance from the TAs.
+If you need help troubleshooting a problem, be sure to follow all the steps outlined in the course's [debugging policy](https://neu-se.github.io/CS4530-Fall-2024/policies/debugging/). This will ensure you have exhausted all initial debugging strategies before reaching out for assistance from the TAs.
