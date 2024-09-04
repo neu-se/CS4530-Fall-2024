@@ -63,7 +63,6 @@ The project will provide hands-on experience to complement the skills taught in 
   - Visual Studio Code (or similar IDE)
   - Git
   - Mocha and Jest
-  - Twilio's Programmable Video API
   - Postman
 
 Select projects from Spring 2024 are hosted [in our project showcase](https://neu-se.github.io/CS4530-Spring-2024/assignments/project-showcase).
@@ -77,4 +76,4 @@ This class and its contents were inspired by Software Engineering courses at var
 * Past iterations of CS4530 at Northeastern: [Spring 2024](https://neu-se.github.io/CS4530-Spring-2024/), [Fall 2023](https://neu-se.github.io/CS4530-Fall-2023/), [Spring 2023](https://neu-se.github.io/CS4530-Spring-2023/), [Fall 2022](https://neu-se.github.io/CS4530-Fall-2022/), [Spring 2022](https://neu-se.github.io/CS4530-Spring-2022/), [Spring 2021](https://neu-se.github.io/CS4530-CS5500-Spring-2021/)
 * Past iterations of CS5500 at Northeastern, as prepared by Mike Weintraub, Mike Shah, Frank Tip and Joydeep Mitra ([Spring 2024](https://sites.google.com/view/sp24-cs5500/)).
 
-This website is built using [Kevin Lin's Just the Class](https://kevinl.info/just-the-class/) Jekyll template. The term project, Covey.Town, is built using code from the [Clowdr open source project](https://github.com/clowdr-app/clowdr-web-app).
+This website is built using [Kevin Lin's Just the Class](https://kevinl.info/just-the-class/) Jekyll template. 

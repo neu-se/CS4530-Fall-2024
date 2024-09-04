@@ -42,32 +42,6 @@ If you join class in person, you are strongly encouraged to bring your laptop or
 If you are registered for an on-the-ground section but do not feel comfortable or are unable to attend in person, please contact your instructor in advance of class.
 We would like to provide the best and most comfortable learning experience, and encourage you to stay at home if advised by a medical professional.
 
-## Debugging
-One of the objectives of this class is to provide students with experiences writing new code for large, existing codebases.
-We anticipate that you may run into difficulties debugging the project code: it is often difficult to build debugging skills until you have a problem in front of you that requires them.
-The course staff is happy to help you with debugging, with the specific goal of helping you learn to successfully apply *scientific debugging*.
-
-Andreas Zeller's *Debugging Book* provides an excellent [guide to scientific debugging](https://www.debuggingbook.org/html/Intro_Debugging.html#The-Scientific-Method).
-The short version is roughly: if you can't debug an issue in the first few minutes "just by looking at it", it will be hard to keep all of the relevant information in your head at once, and a formal process to help you generate and refine guesses for *why* something is wrong can be immensely useful.
-
-The key idea is to create a debugging note file, where you track information like:
-1. What was the input/application state that caused the bug?
-1. What was the behavior that I expected?
-1. What was the behavior that I observed?
-1. What are possible hypotheses for that behavior?
-1. How have I tested those hypotheses, and what was the result?
-
-The overall goal with hypothesis formulation is to come up with possible causes for why the bug exists.
-Then, as long as those hypotheses are testable, we can prove or disprove them. 
-Most hypotheses will be along the lines of "did I make an incorrect assumption about how a library or API works."
-The devil is in enumerating all of the possible incorrect assumptions that you might have made, and testing them.
-The best way to attack these kinds of problems is to start with testing some high-level, general assumptions, and then refine them. 
-
-If you come to us for debugging help, we will ask you to answer these 5 questions, as our goal is to help you *get better at debugging* and not to simply point out bugs that we might have seen before.
-We are happy to discuss the problematic behavior that you are observing, possible hypotheses for why that behavior is occurring, and strategies to test those hypotheses.
-In the past, students have found that using a variety of strategies to test their hypotheses (e.g. using a debugger, creating a minimized test case, measured application of `console.log` statements, internet research) are useful, and we would be happy to demonstrate these.
-We may not be able to stay with you while you work on refining your hypotheses and fixing the bug, but would be happy to continue following up if you get stuck again.
-
 ## Classroom Environment
 
 To create and preserve a classroom atmosphere that optimizes teaching and learning, all participants share a responsibility in creating a civil and non-disruptive forum for the discussion of ideas. Students are expected to conduct themselves at all times in a manner that does not disrupt teaching or learning. Your comments to others should be constructive and free from harassing statements. You are encouraged to disagree with other students and the instructor, but such disagreements need to respectful and be based upon facts and documentation (rather than prejudices and personalities). The instructors reserve the right to interrupt conversations that deviate from these expectations. Repeated unprofessional or disrespectful conduct may result in a lower grade or more severe consequences. Part of the learning process in this course is respectful engagement of ideas with others.
@@ -89,10 +63,10 @@ If you are concerned that by reusing and attributing that copied code it may app
 
 
 ## Accommodations for Disabilities
-Students who have disabilities who wish to receive academic services and/or accommodations should visit the [Disability Resource Center](http://www.northeastern.edu/drc) at 20 Dodge Hall or call (617) 373-2675.
-Please be sure to provide your instructor with DRC's accommodations letter early in the semester in order to avoid logistical challenges.
-This course includes a significant group project, and providing extensions for group work can be complex. 
-As-per the DRC's policy, it is the student's responsibility to coordinate with the instructor in order to provide suitable accommodations.
+Students who have disabilities who wish to receive academic services and/or accommodations should visit the [Disability Access Services](https://disabilityaccessservices.sites.northeastern.edu/) at 20 Dodge Hall or call (617) 373-2675 (previously known as DRC)
+Please be sure to provide your instructor with DAS's accommodations letter early in the semester in order to avoid logistical challenges.
+This course includes a significant group work including project, and providing extensions for group work can be complex. DAS accomodations often do not apply to group submissions but we encourage you to work with your instructors to see how course staff can provide the support you might need. 
+As-per the DAS's policy, it is the student's responsibility to coordinate with the instructor in order to request suitable accommodations.
 
 ## Title IX Notice
 *Title IX of the Education Amendments of 1972 protects individuals from sex or gender-based discrimination, including discrimination based on gender-identity, in educational programs and activities that receive federal financial assistance.*

@@ -3,7 +3,7 @@ layout: page
 title: User Stories and Conditions of Satisfaction
 nav_exclude: true
 ---
-## User Stories and Conditions of Satisfaction
+## Activity 1: User Stories and Conditions of Satisfaction
 
 ### Introduction
 
@@ -28,18 +28,13 @@ Consider a Learning Management System (like Canvas).  Choose ***one*** of the fo
    
     As a <code>&lt;role&gt;</code> I want <code>&lt;some capability&gt;</code> so that I can <code>&lt;get some benefit&gt;</code>
 
-3. For **one** of those user stories, write 3 conditions of satisfaction with appropriate priorities.  (Essential = user story is not satisfied without it)
+3. For **each** user story, write 3 conditions of satisfaction with appropriate priorities. (Essential = user story is not satisfied without it)
 
-If you are working alone, will submit a total of:
+Please submit a total of:
 
 * 1 area
 * 3 roles
 * 3 user stories
-
-If you are working in a group, the group should submit
-
-* 1 area
-* 3 roles
-* 9 user stories (3 for each role)
+* 9 conditions of satisfaction with priorities
 
 When you are done, submit your work as required by your instructor. This may vary from section to section.

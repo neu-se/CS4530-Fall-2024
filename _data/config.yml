@@ -1,31 +1,31 @@
 deadlines:
   '3':
     Wed:
-      date: 2024/01/24 11:00am 
+      date: 2024/09/18 12:00pm (Noon)
       content: ip1
   '4':
     Wed:
-      date: 2024/01/31 11:00am 
+      date: 2024/09/25 12:00pm (Noon)
       content: tp1
   '6':
     Wed:
-      date: 2024/02/14 11:00am
+      date: 2024/10/09 12:00pm (Noon)
       content: tp2
   '7':
     Wed:
-      date: 2024/02/21 11:00am
+      date: 2024/10/16 12:00pm (Noon)
       content: ip2
   '8':
     Wed:
-      date: 2024/02/28 11:00am
+      date: 2024/10/23 12:00pm (Noon)
       content: tp3
-  '14':
+  '13':
     Wed:
-      date: 2024/04/10 11:00am
+      date: 2024/11/26 12:00pm (Noon)
       content: tp4
 dates:
-  firstMonday: 2024/01/08
-  numWeeks: 15
+  firstMonday: 2024/09/02
+  numWeeks: 14
 types:
   default:
     className: lesson
