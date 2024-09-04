@@ -28,7 +28,7 @@ The objectives of this assignment are to:
 
 ## Getting started with this assignment
 
-Start by accepting our [invitation](https://classroom.github.com/a/ofMQDAQs). It will create a Github repository for you which will include the starter code for this assignment.
+Start by accepting our [invitation](https://classroom.github.com/a/5QddNRgd). It will create a Github repository for you which will include the starter code for this assignment. If you are new to Git, your may want to review [this getting starter page](https://classroom.github.com/a/Tc-II7x4) first!
 
 ### 1. Prerequisites
 
