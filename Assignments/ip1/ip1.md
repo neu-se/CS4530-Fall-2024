@@ -9,9 +9,9 @@ submission_notes: Submit through Github Classroom
 ---
 
 Welcome aboard to the Stack Overflow team! We're glad that you're here and ready to join our development team as a new software engineer.
-We're building an interactive application for online community to share their knowledge and experience, and are very happy to see that we have so many new developers who can help make this application a reality.
-By the end of the semester, you'll be able to propose, design, implement and test new features for our project.
-We understand that some of you may have some web development experience, but don't expect that most of you do, and hence, have created an individual project to help you get up to speed with our existing codebase and development environment.
+We're building an interactive application for an online community to share their knowledge and experience, and are very happy to see that we have so many new developers who can help make this application a reality.
+By the end of the semester, you'll be able to propose, design, implement, and test new features for our project.
+We understand that some of you may have some web development experience, but don't expect that most of you do, and hence, we have created an individual project to help you get up to speed with our existing codebase and development environment.
 
 FakeStackOverFlow is a web application that consists of some code that runs in each client's web browser, and also code that runs on a server.
 
@@ -71,7 +71,7 @@ Mongo offers several methods of interacting with your Mongo databases.
 
   - Mongo shell is automatically installed with MongoDB through the Mac installation instructions. To use it, make sure MongoDB is running as a macOS service, then type `mongosh` into the terminal.
 
-- Last and most important, you can use the [Mongoose api](https://mongoosejs.com/docs/index.html) to interact with MongoDB through your Javascript or Typescript programs. Mongoose will be installed as part of the installation process for the project starter code.
+- Last and most important, you can use the [Mongoose api](https://mongoosejs.com/docs/index.html) to interact with MongoDB through your JavaScript or TypeScript programs. Mongoose will be installed as part of the installation process for the project starter code.
 
 ### 2. Install the starter code and its dependencies
 
@@ -92,6 +92,8 @@ npm install
 ### 3. Populate the initial database
 
 1. In the `server` directory, run `npx ts-node populate_db.ts mongodb://127.0.0.1:27017/fake_so` to populate the `fake_so` database with data that follows the schema definition.
+
+Note: Right now, you may run into errors regarding unknown properties. Once you finish implementing Task 2 and Task 4 and modify the schema, you should be able to populate the database correctly.
 
 ### 4. Familiarize Yourself with Project Dependencies
 
@@ -146,7 +148,7 @@ await mongoose.connect("mongodb://127.0.0.1:27017/pets");
 
 causes mongoose to refer to the `pets` database in the local MongoDB instance.
 
-- a MongoDB schema is represented in Mongoose by an object of class `mongoose.Schema`.
+- A MongoDB schema is represented in Mongoose by an object of class `mongoose.Schema`.
   For example, executing
 
 ```typescript
@@ -162,8 +164,8 @@ References to other documents are represented by properties with type `Types.Obj
 
 In this document, we will use the terms 'property' and 'field' interchangeably.
 
-- a MongoDB collection of documents
-  is represented in Mongoose by a Typescript constructor created by `mongoose.model`. For example
+- A MongoDB collection of documents
+  is represented in Mongoose by a TypeScript constructor created by `mongoose.model`. For example
 
 ```typescript
 const Kitten = mongoose.model("Kitten", kittySchema);
@@ -171,7 +173,7 @@ const Kitten = mongoose.model("Kitten", kittySchema);
 
 causes `Kitten` to refer to a collection named 'Kitten' in the current instance; all the documents in the `Kitten` collection should satisfy the schema represented by `kittySchema`.
 
-- A document with schema `M` is represented by a typescript object created by saying `new C`, where `C` is constructor created by `mongoose.model`. For example
+- A document with schema `M` is represented by a TypeScript object created by saying `new C`, where `C` is constructor created by `mongoose.model`. For example
 
 ```typescript
 const fluffy = new Kitten({ name: "fluffy", color: "black" });
@@ -249,12 +251,12 @@ const q = await QuestionModel.findOneAndUpdate(
 return q;
 ```
 
-Here we are give an objectID `qid`. the call to `.findOneAndUpdate` first finds a document whose `_id` field matches `qid`. It then calls the document's `$inc` method to increment its `views` field by 1. The default behavior of `findOneAndUpdate` is to return the original (unmodified) document. But that's not what we wanted here, so we add a third argument `{ new: true }` to return the updated document. All that would be hard to do except by making it part of `findOneAndUpdate`.
+Here we are give an objectID `qid`. The call to `.findOneAndUpdate` first finds a document whose `_id` field matches `qid`. It then calls the document's `$inc` method to increment its `views` field by 1. The default behavior of `findOneAndUpdate` is to return the original (unmodified) document. But that's not what we wanted here, so we add a third argument `{ new: true }` to return the updated document. All that would be hard to do except by making it part of `findOneAndUpdate`.
 
 ### Resources
 
-[Official Mongoose/Typescript docs](https://mongoosejs.com/docs/typescript.html)
-[Moongoose Queries](https://mongoosejs.com/docs/queries.html)
+[Official Mongoose/TypeScript docs](https://mongoosejs.com/docs/typescript.html)
+[Mongoose Queries](https://mongoosejs.com/docs/queries.html)
 
 ## Server/Client Architecture
 
@@ -270,18 +272,18 @@ The starter code package, of which this is a part, is divided into 3 main direct
 
 Running `npm run start` will start a client on port 3000.
 The client code uses Axios to send HTTP method requests to the server. You should review the client code to understand
-how axios sends requests and and the response from the server is processed. You don’t need to change anything in the client code.
+how axios sends requests and how the response from the server is processed. You don’t need to make any changes to the client code.
 
 ### Server
 
 The server is responsible for taking HTTP requests from the client and executing them on the database. The server code resides in the `server/` directory. The server is responsible for all the data that is sent back and forth to the database.
 
 The main server script is in `server/server.ts`. Running `npx ts-node server/server.ts`
-will start an http server, which will take http requests on [**https://localhost:8000**](https://localhost:8000/), and execute them on the running database instance.
+will start an HTTP server, which will take HTTP requests on [**https://localhost:8000**](https://localhost:8000/), and execute them on the running database instance.
 
 You can send requests to the server using a tool like Postman, or by writing scripts that use axios to send requests to `localhost:8000`, as you did in the Async activity.
 
-When the server is terminated (using CTRL+C) the message **“Server closed.”** should be displayed. However, the MongoDB service will still be running (You can run `mongosh` to confirm)
+When the server is terminated (using CTRL+C), the message **“Server closed.”** should be displayed. However, the MongoDB service will still be running (You can run `mongosh` to confirm)
 
 ### Testing
 
@@ -307,11 +309,11 @@ If you want to run specific tests, we recommend that you install vsc-jest-runner
    will contain URIs in their headers. You can use this information to understand the
    endpoints in the server.
 2. Read the Jest tests. The Jest tests list all the endpoints the server should have, and the
-   type of HTTP method associated with them. Further, the tests also have information
+   types of HTTP method associated with them. Further, the tests also have information
    about the Mongoose functions that need to be invoked for the service to send a
    successful response.
 3. Start by defining the schemas in the server/models/schema directory to ensure the data structure is consistent.
-4. Make sure to run all Jest tests. These tests are designed to catch issues early. Once all Jest tests pass, the Cypress tests should also pass, assuming no significant changes have been made to the client’s implementation.
+4. Ensure that you run all Jest tests. These tests are designed to catch issues early. Once all Jest tests pass, the Cypress tests should also pass, assuming no significant changes have been made to the client’s implementation.
 5. Follow the [debugging policy](https://neu-se.github.io/CS4530-Fall-2024/policies/debugging/) to help in the debugging process.
 
 ## Implementation Tasks
@@ -320,7 +322,7 @@ This deliverable has four parts; each part will be graded on its own rubric. You
 
 ### Task 1: Implement Filtering by asked_by Field
 
-The `asked_by` field in the `questions` schema represents the username of the user who asked the question, essentially identifying the author of the question. The objective of this task is to enhance the current functionality by adding the capability to filter questions based on the `asked_by` field. This will allow users to retrieve questions posted by a specific user. Make sure you follow TDD, so work your way up by making sure your code passes the tests in`application.spec.ts`.
+The `asked_by` field in the `questions` schema represents the username of the user who asked the question, essentially identifying the author of the question. The objective of this task is to enhance the current functionality by adding the capability to filter questions based on the `asked_by` field. This will allow users to retrieve questions posted by a specific user. Make sure you follow TDD, so work your way up by making sure your code passes the tests in `application.spec.ts`.
 
 #### Steps to Achieve This
 
@@ -329,6 +331,8 @@ The `asked_by` field in the `questions` schema represents the username of the us
 
 2. **Update the `getQuestionsByFilter` function**  
    Modify the `getQuestionsByFilter` function within the questions controller to incorporate the new filtering functionality based on the `asked_by` field. This involves integrating the `filterQuestionsByAskedBy` function to ensure that the questions are filtered by the specified user before any other filtering operations.
+
+   Hint: you may need to look into `FindQuestionRequest` and make necessary changes.
 
 3. **Testing the implementation**  
    After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
@@ -341,7 +345,7 @@ Grading for implementation tasks:
 
 ### Task 2: Enhancing the Tags Model by Adding a Description Field
 
-The goal of this task is to enhance the existing Tags model by introducing a `description` field. Tags appear as attributes below questions, acting as labels or keywords used to organize and identify information.
+The goal of this task is to enhance the existing `Tags` model by introducing a `description` field. Tags appear as attributes below questions, acting as labels or keywords used to organize and identify information.
 
 For example, the question "How to navigate using React Router?" might have tags like "REACT" and "JAVASCRIPT" to emphasize the languages and frameworks used.
 
@@ -352,9 +356,9 @@ The following steps outline the modifications required in the server to accommod
 #### Steps to Achieve This
 
 1. **Update the `getTags` Function**  
-   The current `getTags` function in `application.ts` accepts an array of tag names as strings. It uses this array to find tag objects in the MongoDB database or create new tag objects if they don't already exist.
+   The current `getTags` function in `application.ts` accepts an array of tag objects, which is only defined to have `_id` and `name`. You will first need to change `Tag` to also include `description`.
 
-   This function needs to be modified to accept an array of tag objects from the client, which will include both the tag name and description but not the `_id` (which is provided by Mongoose). The updated function will:
+   Then, this function needs to be modified to do the following:
 
    1. Remove duplicate tags, ensuring that if the incoming array of tag objects contains objects with the same name, only the first tag object is used and others are discarded.
    2. Check the database for existing tags.
@@ -362,10 +366,10 @@ The following steps outline the modifications required in the server to accommod
    4. Return the modified tags.
 
 2. **Test the Implementation**  
-   To ensure accuracy in your implementation, conduct the following tests:
+   To ensure the accuracy of your implementation, conduct the following tests:
 
    - Test the `getTags` function correctly handles the creation of new tags, removal of duplicates, and retrieval of existing tags.
-   - Test the `getTagByName` function to ensure it accurately returns the correct tag data based on the provided name. Consider the case where it can not find a tag given the name.
+   - Test the `getTagByName` function to ensure it accurately returns the correct tag data based on the provided name. Consider the case where it cannot find a tag given the name.
 
 Grading for implementation tasks:
 
@@ -382,21 +386,20 @@ As part of this task, you will be working on a function to retrieve questions ba
    Create a new function called `sortQuestionsByMostViewed` in the `application.ts` file. This function should take a list of questions as input and return the questions sorted by their view count in descending order.
 
 2. **Update the `getQuestionsByOrder` Function**  
-   Modify the `getQuestionsByOrder` function within the same file (`application.ts`) to incorporate the new sorting functionality. This involves integrating the changes made to the data type in Step 1 and utilizing the function implemented in Step 2.
+   Modify the `getQuestionsByOrder` function within the same file (`application.ts`) to incorporate the new sorting functionality. This involves utilizing the function implemented in Step 1.
 
 3. **Testing the Implementation**  
    After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly sorted by most views, and that the existing sorting features (active, unanswered, and newest) remain unaffected. To ensure your implementation is accurate, please add tests in `application.spec.ts` and ensure the code coverage is as thorough as possible for the portions of code you have added or updated as part of this feature.
 
 Grading for implementation tasks:
 
-- Update `OrderType`: 3 points
 - Add `getMostViewedQuestion`: 5 points
-- Update `getQuestionsByOrder`: 3 points
-- Testing: 2 points
+- Update `getQuestionsByOrder`: 5 points
+- Testing: 3 points
 
 ### Task 4: Implement Upvoting and Downvoting Functionality
 
-The upvoting and downvoting features allow users to express their opinions on questions by adding or removing their votes. This functionality is crucial for a community-driven platform where user engagement and feedback are important. Make sure you follow TDD, so work your way up by understanding and making sure your code passes the tests in `application.spec.ts` and `question.spec.ts`.
+Upvoting and downvoting features allow users to express their opinions on questions by adding or removing their votes. This functionality is crucial for a community-driven platform where user engagement and feedback are important. Make sure you follow TDD, so work your way up by understanding and making sure your code passes the tests in `application.spec.ts` and `question.spec.ts`.
 
 #### Upvoting a Question
 
@@ -457,7 +460,7 @@ This submission will be scored out of 100 points, 90 of which will be awarded fo
 
 You will be provided with starter code that includes a set of tests. Your task is to ensure that all existing tests pass and to create additional tests to cover any new functionality or edge cases.
 
-Your code will be evaluated for linter errors and warnings. Submissions that have _any_ linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**. To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same eslint configuration that is used by our grading script.
+Your code will be evaluated for linting errors and warnings. Submissions that have _any_ linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**. To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same ESlint configuration that is used by our grading script.
 
 #### Manual Grading
 
@@ -467,11 +470,11 @@ To receive all 10 points:
 
 - All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide
 - There are no unused local variables
-- All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describes what the property/method does, as defined in our style guide
+- All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describe what the property/method does, as defined in our style guide
 - The code and tests that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.
 
 We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.
 
 #### Debugging :
 
-If you need help troubleshooting a problem, be sure to follow all the steps outlined in the course's [debugging policy]({{ site.baseurl }}{% link debugging.md %}). This will ensure that you've exhausted all initial debugging strategies before reaching out for assistance from TAs.
+If you need help troubleshooting a problem, be sure to follow all the steps outlined in the course's [debugging policy]({{ site.baseurl }}{% link debugging.md %}). This will ensure you have exhausted all initial debugging strategies before reaching out for assistance from the TAs.
