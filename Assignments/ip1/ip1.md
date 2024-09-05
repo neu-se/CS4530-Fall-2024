@@ -92,7 +92,7 @@ npm install
 ```
 
 Once you install the dependencies, you might see the following ESlint errors in some files. The linter error indicates that the code contains carriage return characters (\r, represented as ␍) at the end of each line and usually happens when the file has Windows-style line endings (\r\n) instead of Unix-style line endings (\n). To fix this, you can click on the "CRLF" icon on the lower right corner of VSCode and change it to "LF". Note that this does not count as a linting error when grading.
-![alt text](error.png)
+![image]({{site.baseurl}}{% link /Assignments/ip1/linter-errors.png %})
 
 ### 3. Populate the initial database
 
