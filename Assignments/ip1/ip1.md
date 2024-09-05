@@ -267,7 +267,7 @@ The schemas for the database are documented in the directory `server/models/sche
 A class diagram for the schema definition is
 shown below:
 
-![Class Diagram](class-diagram.png)
+![image]({{site.baseurl}}{% link /Assignments/ip1/class-diagram.png %})
 
 The starter code package, of which this is a part, is divided into 3 main directories: _client_, _server_, and _testing_.
 
@@ -464,6 +464,8 @@ This submission will be scored out of 100 points, 90 of which will be awarded fo
 You will be provided with starter code that includes a set of tests. Your task is to ensure that all existing tests pass and to create additional tests to cover any new functionality or edge cases.
 
 Your code will be evaluated for linting errors and warnings. Submissions that have _any_ linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**. To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same ESlint configuration that is used by our grading script.
+
+![image]({{site.baseurl}}{% link /Assignments/ip1/error.png %})
 
 #### Manual Grading
 
