@@ -465,7 +465,6 @@ You will be provided with starter code that includes a set of tests. Your task i
 
 Your code will be evaluated for linting errors and warnings. Submissions that have _any_ linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**. To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same ESlint configuration that is used by our grading script.
 
-![image]({{site.baseurl}}{% link /Assignments/ip1/error.png %})
 
 #### Manual Grading
 
