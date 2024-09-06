@@ -17,6 +17,9 @@ FakeStackOverFlow is a web application that consists of some code that runs in e
 
 This implementation effort will be split across two deliverables. In this first deliverable, you will implement and test the core backend components for this feature, and in the second deliverable, you will implement and test the frontend components.
 
+## Change Log
+- 9/6/2024: Added clarification to files required to modify in Task 1
+
 ## Objectives of this assignment
 
 The objectives of this assignment are to:
@@ -331,12 +334,12 @@ The `asked_by` field in the `questions` schema represents the username of the us
    Create a new function called `filterQuestionsByAskedBy` in the `application.ts` file. This function will accept a list of questions and the name of a user as arguments and filter the given list of questions, returning only those asked by the specified user.
 
 2. **Update the `getQuestionsByFilter` function**  
-   Modify the `getQuestionsByFilter` function within the questions controller to incorporate the new filtering functionality based on the `asked_by` field. This involves integrating the `filterQuestionsByAskedBy` function to ensure that the questions are filtered by the specified user before any other filtering operations.
+   Modify the `getQuestionsByFilter` function within the questions controller (`question.ts`) to incorporate the new filtering functionality based on the `asked_by` field. This involves integrating the `filterQuestionsByAskedBy` function to ensure that the questions are filtered by the specified user before any other filtering operations.
 
    Hint: you may need to look into `FindQuestionRequest` and make necessary changes.
 
 3. **Testing the implementation**  
-   After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
+   After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and `question.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
 
 Grading for implementation tasks:
 
