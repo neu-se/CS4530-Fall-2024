@@ -19,7 +19,7 @@ This implementation effort will be split across two deliverables. In this first 
 
 ## Change Log
 - 9/6/2024: Added clarification to files required to modify in Task 1
-- 9/6/2024: Added instruction for `getTagByName` in Task 2
+- 9/6/2024: Added clarification/instruction for `getTagByName` in Task 2
 
 ## Objectives of this assignment
 
