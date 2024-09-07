@@ -13,6 +13,7 @@ Contents:
 * [Databases, Collections, and Documents](#databases-collections-and-documents)
 * [ObjectIDs and References](#objectids-and-references)
 * [Queries](#queries)
+* [Examples](#examples)
 * [Resources](#resources)
 
 
@@ -130,8 +131,6 @@ Person.find({ occupation: /host/ })
 For small projects like the one in the course, it is probably preferable to
 use the simplest Mongoose queries you can, and then process the list of documents that the query returns.
 
-A simple example (i.e, example.ts) can be accessed [here](./assets/week1-mongodb-mongoose/tutorial.zip). 
-
 There are some circumstances where it is helpful to the query do more work. Consider, for example, the following excerpt from `models/application.ts`
 
 ```typescript
@@ -145,7 +144,10 @@ return q;
 
 Here we are give an objectID `qid`. The call to `.findOneAndUpdate` first finds a document whose `_id` field matches `qid`. It then calls the document's `$inc` method to increment its `views` field by 1. The default behavior of `findOneAndUpdate` is to return the original (unmodified) document. But that's not what we wanted here, so we add a third argument `{ new: true }` to return the updated document. All that would be hard to do except by making it part of `findOneAndUpdate`.
 
+### Examples
+A simple example (i.e, example.ts) can be accessed [here](./assets/week1-mongodb-mongoose/tutorial.zip). 
+
 ### Resources
 
-[Official Mongoose/TypeScript docs](https://mongoosejs.com/docs/typescript.html)
-[Mongoose Queries](https://mongoosejs.com/docs/queries.html)
+* [Official Mongoose/TypeScript docs](https://mongoosejs.com/docs/typescript.html)
+* [Mongoose Queries](https://mongoosejs.com/docs/queries.html)
