@@ -372,7 +372,7 @@ The following steps outline the modifications required in the server to accommod
    3. Create new tags if they do not already exist.
    4. Return the modified tags.
 
-2. **Create the `getTagByName` Function and Endpoint**
+2. **Create the `getTagByName` Function and Endpoint**  
    You need to create a new function `getTagByName` in `server/controller/tag.ts`. Its expected behavior can be found in `server/tests/newTags.spec.ts`. You need to ensure that your implementation passes the tests.
 
    Hint: see `getQuestionById` in `server/controller/question.ts` and `addTag` in `application.ts` for how some of the behaviors can be achieved.
