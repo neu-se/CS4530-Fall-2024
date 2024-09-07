@@ -245,7 +245,7 @@ Person.find({ occupation: /host/ })
 For small projects like the one in the course, it is probably preferable to
 use the simplest Mongoose queries you can, and then process the list of documents that the query returns.
 
-A simple example is included in this repo, under `server/tutorial/example.ts`.
+A simple example (i.e, example.ts) can be accessed through the [MongoDb tutorial]({{site.baseurl}}{% link tutorials/week1-mongodb-mongoose.md %}). 
 
 There are some circumstances where it is helpful to the query do more work. Consider, for example, the following excerpt from `models/application.ts`
 
