@@ -19,6 +19,7 @@ This implementation effort will be split across two deliverables. In this first 
 
 ## Change Log
 - 9/6/2024: Added clarification to files required to modify in Task 1
+- 9/6/2024: Added instruction for `getTagByName` in Task 2
 
 ## Objectives of this assignment
 
@@ -371,15 +372,23 @@ The following steps outline the modifications required in the server to accommod
    3. Create new tags if they do not already exist.
    4. Return the modified tags.
 
-2. **Test the Implementation**  
+2. **Create the `getTagByName` Function and Endpoint**
+   You need to create a new function `getTagByName` in `server/controller/tag.ts`. Its expected behavior can be found in `server/tests/newTags.spec.ts`. You need to ensure that your implementation passes the tests.
+
+   Hint: see `getQuestionById` in `server/controller/question.ts` and `addTag` in `application.ts` for how some of the behaviors can be achieved.
+
+3. **Test the Implementation**  
    To ensure the accuracy of your implementation, conduct the following tests:
 
    - Test the `getTags` function correctly handles the creation of new tags, removal of duplicates, and retrieval of existing tags.
    - Test the `getTagByName` function to ensure it accurately returns the correct tag data based on the provided name. Consider the case where it cannot find a tag given the name.
 
+   Your implementation needs to pass existing tests. If existing tests are not fully covering every case of your implementation, you need to add additional tests to achieve full coverage in the coverage report.
+
 Grading for implementation tasks:
 
-- Update `getTags`: 7 points
+- Update `getTags`: 3 points
+- Create `getTagByName` 4 points
 - Testing: 3 points
 
 ### Task 3: Implement Sorting by Most Views
