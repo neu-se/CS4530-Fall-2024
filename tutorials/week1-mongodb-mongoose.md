@@ -5,7 +5,10 @@ permalink: /tutorials/week1-mongodb-mongoose
 parent: Tutorials
 nav_order: 4
 ---
-This tutorial provides basic introduction to MondoDB and Mondoose
+
+# A mini-tutorial on MongoDB and Mongoose
+
+This tutorial provides basic introduction to MondoDB and Mongoose:
 
 Contents:
 * [MongoDB Concepts](#mongodb-concepts)
@@ -16,8 +19,6 @@ Contents:
 * [Examples](#examples)
 * [Resources](#resources)
 
-
-# A mini-tutorial on MongoDB and Mongoose
 
 ## MongoDB Concepts
 
