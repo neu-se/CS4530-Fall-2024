@@ -600,8 +600,10 @@ sum([1, 2, 3]); // evaluates to 6
 ## Functions as Constructors
 
 In Typescript/Javascript, Functions can be used as constructors for creating objects. This is similar to classes, but not quite the same.
+For Examples:
+*   Constructors can’t have type parameters - these belong on the outer class declaration
+*   Constructors can’t have return type annotations - the class instance type is always what’s returned
 
-Examples:
 ```ts
 function Person(this: any, firstName: string, lastName: string) {
     this.firstName = firstName;
@@ -612,11 +614,7 @@ function Person(this: any, firstName: string, lastName: string) {
 }
 const person1 = new Person('first', 'last');
 console.log(person1.getFullName()); // Returns 'first last'.
-```
-*   Constructors can’t have type parameters - these belong on the outer class declaration
 
-*   Constructors can’t have return type annotations - the class instance type is always what’s returned
-```ts
 class Point {
   x: number;
   y: number;
