@@ -21,7 +21,7 @@ This implementation effort will be split across two deliverables. In this first 
 - 9/6/2024: Added clarification to files required to modify in Task 1
 - 9/6/2024: Added clarification/instruction for `getTagByName` in Task 2
 - 9/7/2024: Moved tutorial on MongoDB and Mongoose to tutorials
-- 9/9/2024: Updated handout to fix mocking request body used with 'supertest' in `newQuestion.spec.ts`. Involves changes at 4 places: in line 86, replace `send(mockQuestion)` with `send({ ...mockQuestion, title: '' })`; in line 95, replace `send(mockQuestion)` with `send({ ...mockQuestion, text: '' })`; in line 104, replace `send(mockQuestion)` with `send({ ...mockQuestion, tags: [] })`; in line 113, replace `send(mockQuestion)` with `send({ ...mockQuestion, asked_by: '' })`;
+- 9/9/2024: With reference to Piazza post @38: Update handout to fix mocking request body used with 'supertest' in `newQuestion.spec.ts`. Involves changes at 4 places: in line 86, replace `send(mockQuestion)` with `send({ ...mockQuestion, title: '' })`; in line 95, replace `send(mockQuestion)` with `send({ ...mockQuestion, text: '' })`; in line 104, replace `send(mockQuestion)` with `send({ ...mockQuestion, tags: [] })`; in line 113, replace `send(mockQuestion)` with `send({ ...mockQuestion, asked_by: '' })`;
 
 ## Objectives of this assignment
 
