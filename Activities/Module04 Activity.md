@@ -9,6 +9,6 @@ In this activity, you will do a simple example to help you exercise the five cod
 
 As usual, download the [starter code]({{ site.baseurl }}{% link Activities/module04-traffic-light-activity.zip %}) and run `npm install`.
 
-Then, follow the instructions given in the `README.md` file
+Then, follow the instructions given in the `README.md` file. Be sure to review Canvas assignment for more details (if assigned).
 
 
