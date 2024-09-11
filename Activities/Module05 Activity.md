@@ -44,6 +44,6 @@ A high-level sketch of this design is:
 6. Compare the output of your new program to the output you got by running the original version.  Are the lines printed in the same order?  Why or why not?
 7. Can you modify the code so that the various `XXXDisplay` classes are all implementations of the same interface?  Why might or might not this be a good idea?
 
-When you are done, run `npm run zip`  to create a zip archive with your code. 
+When you are done, run `npm run zip`  to create a zip archive with your code. Check canvas assignment for more details (if assigned)
 
 This activity is based on the running example in Chapter 2 of "Head First Design Patterns, 2nd Edition" by Robson and Freeman.
