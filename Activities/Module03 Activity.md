@@ -8,4 +8,4 @@ We will gain experience improving test suites using two adequacy criteria: line 
 
 As usual, download the [starter code]({{ site.baseurl }}{% link Activities/module03-test-adequacy.zip %}) and run `npm install`.
 
-Then, follow the instructions given in the README.md file
+Then, follow the instructions given in the README.md file. Be sure to review the canvas assignment for related details.
