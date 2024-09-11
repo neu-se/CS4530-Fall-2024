@@ -17,6 +17,12 @@ FakeStackOverFlow is a web application that consists of some code that runs in e
 
 This implementation effort will be split across two deliverables. In this first deliverable, you will implement and test the core backend components for this feature, and in the second deliverable, you will implement and test the frontend components.
 
+## Change Log
+- 9/6/2024: Added clarification to files required to modify in Task 1
+- 9/6/2024: Added clarification/instruction for `getTagByName` in Task 2
+- 9/7/2024: Moved tutorial on MongoDB and Mongoose to tutorials
+- 9/9/2024: With reference to Piazza post @38: Update handout to fix mocking request body used with 'supertest' in `newQuestion.spec.ts`. Involves changes at 4 places: in line 86, replace `send(mockQuestion)` with `send({ ...mockQuestion, title: '' })`; in line 95, replace `send(mockQuestion)` with `send({ ...mockQuestion, text: '' })`; in line 104, replace `send(mockQuestion)` with `send({ ...mockQuestion, tags: [] })`; in line 113, replace `send(mockQuestion)` with `send({ ...mockQuestion, asked_by: '' })`;
+
 ## Objectives of this assignment
 
 The objectives of this assignment are to:
@@ -92,7 +98,7 @@ npm install
 ```
 
 Once you install the dependencies, you might see the following ESlint errors in some files. The linter error indicates that the code contains carriage return characters (\r, represented as ␍) at the end of each line and usually happens when the file has Windows-style line endings (\r\n) instead of Unix-style line endings (\n). To fix this, you can click on the "CRLF" icon on the lower right corner of VSCode and change it to "LF". Note that this does not count as a linting error when grading.
-![alt text](error.png)
+![image]({{site.baseurl}}{% link /Assignments/ip1/linter-errors.png %})
 
 ### 3. Populate the initial database
 
@@ -121,145 +127,13 @@ Note: Right now, you may run into errors regarding unknown properties. Once you 
 ### 5. Explore Useful Resources
 
 1. Express Tutorial: [https://expressjs.com/en/guide/routing.html](https://expressjs.com/en/guide/routing.html)
+2. MongoDB tutorial: [A mini tutorial]({{site.baseurl}}{% link tutorials/week1-mongodb-mongoose.md %}).
 2. Mongoose Queries: [https://mongoosejs.com/docs/queries.html](https://mongoosejs.com/docs/queries.html)
 3. Mongoose Documents: [https://mongoosejs.com/docs/documents.html](https://mongoosejs.com/docs/documents.html)
 4. Jest Basics: [https://jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started)
 5. Mocking in Jest: [https://jestjs.io/docs/mock-functions](https://jestjs.io/docs/mock-functions)
 6. Mocking Mongoose functions: [https://github.com/alonronin/mockingoose](https://github.com/alonronin/mockingoose)
 
-# A mini-tutorial on MongoDB and Mongoose
-
-## MongoDB Concepts
-
-- An _installation_ consists of a set of named _databases_.
-- A _database_ consists of a set of named _collections_.
-- A _collection_ consists of a set of _documents_.
-- A _document_ is a set of (property,value) pairs.
-- A _schema_ is a set of (property,type) pairs. All of the documents in a single collection should satisfy the same _schema_.
-
-## Mongoose representation of MongoDB Concepts
-
-### Databases, Collections, and Documents
-
-Mongoose provides representations of MongoDB concepts in the TypeScript/JavaScript language.
-
-- In any given program `mongoose` refers to a particular database in a particular MongoDB instance. For example, executing
-
-```typescript
-await mongoose.connect("mongodb://127.0.0.1:27017/pets");
-```
-
-causes mongoose to refer to the `pets` database in the local MongoDB instance.
-
-- A MongoDB schema is represented in Mongoose by an object of class `mongoose.Schema`.
-  For example, executing
-
-```typescript
-const kittySchema = new mongoose.Schema({
-  name: String,
-  color: String,
-});
-```
-
-causes `kittySchema` to represent a Mongo schema with a single property, `name`, of type `String`.
-
-References to other documents are represented by properties with type `Types.ObjectID` (more on this later)
-
-In this document, we will use the terms 'property' and 'field' interchangeably.
-
-- A MongoDB collection of documents
-  is represented in Mongoose by a TypeScript constructor created by `mongoose.model`. For example
-
-```typescript
-const Kitten = mongoose.model("Kitten", kittySchema);
-```
-
-causes `Kitten` to refer to a collection named 'Kitten' in the current instance; all the documents in the `Kitten` collection should satisfy the schema represented by `kittySchema`.
-
-- A document with schema `M` is represented by a TypeScript object created by saying `new C`, where `C` is constructor created by `mongoose.model`. For example
-
-```typescript
-const fluffy = new Kitten({ name: "fluffy", color: "black" });
-```
-
-creates a document intended for insertion in the collection named `Kitten`.
-
-- In Mongoose, creation of a document is separate from being inserted in a collection. So to actually insert `fluffy` in the `Kitten` collection, we need to execute
-
-```typescript
-await fluffy.save();
-```
-
-Note that most of the operations that touch the database are asyncs.
-
-### ObjectIDs and References
-
-In MongoDB, every document has a unique identifier, which is kept in its `_id` field.
-
-### Queries
-
-In Mongoose, a query is a recipe for retrieving documents from a collection. There are **lots** of ways to do this. Here are some that work (for a collection called Dogs)
-
-```typescript
-Dog.find(); // finds all documents in the `Dog` collection
-Dog.findOne({ name: "Buddy" }); // finds one of the dogs named 'Buddy'
-Dog.find({ breed: "Labrador" }); // finds all dogs of the given breed
-```
-
-These are all asyncs, so you need to `await` them.
-
-The query syntax offers lots of methods for selecting, sorting, etc. Take a look at this example, which two very different ways of writing the same query:
-
-```typescript
-// With a JSON doc
-Person.find({
-  occupation: /host/,
-  "name.last": "Ghost",
-  age: { $gt: 17, $lt: 66 },
-  likes: { $in: ["vaporizing", "talking"] },
-})
-  .limit(10)
-  .sort({ occupation: -1 })
-  .select({ name: 1, occupation: 1 })
-  .exec(callback);
-
-// Using query builder
-Person.find({ occupation: /host/ })
-  .where("name.last")
-  .equals("Ghost")
-  .where("age")
-  .gt(17)
-  .lt(66)
-  .where("likes")
-  .in(["vaporizing", "talking"])
-  .limit(10)
-  .sort("-occupation")
-  .select("name occupation")
-  .exec(callback);
-```
-
-For small projects like the one in the course, it is probably preferable to
-use the simplest Mongoose queries you can, and then process the list of documents that the query returns.
-
-A simple example is included in this repo, under `server/tutorial/example.ts`.
-
-There are some circumstances where it is helpful to the query do more work. Consider, for example, the following excerpt from `models/application.ts`
-
-```typescript
-const q = await QuestionModel.findOneAndUpdate(
-  { _id: new ObjectId(qid) },
-  { $inc: { views: 1 } },
-  { new: true }
-).populate({ path: "answers", model: AnswerModel });
-return q;
-```
-
-Here we are give an objectID `qid`. The call to `.findOneAndUpdate` first finds a document whose `_id` field matches `qid`. It then calls the document's `$inc` method to increment its `views` field by 1. The default behavior of `findOneAndUpdate` is to return the original (unmodified) document. But that's not what we wanted here, so we add a third argument `{ new: true }` to return the updated document. All that would be hard to do except by making it part of `findOneAndUpdate`.
-
-### Resources
-
-[Official Mongoose/TypeScript docs](https://mongoosejs.com/docs/typescript.html)
-[Mongoose Queries](https://mongoosejs.com/docs/queries.html)
 
 ## Server/Client Architecture
 
@@ -267,7 +141,7 @@ The schemas for the database are documented in the directory `server/models/sche
 A class diagram for the schema definition is
 shown below:
 
-![Class Diagram](class-diagram.png)
+![image]({{site.baseurl}}{% link /Assignments/ip1/class-diagram.png %})
 
 The starter code package, of which this is a part, is divided into 3 main directories: _client_, _server_, and _testing_.
 
@@ -333,12 +207,12 @@ The `asked_by` field in the `questions` schema represents the username of the us
    Create a new function called `filterQuestionsByAskedBy` in the `application.ts` file. This function will accept a list of questions and the name of a user as arguments and filter the given list of questions, returning only those asked by the specified user.
 
 2. **Update the `getQuestionsByFilter` function**  
-   Modify the `getQuestionsByFilter` function within the questions controller to incorporate the new filtering functionality based on the `asked_by` field. This involves integrating the `filterQuestionsByAskedBy` function to ensure that the questions are filtered by the specified user before any other filtering operations.
+   Modify the `getQuestionsByFilter` function within the questions controller (`question.ts`) to incorporate the new filtering functionality based on the `asked_by` field. This involves integrating the `filterQuestionsByAskedBy` function to ensure that the questions are filtered by the specified user before any other filtering operations.
 
    Hint: you may need to look into `FindQuestionRequest` and make necessary changes.
 
 3. **Testing the implementation**  
-   After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
+   After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and `question.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
 
 Grading for implementation tasks:
 
@@ -368,15 +242,23 @@ The following steps outline the modifications required in the server to accommod
    3. Create new tags if they do not already exist.
    4. Return the modified tags.
 
-2. **Test the Implementation**  
+2. **Create the `getTagByName` Function and Endpoint**  
+   You need to create a new function `getTagByName` in `server/controller/tag.ts`. Its expected behavior can be found in `server/tests/newTags.spec.ts`. You need to ensure that your implementation passes the tests.
+
+   Hint: see `getQuestionById` in `server/controller/question.ts` and `addTag` in `application.ts` for how some of the behaviors can be achieved.
+
+3. **Test the Implementation**  
    To ensure the accuracy of your implementation, conduct the following tests:
 
    - Test the `getTags` function correctly handles the creation of new tags, removal of duplicates, and retrieval of existing tags.
    - Test the `getTagByName` function to ensure it accurately returns the correct tag data based on the provided name. Consider the case where it cannot find a tag given the name.
 
+   Your implementation needs to pass existing tests. If existing tests are not fully covering every case of your implementation, you need to add additional tests to achieve full coverage in the coverage report.
+
 Grading for implementation tasks:
 
-- Update `getTags`: 7 points
+- Update `getTags`: 3 points
+- Create `getTagByName` 4 points
 - Testing: 3 points
 
 ### Task 3: Implement Sorting by Most Views
@@ -464,6 +346,7 @@ This submission will be scored out of 100 points, 90 of which will be awarded fo
 You will be provided with starter code that includes a set of tests. Your task is to ensure that all existing tests pass and to create additional tests to cover any new functionality or edge cases.
 
 Your code will be evaluated for linting errors and warnings. Submissions that have _any_ linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**. To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same ESlint configuration that is used by our grading script.
+
 
 #### Manual Grading
 
