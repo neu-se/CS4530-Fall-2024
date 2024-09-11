@@ -16,4 +16,4 @@ This activity is intended to supplement the CS4530 lecture on test-driven develo
 4. Write Jest tests for your testable behaviors
 5. Implement a method `addGrade` that passes your tests.
 
-When you are done, submit your work as required by your instructor.  This may vary from section to section.
+When you are done, submit your work as required by your instructor (check the Canvas asssignment for details, if assigned). This may vary from section to section.

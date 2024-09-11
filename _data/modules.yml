@@ -9,10 +9,10 @@
   page: /modules/2-requirements-to-code
 2a:
   name: Test Adequacy
-  page: 
+  page: /modules/3-test-adequacy
 2b:
   name: Code-Level Design Principles
-  page: 
+  page: /modules/4-code-level-design
 3a:
   name: Interaction-Level Design Patterns
   page: /modules/5-interaction-level-design-patterns

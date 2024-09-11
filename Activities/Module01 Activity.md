@@ -37,4 +37,4 @@ Please submit a total of:
 * 3 user stories
 * 9 conditions of satisfaction with priorities
 
-When you are done, submit your work as required by your instructor. This may vary from section to section.
+When you are done, submit your work as required by your instructor (check the Canvas asssignment for details, if assigned). This may vary from section to section.
