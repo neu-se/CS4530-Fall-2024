@@ -22,6 +22,7 @@ This implementation effort will be split across two deliverables. In this first 
 - 9/6/2024: Added clarification/instruction for `getTagByName` in Task 2
 - 9/7/2024: Moved tutorial on MongoDB and Mongoose to tutorials
 - 9/9/2024: With reference to Piazza post @38: Update handout to fix mocking request body used with 'supertest' in `newQuestion.spec.ts`. Involves changes at 4 places: in line 86, replace `send(mockQuestion)` with `send({ ...mockQuestion, title: '' })`; in line 95, replace `send(mockQuestion)` with `send({ ...mockQuestion, text: '' })`; in line 104, replace `send(mockQuestion)` with `send({ ...mockQuestion, tags: [] })`; in line 113, replace `send(mockQuestion)` with `send({ ...mockQuestion, asked_by: '' })`;
+- 9/12/2024: Updated typo regarding file to test for Task 1. Tests are to be added in `questions.spec.ts` instead of `question.spec.ts`
 
 ## Objectives of this assignment
 
@@ -212,7 +213,7 @@ The `asked_by` field in the `questions` schema represents the username of the us
    Hint: you may need to look into `FindQuestionRequest` and make necessary changes.
 
 3. **Testing the implementation**  
-   After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and `question.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
+   After implementing these changes, it's crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the `asked_by` field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to `application.spec.ts` and `questions.spec.ts` and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.
 
 Grading for implementation tasks:
 
