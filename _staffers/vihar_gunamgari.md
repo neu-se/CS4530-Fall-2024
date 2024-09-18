@@ -2,6 +2,6 @@
 name: Vihar Gunamgari  
 role: Teaching Assistant
 email: gunamgari.s@northeastern.edu
-photo: 
+photo: staff/vihar.jpg
 
 ---
