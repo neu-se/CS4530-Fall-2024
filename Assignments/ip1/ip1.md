@@ -23,6 +23,7 @@ This implementation effort will be split across two deliverables. In this first 
 - 9/7/2024: Moved tutorial on MongoDB and Mongoose to tutorials
 - 9/9/2024: With reference to Piazza post @38: Update handout to fix mocking request body used with 'supertest' in `newQuestion.spec.ts`. Involves changes at 4 places: in line 86, replace `send(mockQuestion)` with `send({ ...mockQuestion, title: '' })`; in line 95, replace `send(mockQuestion)` with `send({ ...mockQuestion, text: '' })`; in line 104, replace `send(mockQuestion)` with `send({ ...mockQuestion, tags: [] })`; in line 113, replace `send(mockQuestion)` with `send({ ...mockQuestion, asked_by: '' })`;
 - 9/12/2024: Updated typo regarding file to test for Task 1. Tests are to be added in `questions.spec.ts` instead of `question.spec.ts`
+- 9/18/2024: Updated typo in Task 3. `sortQuestionsByMostViewed` is the function to be added (NOT `getMostViewedQuestion`).
 
 ## Objectives of this assignment
 
@@ -279,7 +280,7 @@ As part of this task, you will be working on a function to retrieve questions ba
 
 Grading for implementation tasks:
 
-- Add `getMostViewedQuestion`: 5 points
+- Add `sortQuestionsByMostViewed`: 5 points
 - Update `getQuestionsByOrder`: 5 points
 - Testing: 3 points
 
