@@ -7,7 +7,7 @@ nav_order: 6
 ---
 
 # React Basics
-This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.
+This tutorial covers the basic concepts of React. By the end of this tutorial, you will be able to create a new React app, understand the basic concepts of React such as states and props, understand React hooks and handling events.
 
 -   [React Basics](#react-basics)
 -   [Creating a new NextJs App](#creating-a-new-next-js-app)
@@ -58,7 +58,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
     ```
     - Note: Next.Js renders the content within the `app/pages.tsx` file as the root component.
 
-4. Navigate to http://localhost:3000/ to see the default react page.
+4. Navigate to http://localhost:3000/ to see the default React page.
     - After a few seconds, a browser window opens, with our app running:
       ![image](./assets/week4-react/start.png)
 5. [Chakra UI components](https://chakra-ui.com) can be reused and the library can be installed for Next.js with following command:
@@ -89,7 +89,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
     ```ts
     npm start
     ```
-4. Navigate to http://localhost:3000/ to see the default react page.
+4. Navigate to http://localhost:3000/ to see the default React page.
     - After a few seconds, a browser window opens, with our app running:
       ![image](./assets/week4-react/start-screen.png) -->
 
@@ -106,7 +106,7 @@ pieces where each piece can be used in isolation.
 
 <a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/CreateFunctionComponent.tsx" target="_blank">view in sandbox</a>
 
-The simplest method to define a component is to write a function in Javascript. These components are also widely referred as functional stateless components but in the recent versions of React, they have the capabilities to contain state as well.
+The simplest method to define a component is to write a function in JavaScript. These components are also widely referred to as functional stateless components but in the recent versions of React, they have the capabilities to contain state as well.
 ```tsx
 import * as React from "react";
 
@@ -132,10 +132,10 @@ export default App;
 - The import statement is used to import the public classes/functions from the `react` library.
 - A function can return a single top level element. 
   - div is the top level element in this case and other elements can be nested in it.
-    - The attribute `className` is used to specify a CSS class name if CSS properties have been defined seperately for a class.
+    - The attribute `className` is used to specify a CSS class name if CSS properties have been defined separately for a class.
     - `className` attribute is used to set the value of an element’s class attribute. Using this property, the user can set the class of an element to the desired class.
 - The round brackets (()) after return are used to span a JSX/TSX element across multiple lines.
-- At last , the component needs to be exported from the current file, so that it can be imported somewhere else and can be used either in isolation or combination with other components for rendering on the UI.
+- At last, the component needs to be exported from the current file, so that it can be imported somewhere else and can be used either in isolation or combination with other components for rendering on the UI.
 - Elements on one line can be returned directly.
 - Each instance of a component creates a new element independent of other instances of the component.
 - Each component has its own state, props, and lifecycle (which will be explored later in the tutorial).
@@ -232,11 +232,11 @@ State management is just a means of facilitating data sharing and communication 
 const [counter, setCounter] = useState(0)
 ```
 
-The above snippet shows creation of counter state with an intial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value. 
+The above snippet shows creation of counter state with an initial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value. 
 
 In its most basic form, a State object is a JavaScript object that represents the part of a component that can change as a result of a user's action. States can also be thought of as a component's memory.
 
-State update calls are asynchronous. As one cannot expect to call the update state function on one line and expect the state to be updated on the next. The reason for this is that update state methods are more of a request than an immediate order to update state. So React schedules an update to a component’s state object. When state changes, the component responds by re-rendering. Also multiple update request may be batched into one for performance reasons. 
+State update calls are asynchronous. As one cannot expect to call the update state function on one line and expect the state to be updated on the next. The reason for this is that update state methods are more of a request than an immediate order to update state. So React schedules an update to a component’s state object. When state changes, the component responds by re-rendering. Also, multiple update requests may be batched into one for performance reasons. 
 
 Changes in state and/or props will both cause our React component to re-render. Changes in state, on the other hand, can only occur internally as a result of components modifying their own state. 
 
@@ -312,7 +312,7 @@ function CounterContent({ counter }: CounterContentProps) {
 }
 
 /**
- * Child component accepts a incrementCount callback function as a props.
+ * Child component accepts an incrementCount callback function as a props.
  * The callback which is declared inside the parent component triggers a state update.
  */
 function IncrementCounterButton({
@@ -380,7 +380,7 @@ function Counter() {
 <a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/HandlingEvents.tsx" target="_blank">view in sandbox</a>
 
 
--   React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
+-   React implements its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
     -   React events are named using camelCase, rather than lower case.
     -   With JSX a function can be passed as an event handler instead of a string.
 
@@ -423,7 +423,7 @@ Please check the list of common events and instances in which they are used [her
 
 ## React Hooks
 
-React hooks are built-in functions which allows us to use state and other lifecycle features. The most basic hooks used by react are useState() which adds a state variable to a react component and useEffect() which is the lifecycle hook for a component. State of component refers to the data it is holding at a particular moment in time.
+React hooks are built-in functions which allows us to use state and other lifecycle features. The most basic hooks used by React are useState() which adds a state variable to a React component and useEffect() which is the lifecycle hook for a component. State of component refers to the data it is holding at a particular moment in time.
 
 ### useState():
 
@@ -445,7 +445,7 @@ function Counter() {
 This line of code looks a little strange, so let's break it down:
 
 -   When the hook useState() is invoked, it returns an array. Where the first item is the state value, and the second item is a function that updates the state. 
--   First, we import the useState from react library.
+-   First, we import useState from the react library.
 -   useState is a React function that lets us create state, passing in a default value as a parameter. In our case, we pass it a default value of 0.
 -   The useState function returns an array containing two elements:
 -   -   The first array element contains the current value of state.
@@ -508,7 +508,7 @@ setList(newList)
 
 
 Now let's have a look at how to invoke the code to execute at a certain point in the component's lifecycle.
-Older versions of React consisted of different Lifecycle hooks that allowed a user to hook into various phases of component rendering such as componentDidMount, ComponentDidUpdate, etc. which have all been condensed into a single function called useEffect(). Let us observe how this hook behaves by printing out the count in browser console.
+Older versions of React consisted of different Lifecycle hooks that allowed a user to hook into various phases of component rendering such as componentDidMount, componentDidUpdate, etc. which have all been condensed into a single function called useEffect(). Let us observe how this hook behaves by printing out the count in the browser console.
 
 > The new functional component system in React (moving away from class based) added amazing syntactic sugar to the React ecosystem. Use of a hook to control component lifecycle is an example such as the `useEffect()` hook.
 
@@ -533,7 +533,7 @@ Let's break down this code to understand what is happening:
 -   The function takes in a second parameter, which determines when our arrow function is called. This parameter is an array of values that, when changed, will cause the arrow function to be invoked. In our case, we pass in an empty array, so our arrow function will never be called after the first render.
 -   If we now try the running app and open the console, we'll see that the log within the useEffect only appears once.
 
-3.  Let's remove the second parameter into useEffect now:
+3.  Let's remove the second parameter from useEffect now:
 
 -   If no second parameter is provided, it will cause the arrow function to be invoked first on mount and then on every re-render.
 
@@ -544,7 +544,7 @@ useEffect(() => {
 ```
 
 -   Additionally we can also pass the variable in the array to observe only changes related to a particular value (as below).
--   Now we can see that the component will render everytime the value of count is changed.
+-   Now we can see that the component will render every time the value of count is changed.
 
 ```tsx
 useEffect(() => {
@@ -610,7 +610,7 @@ function Counter() {
 
     function incrementCount() {
         counter.count += counter.increment;
-        setCounter(counter); // will not cause component to rerender
+        setCounter(counter); // will not cause component to re-render
     }
 
   // Will not get called when incrementCount is called
