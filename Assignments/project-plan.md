@@ -13,7 +13,7 @@ In the coming weeks, we will provide tutorials and instructions for you to run t
 Given that you will be up-to-speed on the StackOverflow codebase (and have been introduced to TypeScript, React, NodeJS, and testing frameworks),
 and that you will have a team of four, we expect that the feature that you propose will be at least as complex as the feature implemented in the individual assignments.
 
-Feel free to look at existing systems like [Stackoverlow](https://stackoverflow.com/) and similar for inspiration on new features to build. 
+Feel free to look at existing systems like [Stackoverlow](https://stackoverflow.com/), [Quora](https://www.quora.com/), [reddit](https://www.reddit.com/) and similar stack exchange sites for inspiration on new features to build. 
 Examples of features that students might propose include:
 * Add Session management for your project
 * Use Chakra UI Library for components and make your UI accessible
@@ -68,8 +68,7 @@ Given the preliminary nature of your project, we do not expect that you will kno
 
 In keeping with the agile philosophy, you should plan on spending the first two weeks of the project (from Sep 25 until Oct 9) in a "Sprint -1" in which you will undertake organizational and research tasks to help you improve your project plan in 2 weeks.
 
-TOBEUPDATED {: .label .label-red }
-For example: Consider if you were proposing the "Viewing Area" project (the individual project), without the experience of having completed it. It might be difficult to consider how to break down a task like "Implement the frontend components for synchronized video playback" into something that you could commit to doing within a day or two. Given that this is a task that can be delayed until the end of the project (no other tasks depend on it), it would be wise to consider having some tasks early on in the project, such as: "Find react components that embed YouTube videos," and "Implement simple video player that does not synchronize playback." Completing these smaller tasks early would let you both demonstrate that some forward progress is being made, and also allow you to create a much more responsible estimate for how that last, otherwise insurmountably large task would take.
+For example: Consider if you were proposing the "job advertisement" feature, without the experience of having completed it. It might be difficult to consider how to break down a task like "Implement the frontend components for ad video playback" into something that you could commit to doing within a day or two. Given that this is a task that can be delayed until the end of the project (no other tasks depend on it), it would be wise to consider having some tasks early on in the project, such as: "Find react components that embed video ads," and "Implement simple video player that does not synchronize playback." Completing these smaller tasks early would let you both demonstrate that some forward progress is being made, and also allow you to create a much more responsible estimate for how that last, otherwise insurmountably large task would take.
 
 **Do not wait for your TA feedback to begin this work.** You probably know more about the details of your project then they do. It will be helpful for all concerned if your Project Plan lists the major unknowns or things that you expect to need help with-- this will help the TA provide more useful feedback for you
 
