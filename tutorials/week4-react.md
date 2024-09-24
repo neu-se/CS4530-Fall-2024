@@ -37,6 +37,8 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
 - Please check the following reference to the Next.Js boiler plate and getting started with framework 
 [Next.Js official documentation](https://nextjs.org/learn/react-foundations)
 
+- Before beginning the installation, please ensure that your Node.js version is 18 or higher, as Next.js is only supported on these versions. Use `node --version` command to check.
+
 1. We use the create-next-app npx package to create an application that creates a fully-featured TS package.
 
     ```bash
@@ -61,7 +63,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
 4. Navigate to http://localhost:3000/ to see the default React page.
     - After a few seconds, a browser window opens, with our app running:
       ![image](./assets/week4-react/start.png)
-5. [Chakra UI components](https://chakra-ui.com) can be reused and the library can be installed for Next.js with following command:
+5. [Chakra UI](https://chakra-ui.com) provides a comprehensive library of reusable React components for developing modern web applications. To install Chakra UI for Next.js, please enter the following command::
     ```bash
     npm i --save @chakra-ui/react @chakra-ui/next-js
     ```
@@ -95,7 +97,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
 
 ## React Component
 React follows a Component based architecture. A component is a
-repeatable html element with built-in state, business logic, and a
+reusable html element with built-in state, business logic, and a
 lifecycle. The component may be something as simple as a single html
 element such as an input box, or a button, or a complex entity made up
 of other components.
@@ -104,7 +106,7 @@ Components are the basic building blocks of a React application and they allow t
 pieces where each piece can be used in isolation. 
 ### Creating a Function Component in React
 
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/CreateFunctionComponent.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/CreateFunctionComponent.tsx" target="_blank">View in sandbox</a>
 
 The simplest method to define a component is to write a function in JavaScript. These components are also widely referred to as functional stateless components but in the recent versions of React, they have the capabilities to contain state as well.
 ```tsx
@@ -128,7 +130,7 @@ export default App;
 ### A Few Things to Note About React Components:
 
 - The root (App) component is the entry point for the React App and all other components are nested in it.
-- We define a function component using a javascript function, passing the props type in as a generic parameter.
+- We create a functional component by defining a JavaScript function and passing the props type as a generic parameter.
 - The import statement is used to import the public classes/functions from the `react` library.
 - A function can return a single top level element. 
   - div is the top level element in this case and other elements can be nested in it.
@@ -142,7 +144,7 @@ export default App;
 
 ## Template For Structure of Function Component
 
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/TemplateForFunction.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/TemplateForFunction.tsx" target="_blank">View in sandbox</a>
 
 ```tsx
 import * as React from "react";
@@ -170,7 +172,7 @@ export default ComponentName;
 ```
 
 ## Props
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/PassingProps.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/PassingProps.tsx" target="_blank">View in sandbox</a>
 
 React components are similar to JavaScript functions and can accept arbitrary arguments called props. Since components are reusable, props are especially useful to display different content in each instance of the component. Let us extract the header elements from the previous code snippet into a new component called Header. We can then use props to say "hello" to different users.
 
@@ -243,7 +245,7 @@ Changes in state and/or props will both cause our React component to re-render. 
 ## Communication Between Components: 
 
 ### Parent To Child Component Communication: 
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ParentChildCommunication.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ParentChildCommunication.tsx" target="_blank">View in sandbox</a>
 
 
 Passing values from a parent component to a child component is simple. We only have to pass the values as props of the child component. The child component can then use the props object to output results. In the example code you will see that CounterContent component accepts a counter prop which is then used to display the value inside div element. 
@@ -273,7 +275,7 @@ function Counter() {
 
 ### Child to Parent Component Communication
 
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ChildParentCommunication.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ChildParentCommunication.tsx" target="_blank">View in sandbox</a>
 
 For passing data from child component to parent component do the following steps: 
 1. Declare a callback function inside the parent component. This function will get data from the child component. 
@@ -377,7 +379,7 @@ function Counter() {
 
 # Handling Events
 
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/HandlingEvents.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/HandlingEvents.tsx" target="_blank">View in sandbox</a>
 
 
 -   React implements its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
@@ -427,7 +429,7 @@ React hooks are built-in functions which allows us to use state and other lifecy
 
 ### useState():
 
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseStateExample.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseStateExample.tsx" target="_blank">View in sandbox</a>
 
 In this section we will see how we can add state to a React Component using the useState() hook provided by React. The useState hook takes the initial value of the state variable as an argument, the initial state can be any type you want (a string, a number, an array, an object or a function). Only on the first render will the initial value be assigned. Each useState call returns a two-element array. The state variable is the first element of the array, followed by a function to change the variable's value.
 
@@ -504,7 +506,7 @@ setList(newList)
 ``` 
 
 ### useEffect():
-<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseEffectExample.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseEffectExample.tsx" target="_blank">View in sandbox</a>
 
 
 Now let's have a look at how to invoke the code to execute at a certain point in the component's lifecycle.
@@ -687,3 +689,5 @@ function Counter() {
 
 export default Counter;
 ```
+
+Feel free to explore additional React hooks, such as `useContext`, `useCallback`, `useMemo`, and `useReducer`, as these are essential tools for efficient React development. For more information, check [here](https://react.dev/reference/react/hooks).
