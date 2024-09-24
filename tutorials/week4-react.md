@@ -63,7 +63,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
 4. Navigate to http://localhost:3000/ to see the default React page.
     - After a few seconds, a browser window opens, with our app running:
       ![image](./assets/week4-react/start.png)
-5. [Chakra UI](https://chakra-ui.com) provides a comprehensive library of reusable React components for developing modern web applications. To install Chakra UI for Next.js, please enter the following command::
+5. [Chakra UI](https://chakra-ui.com) provides a comprehensive library of reusable React components for developing modern web applications. To install Chakra UI for Next.js, please enter the following command:
     ```bash
     npm i --save @chakra-ui/react @chakra-ui/next-js
     ```
