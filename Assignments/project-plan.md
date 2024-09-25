@@ -11,14 +11,20 @@ Once teams have been formed, you and your team will decide what kind of new feat
 Your feature should be something that can be implemented within the timeframe allotted (5 weeks, plus 2 weeks of planning), and will be implemented in a fork of the main codebase.
 In the coming weeks, we will provide tutorials and instructions for you to run the entire application in a local development environment, and also to deploy it to the cloud.
 Given that you will be up-to-speed on the StackOverflow codebase (and have been introduced to TypeScript, React, NodeJS, and testing frameworks),
-and that you will have a team of four, we expect that the feature that you propose will be at least as complex as the feature implemented in the individual assignments.
+and that you will have a team of four, we expect that the feature that you propose will be somewhat more complex than the features implemented in the individual assignments.
 
 Feel free to look at existing systems like [Stackoverlow](https://stackoverflow.com/), [Quora](https://www.quora.com/), [reddit](https://www.reddit.com/) and similar stack exchange sites for inspiration on new features to build. 
 Examples of features that students might propose include:
-* Add Session management for your project
-* Use Chakra UI Library for components and make your UI accessible
-* Support additional persistence options: (e.g. Firebase, Supabase, Postgres + GraphQL), allow users to register and save a profile (e.g. using Auth0) 
-* Add direct messaging, image messaging, and other chat features
+
+* Allow users to pose and answer questions using Markdown
+* Allow users to register and save a profile using some SSO tool for authentication
+* Improve the accessibility of the UI for some class of user (e.g.: screen-reader user, low-vision user, user with color-blindness)
+* Modify the code so that it is easy to switch to other persistence options: (e.g. Firebase, Supabase, Postgres + GraphQL)
+* Modify the code to generate secure and documented APIs using [tsoa](https://tsoa.com/) and [swagger](https://swagger.io/).
+*  Retarget the client to use the Chakra UI library
+* Improve the quality of the tests
+* Add direct messaging and other chat features
+* Propose some cool app using the infrastructure in the starter code (REST, WebSockets, persistent database)
 
 Please note that multiple teams might choose to propose the same feature, or a variation of that same feature - this is OK.
 
@@ -30,10 +36,13 @@ The project plan will include:
 * User stories and acceptance criteria: high level description of how users will interact with your new feature. 
 * Work breakdown: Define engineering tasks that will be necessary to implement your new feature. Map each task to a sprint. 
 
-Your assigned TA mentor will review your project plan and provide you with feedback on the scope and details provided in this plan.
+You should plan on spending the next two weeks (from Sep 25 until Oct 9) in a "Sprint -1" in which you will undertake organizational and research tasks to help you decide on a project and formulate your plan.
+
+You should be in contact with your assigned TA mentor before you submit the project plan, so they can answer questions and make sure you are on the right track.  You may wish to share a draft of your plan with them *before* October 9 to get early feedback.
+
 Your team will self-organize, as agile teams do, and will enhance and adapt its plan during the project lifecycle.
 As such, the primary goal of this document is to *begin* the planning process, and *not* to produce a detailed plan that must be followed precisely.
-The course staff will provide feedback on your project to help ensure that the scope of your project is appropriate.
+The course staff will provide regular feedback on your project to help ensure that the scope of your project is appropriate.
 
 We list page *maximums* for each section as general guidance of what we are willing to grade. Please do not feel compelled to use all of the pages provided, and remember that a diagram or table can be as expressive (or more) as a comparable amount of text.
 
@@ -41,15 +50,18 @@ We list page *maximums* for each section as general guidance of what we are will
 ## Problem Statement, User Stories and Acceptance Criteria (max 4 pages)
 Your project plan should begin with a 1-3 paragraph introductory problem statement: what problem in StackOverflow does your (proposed) feature solve? Provide a paragraph (or two) that describes why you are interested in building this feature. 
 
-Given the problem statement, develop three user stories that show how a user would interact with the feature. User stories are requirements specified in the following format 
+Given the problem statement, develop 1 to 3 user stories that show how a user would interact with the feature. User stories are requirements specified in the following format 
 "As a < type of user >, I want < some goal > so that < some reason >."
 My conditions of satisfaction are < list of common cases and special cases that must work >.
 
-Please make sure that your conditions of satisfaction are complete (i.e., cover all common cases) and can be turned into testable behaviors.
+Your user stories should cover the key behavior or qualities that your feature will provide.
 
-**EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product". Each user story should include one or more essential and desirable conditions of satisfaction.
+Each user story should include conditions of satisfaction.
+Please make sure that your conditions of satisfaction cover all the common cases and can be turned into testable behaviors.
 
-You should include three different user stories to describe how users will interact with your feature. Your three user stories should cover the key behavior that your feature will provide.
+Each user story and condition of satisfaction must have a priority (Essential, Desirable, or Optional).  The set of Essential items will constitute the "Minimum Viable Product". 
+
+Some of the suggested projects above are primarily about some non-functional quality of the code base and have little or no user impact.  For these, you may want to write stories of the form "As a project owner, I want ...".  You still need to offer a reason why a project owner might want the proposed goal to be accomplished.
 
 Do not provide more than three user stories. Your problem statement and description of user stories and conditions of satisfaction should be between 2-4 pages.
 
@@ -64,15 +76,13 @@ Each task on the work breakdown should be assigned to exactly one team member (a
 Consider the dependencies between tests: perhaps an API needs to be designed and specified before implementation can begin; perhaps your development environment needs to be configured before anything else can proceed.
 Assign tasks to sprints considering these dependencies.
 
-Given the preliminary nature of your project, we do not expect that you will know all of the details about precisely how to implement your feature such that you could break it down into tasks that you feel could be implemented in a day or two. Large tasks (those which you can not provide a responsible estimate for) must be accompanied by smaller “research” tasks that can be performed early on in the project. You may wish to provide deadlines by which the task must either be refined into smaller tasks (based on new knowledge gathered), or reworked/abandoned.
-
-In keeping with the agile philosophy, you should plan on spending the first two weeks of the project (from Sep 25 until Oct 9) in a "Sprint -1" in which you will undertake organizational and research tasks to help you improve your project plan in 2 weeks.
+Given the preliminary nature of your plan, we do not expect that you will know all of the details about precisely how to implement your feature such that you could break it down into tasks that you feel could be implemented in a day or two. Large tasks (those which you can not provide a responsible estimate for) must be accompanied by smaller “research” tasks that can be performed early on in the project. You may wish to provide deadlines by which the task must either be refined into smaller tasks (based on new knowledge gathered), or reworked/abandoned.
 
 For example: Consider if you were proposing the "job advertisement" feature, without the experience of having completed it. It might be difficult to consider how to break down a task like "Implement the frontend components for ad video playback" into something that you could commit to doing within a day or two. Given that this is a task that can be delayed until the end of the project (no other tasks depend on it), it would be wise to consider having some tasks early on in the project, such as: "Find react components that embed video ads," and "Implement simple video player that does not synchronize playback." Completing these smaller tasks early would let you both demonstrate that some forward progress is being made, and also allow you to create a much more responsible estimate for how that last, otherwise insurmountably large task would take.
 
 **Do not wait for your TA feedback to begin this work.** You probably know more about the details of your project then they do. It will be helpful for all concerned if your Project Plan lists the major unknowns or things that you expect to need help with-- this will help the TA provide more useful feedback for you
 
-Be realistic, and leave time for contingencies (including the time around the midterm exam in week9).
+Be realistic, and leave time for contingencies (including the time around the midterm exam in week 9).
 Remember that you will need to have a demo prepared of your feature by project deadline - just 7 weeks from the due date of this assignment.
 If you are uncertain that some tasks will be feasible, then be sure to include evaluation tasks earlier-on in the project that will allow for "go/no-go" decisions to move forward on a task or drop it.
 
@@ -109,13 +119,18 @@ The project plan will account for 10% of your project grade, and will be graded 
 * Receive partial credit if the narrative is present, but does not describe a problem that the project aims to solve
 
 ### User stories (15 points):
-Each of the three user stories will account for 5% of your grade on this assignment and will be graded as follows:
+Your user stories taken together will account for 15% of your grade on this assignment.  Each user story will be graded as follows:
 * Receive full marks if:
   * The user story fits the problem statement
   * The user story satisfies the INVEST criteria for good user stories (construed quite broadly)
-  * The user story includes conditions of satisfaction that cover the "normal" expected behavior of the feature, and any relevant error cases
-  * The conditions of satisfaction include priority
-  * Each user story includes one or more condition of satisfaction marked with essential, desirable and extension priority.
+  * The user story contains a priority (essential, desirable, extension).  
+  * The user story includes conditions of satisfaction that cover the "normal" expected behavior of the feature, and any important error cases
+  * Each condition of satisfaction is marked with a priority (essential, desirable, extension). 
+
+The user stories must be numbered (1,2,3) and each the conditions of satisfaction must likewise be numbered (1.1, 1.2, 1.3) and laid out in a table for easy reference.
+
+Remember that you will get full credit for delivering a minimum viable product (MVP) only if you deliver working implementations of all of your essential user stories and conditions of satisfaction.
+  
 
 ### Work breakdown (80 points):
 Your work breakdown will be evaluated holistically on the following rubric:
