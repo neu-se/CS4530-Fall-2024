@@ -18,7 +18,7 @@ All implementation will take place in the TypeScript programming language, using
 | -----| ----------- | ----------- |
 | 09/27/2024| Team Formation Survey | Specify preferences for teammates |
 | 10/02/2024| Project Kick-off Meeting | Schedule a meeting with your Mentor TA during this week |
-| 10/09/2024 | Preliminary Project Plan | Propose a new feature for StackOverflow project that can be planned and implemented within 7 weeks |
+| 10/09/2024 | [Preliminary Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) | Propose a new feature for StackOverflow project that can be planned and implemented within 7 weeks |
 | 10/23/2024 | Revised Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. |
 | 11/26/2024 | Project Delivery - Implementation and Documentation | Deliver/Deploy your new features, including design documentation and tests |
 
