@@ -4,7 +4,7 @@ title: "Individual Project 2"
 permalink: /assignments/ip2
 parent: Assignments
 nav_order: 2
-due_date: "---"
+due_date: "Wednesday October 16, 2024 12:00pm EST (Noon)"
 submission_notes: Submit via GitHub Classroom.
 ---
 
@@ -18,7 +18,7 @@ The objectives of this assignment are to:
 * Write React components and hooks that make use of state
 
 ## Getting started with this assignment
-Start by accepting our [invitation](https://classroom.github.com/a/NtWcqIYx). It will create a Github repository for you which will include the starter code for this assignment. Run `npm install` within `./client` and `./server` to fetch the dependencies.  
+Start by accepting our [invitation](https://classroom.github.com/a/q3BzC1w5). It will create a Github repository for you which will include the starter code for this assignment. Run `npm install` within `./client` and `./server` to fetch the dependencies.  
 
 {: .note }
 **System-level dependencies:** The libraries used for React require some native binaries to be installed -- code written and compiled for your computer (not JavaScript). If you run into issues with `npm install` not succeeding, please try to delete the `node_modules` directory and re-run `npm install`. If the issue still persists, please leave a post on Piazza or come to Office Hours for assistance.
