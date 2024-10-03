@@ -113,7 +113,7 @@ We are going to refactor a few components to extract its state and business logi
    Remove the state and the input handling logic present and use the `useHeader` custom hook without breaking any existing functionality.
 
 6. **Create useTagSelected custom hook for component Tag**  
-   Create a new file `./client/src/hooks/useTagSelected.ts`. In this file, you would be implementing the `useTagSelected` custom hook, which will handle fetching tag details by tag name. This hook should take the same parameters as the props in `Tag` component. It should also be responsible for fetching the tag from the server in case the value of the name field changes in the supplied object of type `TagData`. For this take a look at index.tsx in `./client/src/components/tagPage/tag/index.tsx`
+   Create a new file `./client/src/hooks/useTagSelected.ts`. In this file, you would be implementing the `useTagSelected` custom hook, which will handle fetching tag details by tag name from the server. It should also be responsible for fetching the tag from the server in case the value of the name field changes in the supplied object of type `TagData`. For this take a look at index.tsx in `./client/src/components/tagPage/tag/index.tsx`.
 
 7. **Update and remove the state management from component Tag**  
    In `./client/src/components/tagPage/tag/index.tsx`, update the component to use the `useTagSelected` hook. Remove any state management logic present along with any logic that interacts with an external system. Now use the `useTagSelected` custom hook in a way that the component works the same way as before.
