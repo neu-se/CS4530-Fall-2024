@@ -57,14 +57,216 @@ Socket.IO is great for any use case where real-time updates are essential, or wh
 
 # Set Up a New Project
 
+To get started with Socket.IO, you'll need to set up a Node.js project. Follow these steps:
+1. Initialize a Node.js Project\
+   First, create a new directory for your project and navigate into it: 
+  ```
+  mkdir socketio-tutorial
+  cd socketio-tutorial
+  ```
+
+  Now initialize a new Node.js project by running the following command:
+  ```
+  npm init -y
+  ```
+  This will generate a package.json file with the default configuration.
+
+2. Install the Necessary Packages\
+  To use Socket.IO, you'll need to install both `express` (for setting up a basic HTTP server) and `socket.io` itself.
+  Run the following command to install both:
+  ```
+  npm install express socket.io
+  ```
+
+3. Set Up a Basic Server\
+  Now, lets create the server. Inside your project directory, create a file called `server.js`:
+  ```
+  touch server.js
+  ```
+  Open `server.js` and write the following code to create a basic HTTP server with Socket.IO:
+  ```
+  const express = require('express');
+  const http = require('http');
+  const { Server } = require('socket.io');
+  
+  const app = express();
+  const server = http.createServer(app);
+  const io = new Server(server);
+  
+  // Serve a simple HTML page (or use this for serving static files)
+  app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+  });
+  
+  // Set up a connection handler
+  io.on('connection', (socket) => {
+    console.log('A user connected');
+  
+    // Clean up when the client disconnects
+    socket.on('disconnect', () => {
+      console.log('A user disconnected');
+    });
+  });
+  
+  const PORT = 3000;
+  server.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+  ```
+  This will setup a basic HTTP server that uses Socket.IO to establish connections. Now, let's create a simple client.
+
+4. Create a Client-Side HTML File\
+  In your project directory, create a file called `index.html`:
+  ```
+  touch index.html
+  ```
+  Now, open `index.html` and add the following code:
+  ```
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Tutorial</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Hello Socket.IO!</h1>
+    <script>
+      const socket = io();
+  
+      // Listen for connection confirmation
+      socket.on('connect', () => {
+        console.log('Connected to the server');
+      });
+  
+      // Listen for disconnection
+      socket.on('disconnect', () => {
+        console.log('Disconnected from the server');
+      });
+    </script>
+  </body>
+  </html>
+  ```
+  This HTML file sets up a basic client-side script that connects to the server using Socket.IO.
+
+5. Run Your Project\
+  To start the server, run the following command:
+  ```
+  node server.js
+  ```
+  Then, open a browser and go to `http://localhost:3000`. You should see "Hello Socket.IO!" on the page, and in the browser's developer console, you'll see a essage confirming the connection.
+
+
 # Emitting and Receiving Socket Events
+Now that you've set up a basic project, let's dive into how you can emit and receive Socket.IO events to communicate between the client and server.
 
-Notes to include here:
+1. Creating a Socket Object on CLient and Server\
+Client-Side:
+When the browser loads the HTML page, it creates a `socket` object that connects to the server.
+We've already initialized the socket object in the script section of `index.html`:
+```
+const socket = io(); // Automatically connects to the server
+```
+Server-Side:
+On the server, Socket.IO will create a `socket` object for each client that connects. You can listen for connections with the `io.on('connection')` event:
+```
+io.on('connection', (socket) => {
+  console.log('A user connected');
+});
+```
 
-- Creating a socket object on client/server
-- Setting up a connection
-- Emitting an update + object with the update
-- Subscribing a listener to an update + handler function for emitted object
+2. Setting Up a Connection\
+Once the socket object is created, both the client and server can start emitting and receiving events.
+Example: Handling Connections and Disconnections
+We can already see basic connection handling:
+```
+// Server-side
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
+});
+```
+On the client side, you can also listen for the `connect` and `disconnect` events:
+```
+// Client-side
+socket.on('connect', () => {
+  console.log('Connected to the server');
+});
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from the server');
+});
+```
+
+3. Emitting an Update + Object with the Update\
+To send data from the client to the server or vice versa, you use the `.emit()` method.
+Example: Emitting a Custom Event
+Let's say we want to send a chat message from the client to the server. You can emit a custom event like this:
+```
+// Client-side
+socket.emit('chat message', { user: 'John', message: 'Hello, World!' });
+```
+On the server side, you can listen for this event and handle the received data:
+```
+// Server-side
+socket.on('chat message', (data) => {
+  console.log(`${data.user}: ${data.message}`);
+});
+```
+You can also send data back to all connected client:
+```
+// Server-side
+io.emit('chat message', { user: 'Server', message: 'Welcome to the chat!' });
+```
+
+4. Subscribing a Listener to an Update + Handler Function for Emitted Object\
+On the client side, you need to subscribe to the event to receive the emitted messages:
+```
+// Client-side
+socket.on('chat message', (data) => {
+  console.log(`${data.user}: ${data.message}`);
+});
+```
+This will allow the client to receive and handle chat messages sent from the server (or other clients).
+
+Putting It All Together
+Here's an example of a simple chat app:
+Server-Side (`server.js`)"
+```
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  socket.on('chat message', (data) => {
+    console.log(`${data.user}: ${data.message}`);
+    // Broadcast the message to all clients
+    io.emit('chat message', data);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
+});
+```
+Client-Side (`index.html`):
+```
+<script>
+  const socket = io();
+
+  // Listen for chat messages
+  socket.on('chat message', (data) => {
+    console.log(`${data.user}: ${data.message}`);
+  });
+
+  // Example of emitting a message
+  socket.emit('chat message', { user: 'John', message: 'Hello, World!' });
+</script>
+```
+This example sets up a basic chat app where users can send and receive messages in real time.
+
 
 # Useful Resources
 
