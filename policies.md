@@ -31,15 +31,18 @@ If you're worried about being busy around the time of a HW submission, please pl
 
 **For fairness to all, there are no exceptions to the above rules.**
 
-## In Class Activities:
+## In Class Activities and Attendance:
 
 Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to participate in the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Each instructor may have a different style for assigning participation grades, but historical grading information suggests that each style results in a similar overall grade distribution. Participation grades will be posted on Canvas, and regularly updated. 
 
+Attendance in the synchronous meetings is expected. Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to catch up on the materials discussed in the class and inform the instructor to receive credit for any participation. 
+
 If you join class in person, you are strongly encouraged to bring your laptop or phone to class so that you can participate in the activities.
+
 
 ### Policy on remote attendance
 
-If you are registered for an on-the-ground section but do not feel comfortable or are unable to attend in person, please contact your instructor in advance of class.
+If you are registered for an on-the-ground section but do not feel comfortable or are unable to attend in person, please contact your instructor in advance of class. 
 We would like to provide the best and most comfortable learning experience, and encourage you to stay at home if advised by a medical professional.
 
 ## Classroom Environment
@@ -50,17 +53,17 @@ Please don't be late. You are an essential part of the class. Your participation
 
 BE PRESENT WHEN YOU ARE ATTENDING CLASS. Please do not distract yourself from the class by doing other activities such as phone calls, email, facebook, chat/IM/texting, games, web surfing -- unless it has a direct bearing on the course. Then, by all means, surf away!
 
-Attendance in the synchronous meetings is expected. Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to catch up on the materials discussed in the class.
-
 ## Academic Integrity
 Students must work individually on all homework assignments.
 We encourage you to have high-level discussions with other students in the class about the assignments, however, we require that when you turn in an assignment, it is only your work. That is, copying any part of another student's assignment is strictly prohibited.
+
 If you steal someone else's work, you fail the class. You are responsible for protecting your work. If someone uses your work, with or without your permission, you fail the class.
 
 You are free to reuse small snippets of example code found on the Internet (e.g., via StackOverflow) provided that it is attributed. Use of co-pilot is also enrouraged.
 
 If you are concerned that by reusing and attributing that copied code it may appear that you didn't complete the assignment yourself, then please raise a discussion with the instructor. If you are in doubt whether using others' work is allowed, you should assume that it is NOT allowed unless the instructors confirm otherwise.
 
+To ensure that students have completed the work themselves, instructor might require students to explain the work they have submitted. We will consider adjusting grades based on your understanding of the course material.    
 
 ## Accommodations for Disabilities
 Students who have disabilities who wish to receive academic services and/or accommodations should visit the [Disability Access Services](https://disabilityaccessservices.sites.northeastern.edu/) at 20 Dodge Hall or call (617) 373-2675 (previously known as DRC)
