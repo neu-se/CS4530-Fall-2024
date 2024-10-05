@@ -6,12 +6,12 @@ nav_exclude: true
 ---
 # Activity 14: Continuous Deployment Pipeline for FakeStackOverFlow
 
-In this activity, you will configure a continuous deployment pipeline using MongoDB Atlas and Render.com. Our pipeline will use Render.com to deploy the application, and the MongoDB database will be deployed on the cloud using MongoDB Atlas.
+In this activity, you will set up a continuous deployment pipeline using MongoDB Atlas and Render.com. The application will be deployed through Render.com, while the MongoDB database will be hosted in the cloud using MongoDB Atlas.
 
-Only one member of each team needs to do these steps - the resulting deployment will be shared by the whole team. But if you would like, you can sit as a team and deploy the application together.
+Only one member of each team needs to complete these steps, as the resulting deployment will be shared with the entire team. However, if preferred, the team can work together to deploy the application.
 
 {: .note } 
-We will be concentrating on building a continuous deployment pipeline in this activity, but what about continuous integration? There are a lot of ways to integrate continuous integration into your projects. One such example is automatically running tests after pushing a commit using GitHub Actions. FakeStackOverFlow has this continuous integration, and you can find the workflow in `.github/workflows/main.yml`.
+In this activity, we will focus on building a continuous deployment pipeline, but what about continuous integration? There are many ways to use continuous integration in your projects. For example, you can use GitHub Actions to automatically run tests after pushing a commit. FakeStackOverflow has a continuous integration setup for running tests, and you can find the workflow in `.github/workflows/main.yml`.
 
 ## Pre-Requisites
 
@@ -21,7 +21,7 @@ There are three pre-requisites for this activity.
 
 Your team's deployment must take place within a private GitHub repository in our GitHub Classroom. To create your repository, each member of your team should follow these instructions:
 
-1. Sign in to GitHub.com, and then use our invitation [ADD LINK] to create a repository with the covey.town codebase. Check to see if one of your groupmates has created a group already - if so, select it to join it. Otherwise, create a repo using the following format fall24-team-project-group-xyy where you should enter your group number (e.g. "Group-XYY") as the team name where X is your section number and YY is your group number.
+1. Sign in to GitHub.com, and then use our invitation [ADD LINK] to create a repository with the FakeStackOverflow codebase. Check to see if one of your groupmates has created a group already - if so, select it to join it. Otherwise, create a repo using the following format fall24-team-project-group-xyy where you should enter your group number (e.g. "Group-XYY") as the team name where X is your section number and YY is your group number.
 
 2. Check your email for the invitation to join the repo. After that, refresh the page, and it will show a link to your new repository, for example: https://github.com/neu-cs4530/fall24-team-project-group-xyy. Click the link to navigate to your new repository. This is the repository you will use for the project.
 
@@ -72,23 +72,26 @@ You will first create the MongoDB database, and then setup the continuous deploy
    4.  Otherwise, switch to the "I have MongoDB Compass installed" tab and connect.
 10. After you have connected to the database on MongoDB Compass, check what collections are created by default.
 11. Go to your project repository's server folder and run the `populate_db.ts` script.
+
 ```
 cd server
 
 npx ts-node populate_db.ts mongodb+srv://<username>:<password>@db-cs4530-f24-xxx.xxxxx.mongodb.net/
 ```
+
 Make sure you replace the username, password, and xxx values in the connection string. You can find the connection string in the instructions from step 9.
 
 
 {: .note } 
-For the sake of simplicity and because you are not dealing with sensitive data, the Network Access was set to accept access from anywhere. But when working on other projects with sensitive data you should allow access to only a required scope of IP addresses.
+For simplicity, and since you're not handling sensitive data, the Network Access is set to allow connections from anywhere. However, for projects involving sensitive data, you should restrict access to only the necessary range of IP addresses.
 
+You can connect your locally deployed server to a cloud-hosted MongoDB database. This is useful when developing a feature and testing it before deployment. To do this, add an environment variable with the connection string before starting your server.
 
-You can connect your locally deployed server to the cloud hosted MongoDB database. This can be useful when you are developing a feature and want to test it out before deploying it. To do this, add an environmental variable with the connection string before starting your server.
 ```
 export MONGODB_URI="<connection string>"
 ```
-Note that if you do not save the environmental variable in a ~/.bashrc file or something similar, it will removed every time you close your terminal.
+
+Note that if you don't save the environment variable in a `~/.bashrc` file or a similar configuration, it will be removed every time you close the terminal.
 
 ### Setup your Server
 
@@ -126,8 +129,8 @@ Note that if you do not save the environmental variable in a ~/.bashrc file or s
 3. Click "Deploy Static Site".
 4. Once the site is deployed, copy the client URL.
 5. Open the [Render Dashboard](https://dashboard.render.com/) again. Choose the project you have created.
-6. Click on the server Web Service. Click on the "Environment" tab.
-7. Add a new environmnent variable called `CLIENT_URL`. For the value, add the client URL (make sure you are adding this env. variable in the server's settings, not the client's).
+6. Click on the server's Web Service. Click on the "Environment" tab.
+7. Add a new environment variable called `CLIENT_URL`. For the value, add the client URL (make sure you are adding this env. variable in the server's settings, not the client's).
 8. Visit the client URl in your browser to view the application.
 
 
