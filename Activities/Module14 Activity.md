@@ -10,7 +10,8 @@ In this activity, you will configure a continuous deployment pipeline using Mong
 
 Only one member of each team needs to do these steps - the resulting deployment will be shared by the whole team. But if you would like, you can sit as a team and deploy the application together.
 
-{: .note } We will be concentrating on building a continuous deployment pipeline in this activity, but what about continuous integration? There are a lot of ways to integrate continuous integration into your projects. One such example is automatically running tests after pushing a commit using GitHub Actions. FakeStackOverFlow has this continuous integration, and you can find the workflow in `.github/workflows/main.yml`.
+{: .note } 
+We will be concentrating on building a continuous deployment pipeline in this activity, but what about continuous integration? There are a lot of ways to integrate continuous integration into your projects. One such example is automatically running tests after pushing a commit using GitHub Actions. FakeStackOverFlow has this continuous integration, and you can find the workflow in `.github/workflows/main.yml`.
 
 ## Pre-Requisites
 
@@ -42,7 +43,7 @@ Render.com is a cloud platform that simplifies deploying and hosting web applica
 
 You can create a Render.com account [here]([https://](https://dashboard.render.com/register)). Clicking on the "GitHub" button and sign up using the **same GitHub account** as the one used to create the GitHub project repository.
 
-After you register you will be asked to verify your email.
+After you register you will be asked to verify your email. You might be asked to authorize the Render app for the "neu-cs4530" organization - choose your repository using the "Only select repositories" option, DO NOT choose "All repositories".
 
 ## Steps
 
@@ -79,16 +80,55 @@ npx ts-node populate_db.ts mongodb+srv://<username>:<password>@db-cs4530-f24-xxx
 Make sure you replace the username, password, and xxx values in the connection string. You can find the connection string in the instructions from step 9.
 
 
-{: .note } For the sake of simplicity and because you are not dealing with sensitive data, the Network Access was set to accept access from anywhere. But when working on other projects with sensitive data you should allow access to only a required scope of IP addresses.
+{: .note } 
+For the sake of simplicity and because you are not dealing with sensitive data, the Network Access was set to accept access from anywhere. But when working on other projects with sensitive data you should allow access to only a required scope of IP addresses.
 
 
 You can connect your locally deployed server to the cloud hosted MongoDB database. This can be useful when you are developing a feature and want to test it out before deploying it. To do this, add an environmental variable with the connection string before starting your server.
 ```
 export MONGODB_URI="<connection string>"
 ```
-Note that if you do not save the env. variable in a ~/.bashrc file or something similar, it will removed every time you close your terminal.
+Note that if you do not save the environmental variable in a ~/.bashrc file or something similar, it will removed every time you close your terminal.
+
+### Setup your Server
+
+1. Open the [Render Dashboard](https://dashboard.render.com/).
+2. Click on "Create new project", and create a new project with a name such as "cs4530-f24-XYY" (where XYY is your group number).
+3. From the top menu, click on the "+ New" button and click on "Web Service".
+   1. For the Source Code, choose your project repository. In case you do not see your project repository, re-connect your GitHub account and authorize access to your project repository.
+   2. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY-api" (where XYY is your group number).
+   3. For the Project, select the project created earlier. For the environment, select Production or any default value.
+   4. For Language, select "Node".
+   5. For Branch, select "main".
+   6. For Region, keep the default value.
+   7. For Root Directory, type in "server".
+   8. For Build Command, type in "npm install && tsc".
+   9. For Start Command, type in "npm run start:prod".
+   10. For Instance Type, choose the "Free" option.
+   11. In the Environment Variables section, add a variable called `MONGODB_URL`. For the value, add the connection string of the MongoDB database created earlier.
+4. Click "Deploy Web Service".
+5. Once the deployment is completed, visit the URL and check if you get a "hello world" response.
+6. Append "/question/getQuestion?order=newest&search=" to the URL and check if you get an successful response.
+
 
 ### Setup your Client
+
+1. Open the [Render Dashboard](https://dashboard.render.com/).
+2. From the top menu, click on the "+ New" button and click on "Static Site".
+   1. For the Git Provider, choose your project repository. In case you do not see your project repository, re-connect your GitHub account and authorize access to your project repository.
+   2. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY" (where XYY is your group number).
+   3. For the Project, select the project created earlier. For the environment, select Production or any default value.
+   4. For Branch, select "main".
+   5. For Root Directory, type in "client".
+   6. For Build Command, type in "npm install && npm run build".
+   7. For Publish directory, type in "build".
+   8. In the Environment Variables section, add a variable called `REACT_APP_API_URL`. For the value, add the server URL.
+3. Click "Deploy Static Site".
+4. Once the site is deployed, copy the client URL.
+5. Open the [Render Dashboard](https://dashboard.render.com/) again. Choose the project you have created.
+6. Click on the server Web Service. Click on the "Environment" tab.
+7. Add a new environmnent variable called `CLIENT_URL`. For the value, add the client URL (make sure you are adding this env. variable in the server's settings, not the client's).
+8. Visit the client URl in your browser to view the application.
 
 
 
