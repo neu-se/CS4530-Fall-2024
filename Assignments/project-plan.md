@@ -50,7 +50,7 @@ We list page *maximums* for each section as general guidance of what we are will
 ## Problem Statement, User Stories and Acceptance Criteria (max 4 pages)
 Your project plan should begin with a 1-3 paragraph introductory problem statement: what problem in StackOverflow does your (proposed) feature solve? Provide a paragraph (or two) that describes why you are interested in building this feature. 
 
-Given the problem statement, develop 1 to 3 user stories that show how a user would interact with the feature. User stories are requirements specified in the following format 
+Given the problem statement, develop 3 user stories that show how a user would interact with the feature. User stories are requirements specified in the following format 
 "As a < type of user >, I want < some goal > so that < some reason >."
 My conditions of satisfaction are < list of common cases and special cases that must work >.
 

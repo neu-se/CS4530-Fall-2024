@@ -10,6 +10,9 @@ submission_notes: Submit via GitHub Classroom.
 
 Welcome back to the Stack Overflow team! In this second deliverable, you will be implementing new and exciting features to enhance the frontend interface and bring the web application to life. This assignment builds on the foundation you laid in the first project and will deepen your skills in frontend development with TypeScript and React.
 
+## Change Log
+- 10/3/2024: Modified the directory of the main component to `./client/src/components/main/index.tsx`
+
 ## Objectives of this assignment
 The objectives of this assignment are to:
 * Investigate and understand a large, existing codebase
@@ -110,7 +113,7 @@ We are going to refactor a few components to extract its state and business logi
    Remove the state and the input handling logic present and use the `useHeader` custom hook without breaking any existing functionality.
 
 6. **Create useTagSelected custom hook for component Tag**  
-   Create a new file `./client/src/hooks/useTagSelected.ts`. In this file, you would be implementing the `useTagSelected` custom hook, which will handle fetching tag details by tag name. This hook should take the same parameters as the props in `Tag` component. It should also be responsible for fetching the tag from the server in case the value of the name field changes in the supplied object of type `TagData`. For this take a look at index.tsx in `./client/src/components/tagPage/tag/index.tsx`
+   Create a new file `./client/src/hooks/useTagSelected.ts`. In this file, you would be implementing the `useTagSelected` custom hook, which will handle fetching tag details by tag name from the server. It should also be responsible for fetching the tag from the server in case the value of the name field changes in the supplied object of type `TagData`. For this take a look at index.tsx in `./client/src/components/tagPage/tag/index.tsx`.
 
 7. **Update and remove the state management from component Tag**  
    In `./client/src/components/tagPage/tag/index.tsx`, update the component to use the `useTagSelected` hook. Remove any state management logic present along with any logic that interacts with an external system. Now use the `useTagSelected` custom hook in a way that the component works the same way as before.
@@ -134,7 +137,7 @@ We are going to refactor a few components to extract its state and business logi
    Create a new file `./client/src/hooks/useMainPage.ts`. In this file, you would be implementing the `useMainPage` custom hook, which manages the page rendering logic for components such as `HomePageClass`, `TagPageClass`, `AnswerPageClass`, `NewQuestionPageClass`, and `NewAnswerPageClass`.
 
 13. **Use the useMainPage custom hook**
-   Refactor the Main component located at`./client/src/components/main/routing/Main.tsx` to use the `useMainPage` custom hook for managing page switching and states. This will simplify the logic in Main and allow centralized page management within the useMainPage hook.
+   Refactor the Main component located at `./client/src/components/main/index.tsx` to use the `useMainPage` custom hook for managing page switching and states. This will simplify the logic in Main and allow centralized page management within the useMainPage hook.
 
 14. **Create useLoginContext custom hook**  
    Create a new file `./client/src/hooks/useLoginContext.ts`. In this file, you would be implementing the `useLoginContext` custom hook, which will access the `LoginContext` using the `useContext` hook and return it.
