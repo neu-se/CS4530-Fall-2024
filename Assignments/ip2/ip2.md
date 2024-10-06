@@ -12,6 +12,7 @@ Welcome back to the Stack Overflow team! In this second deliverable, you will be
 
 ## Change Log
 - 10/3/2024: Modified the directory of the main component to `./client/src/components/main/index.tsx`
+- 10/5/2024: Added a note about deleting outdated entries
 
 ## Objectives of this assignment
 The objectives of this assignment are to:
@@ -70,6 +71,9 @@ Refer to [IP1](https://neu-se.github.io/CS4530-Fall-2024/assignments/ip1) for in
 
 {: .note }
 **GitHub Copilot:** If you haven't yet used GitHub Copilot, this might be a good time to set it up. It can be very helpful for writing boilerplate code, and especially for proposing implementations of very simple methods. You likely will find it very useful for many of these implementation tasks. To get it for free: 1. Sign up for [GitHub's Student Pack](https://education.github.com/pack) and wait for your student status to be verified, then 2. Install the [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) for VSCode.
+
+{: .note }
+The fields of the Schemas were changed. As a result, features such as upvoting will not work on database entries that were made in IP1. If you want to test features, delete old database entries and make new questions either through manually making it in the client, or run `populate_db.ts` after you finish implementing the tasks.
 
 ### **Task 0: Setup Environment Variables**
 
