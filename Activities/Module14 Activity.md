@@ -125,7 +125,7 @@ Note that if you don't save the environment variable in a `~/.bashrc` file or a 
    5. For Root Directory, type in "client".
    6. For Build Command, type in "npm install && npm run build".
    7. For Publish directory, type in "build".
-   8. In the Environment Variables section, add a variable called `REACT_APP_API_URL`. For the value, add the server URL.
+   8. In the Environment Variables section, add a variable called `REACT_APP_SERVER_URL`. For the value, add the server URL.
 3. Click "Deploy Static Site".
 4. Once the site is deployed, copy the client URL.
 5. Open the [Render Dashboard](https://dashboard.render.com/) again. Choose the project you have created.
