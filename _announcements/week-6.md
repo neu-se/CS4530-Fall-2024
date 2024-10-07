@@ -1,7 +1,7 @@
 ---
 title: Software Development Process  
 week: 6
-date: 2024-10-14
+date: 2024-10-06
 ---
 As part of software development process, each team is expected to use a structured development process, including pull requests, code reviews, etc. Each team will also submit sprint reports, individual surveys, and have weekly meetings with TA Mentor. The development process started last week (as you started developing your project plan) and the required "process-related" submissions start this week. 
 
