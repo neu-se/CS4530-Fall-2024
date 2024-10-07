@@ -3,7 +3,7 @@ layout: page
 title: MongoDB and Mongoose
 permalink: /tutorials/week1-mongodb-mongoose
 parent: Tutorials
-nav_order: 4
+nav_order: 5
 ---
 
 # A mini-tutorial on MongoDB and Mongoose
