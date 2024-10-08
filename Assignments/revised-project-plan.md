@@ -17,16 +17,16 @@ If you are unsure of how to address any of these concerns or if you have address
 We list page *maximums* for each section as general guidance of what we are willing to grade. Please do not feel compelled to use all of the pages provided, and remember that a diagram or table can be as expressive (or more) as a comparable amount of text.
 
 ## Revised Problem Statement, User Stories and Acceptance Criteria (max 4 pages)
-Your revised project plan should begin with a 1-3 paragraph introductory problem statement: what problem in FakeStackOverflow does your (proposed) feature solve? Provide a paragraph (or two) that describes why you are interested in building this feature. 
+Your revised project plan should begin with a 1-3 paragraph introductory problem statement: what problem in FakeStackOverflow does your (proposed) feature(s) solve? Provide a paragraph (or two) that describes why you are interested in building the feature(s). 
 
-Given the problem statement, develop three user stories that show how a user would interact with the feature. User stories are requirements specified in the format 
+Given the problem statement, develop three user stories that show how a user would interact with the feature(s). User stories are requirements specified in the format 
 "As a < type of user >, I want < some goal > so that < some reason >."
 My conditions of satisfaction are < list of common cases and special cases that must work >. Please make sure that your conditions of satification are complete (i.e., cover all common cases) and can be turned into testable behaviors.
 
 **EACH USER STORY MUST HAVE ONE OR MORE ESSENTIAL AND DESIRABLE CONDITION(S) OF SATISFACTION**. The set of essential items will constitute the "Minimum Viable Product". **EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional).**
 
-You should include three different user stories to describe how users will interact with your feature.
-Your three user stories should cover the key behavior that your features will provide.
+You should include three different user stories to describe how users will interact with your feature(s).
+Your three user stories should cover the key behavior that your feature(s) will provide.
 Do not provide more than three user stories. Your problem statement and description of user stories and conditions of satisfaction should be between 2-4 pages.
 
 This revised project plan should be a standalone document (it is OK to copy/paste from the preliminary plan in this case).
@@ -43,7 +43,7 @@ Each task on the work breakdown should be assigned to exactly one team member (a
 Consider the dependencies between tests: perhaps an API needs to be designed and specified before implementation can begin; perhaps your development environment needs to be configured before anything else can proceed.
 Assign tasks to sprints considering these dependencies.
 
-Given the preliminary nature of your project, we do not expect that you will know all of the details about precisely how to implement your features such that you could break it down into tasks that you feel could be implemented in a day or two. Large tasks (those which you can not provide a responsible estimate for) must be accompanied by smaller “research” tasks that can be performed early on in the project. You may wish to provide deadlines by which the task must either be refined into smaller tasks (based on new knowledge gathered), or reworked/abandoned.
+Given the preliminary nature of your project, we do not expect that you will know all of the details about precisely how to implement your feature(s) such that you could break it down into tasks that you feel could be implemented in a day or two. Large tasks (those which you can not provide a responsible estimate for) must be accompanied by smaller “research” tasks that can be performed early on in the project. You may wish to provide deadlines by which the task must either be refined into smaller tasks (based on new knowledge gathered), or reworked/abandoned.
 
 In keeping with the agile philosophy, you should plan on spending these two weeks of the project (from February 14 until February 28) in a "Sprint 0" in which you will undertake tasks you previously planned including those that help you improve your project plan.
 
@@ -52,7 +52,7 @@ For example: Consider if you were proposing the "Viewing Area" project (the indi
 **Do not wait for your TA feedback to begin this work.** You probably know more about the details of your project then they do. It will be helpful for all concerned if your Project Plan lists the major unknowns or things that you expect to need help with-- this will help the TA provide more useful feedback for you
 
 Be realistic, and leave time for contingencies (including the time around the midterm exam).
-Remember that you will need to have a demo prepared of your feature by project deadline - just 5 weeks from the due date of this assignment (not counting spring break).
+Remember that you will need to have a demo prepared of your feature(s) by project deadline - just 5 weeks from the due date of this assignment (not counting spring break).
 
 If you are uncertain that some tasks will be feasible, then be sure to include evaluation tasks earlier-on in the project that will allow for "go/no-go" decisions to move forward on a task or drop it.
 
@@ -79,7 +79,7 @@ Your work breakdown may take the format of a simple textual list.
 
 **Mandatory update for all teams:** Even if your work breakdown is entirely unchanged compared to the preliminary plan, please be certain to include updates on all "sprint 0" tasks (those which were scheduled to be completed before the due date of this revised plan). Many teams included research/learning tasks in the first week to help inform the rest of the work breakdown: you should be certain to revise your work breakdown based on what you have learned so far.
 
-**Please note that in order to receive full credit for the final delivered product, each team is expected to deliver Minimum Viable Product (marked as essential) as well as additional features proposed in the project plan (marked as desirables). Please plan your work accordingly.**
+**Please note that in order to receive full credit for the final delivered product, each team is expected to deliver Minimum Viable Product (marked as essential) as well as additional feature(s) proposed in the project plan (marked as desirables). Please plan your work accordingly.**
 
 ## Submission 
 Your revised project plan should be submitted as a single PDF on Canvas under the assignment "Revised Project Plan."
@@ -97,7 +97,7 @@ Each of the three user stories will account for 5% of your grade on this assignm
 * Receive full marks if:
   * The user story fits the problem statement
   * The user story satisfies the INVEST criteria for good user stories (construed quite broadly)
-  * The user story includes conditions of satisfaction that cover the "normal" expected behavior of the feature, and any relevant error cases
+  * The user story includes conditions of satisfaction that cover the "normal" expected behavior of the feature(s), and any relevant error cases
   * Conditions of satisfaction can be turned into Testable behaviors
   * Conditions of satisfaction are prioritized
   * Each user story includes one or more condition of satisfaction marked with essential, desirable and extension priority.
@@ -107,7 +107,7 @@ Each of the three user stories will account for 5% of your grade on this assignm
 Your work breakdown will be evaluated holistically on the following rubric:
 
 #### Coverage of tasks needed (20 points):
-Receive full marks if the work breakdown includes all (reasonably expected) tasks to implement your feature, considering these kinds of tasks: 
+Receive full marks if the work breakdown includes all (reasonably expected) tasks to implement your feature(s), considering these kinds of tasks: 
   * Background research 
   * Design of interfaces and data types
   * Deployment of third-party services
