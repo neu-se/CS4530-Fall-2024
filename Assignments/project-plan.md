@@ -6,12 +6,16 @@ parent: Assignments
 nav_order: 4
 ---
 # Project Plan **Due Wednesday October 9, 12:00pm (noon) ET**{: .label .label-red }
+
+## Change Log
+- 10/8/2024: Updated description that could have been interpreted as students having to build only a single feature for the entire project. 
+
 All projects will involve frontend and backend development of new features for our StackOverflow.
-Once teams have been formed, you and your team will decide what kind of new feature you would like to build.
-Your feature should be something that can be implemented within the timeframe allotted (5 weeks, plus 2 weeks of planning), and will be implemented in a fork of the main codebase.
+Once teams have been formed, you and your team will decide what kind of new features you would like to build.
+Your features should be something that can be implemented within the timeframe allotted (5 weeks, plus 2 weeks of planning), and will be implemented in a fork of the main codebase.
 In the coming weeks, we will provide tutorials and instructions for you to run the entire application in a local development environment, and also to deploy it to the cloud.
 Given that you will be up-to-speed on the StackOverflow codebase (and have been introduced to TypeScript, React, NodeJS, and testing frameworks),
-and that you will have a team of four, we expect that the feature that you propose will be somewhat more complex than the features implemented in the individual assignments.
+and that you will have a team of four, we expect that the features that you propose will be more complex than the features implemented in the individual assignments.
 
 Feel free to look at existing systems like [Stackoverlow](https://stackoverflow.com/), [Quora](https://www.quora.com/), [reddit](https://www.reddit.com/) and similar stack exchange sites for inspiration on new features to build. 
 Examples of features that students might propose include:
@@ -48,13 +52,13 @@ We list page *maximums* for each section as general guidance of what we are will
 
 
 ## Problem Statement, User Stories and Acceptance Criteria (max 4 pages)
-Your project plan should begin with a 1-3 paragraph introductory problem statement: what problem in StackOverflow does your (proposed) feature solve? Provide a paragraph (or two) that describes why you are interested in building this feature. 
+Your project plan should begin with a 1-3 paragraph introductory problem statement: what problem in StackOverflow does your (proposed) features solve? Provide a paragraph (or two) that describes why you are interested in building these features. 
 
-Given the problem statement, develop 3 user stories that show how a user would interact with the feature. User stories are requirements specified in the following format 
+Given the problem statement, develop 3 user stories that show how a user would interact with the features. User stories are requirements specified in the following format 
 "As a < type of user >, I want < some goal > so that < some reason >."
 My conditions of satisfaction are < list of common cases and special cases that must work >.
 
-Your user stories should cover the key behavior or qualities that your feature will provide.
+Your user stories should cover the key behavior or qualities that your features will provide.
 
 Each user story should include conditions of satisfaction.
 Please make sure that your conditions of satisfaction cover all the common cases and can be turned into testable behaviors.
@@ -115,8 +119,8 @@ Each team submits a single document to Canvas.
 The project plan will account for 10% of your project grade, and will be graded out of 100 points. The grading of the project plan is further broken down as follows:
 
 ### Introductory problem statement (5 points): 
-* Receive full marks if there is a narrative consisting of 1-3 paragraphs that describes a specific problem that your project aims to solve.
-* Receive partial credit if the narrative is present, but does not describe a problem that the project aims to solve
+* Receive full marks if there is a narrative consisting of 1-3 paragraphs that describes the specific problems that your project aims to solve.
+* Receive partial credit if the narrative is present, but does not describe the problems that the project aims to solve
 
 ### User stories (15 points):
 Your user stories taken together will account for 15% of your grade on this assignment.  Each user story will be graded as follows:
