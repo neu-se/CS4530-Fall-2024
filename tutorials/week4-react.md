@@ -3,7 +3,7 @@ layout: page
 title: React Tutorial
 permalink: /tutorials/week4-react-basics
 parent: Tutorials
-nav_order: 6
+nav_order: 7
 ---
 
 # React Basics
