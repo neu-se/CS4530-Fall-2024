@@ -1,4 +1,4 @@
-# Tutorial: How to Install and Use Postman
+# Tutorial: Guide to API Requests and Installing Postman
 
 ## Contents
 - [Introduction to API Requests and Postman](#introduction-to-api-requests-and-postman)
@@ -40,10 +40,13 @@ Each of these request types serves a specific purpose in API interactions, and P
 Each API request has key components:
 
 ### 1. **URL**
+For this URL -> `https://localhost:8000/api/users`
+
 The URL defines the location of the API you're interacting with:
 - **Protocol** (`https://`)
-- **Domain** (`api.example.com`)
-- **Endpoint** (`/users`)
+- **Domain** (`localhost`)
+- **Port** (`8000`)
+- **Endpoint** (`/api/users`)
 
 ### 2. **Method**
 Defines the action type:
@@ -138,25 +141,37 @@ After installation, launch Postman. You'll see a workspace where you can start c
 ### Step 2: Make Your First API Request
 1. Click on the "New" button at the top-left and select **HTTP**.
 
-![Postman1](./assets/week1-installing-postman/Postman1.png)
+![Postman1](./assets/week1-apirequests-postman/Postman1.png)
 
 2. In the request window, choose the type of request method (GET, POST, PUT, DELETE) from the dropdown menu (default is GET).
-3. Enter the URL of the API you want to test in the input field (e.g., `https://localhost:8000/api/users`).
+3. Enter the URL of the API you want to test in the input field (e.g., `http://localhost:8000/question/getQuestionById/67062b6dd9d59b115c559096`). Ensure that the ID is valid and belongs to one of the questions in the database.
 
-![Postman2](./assets/week1-installing-postman/Postman2.png)
+![Postman2](./assets/week1-apirequests-postman/Postman2.png)
 
-4. To send a POST request you need to include the Body as well.
+4. To send a POST request you need to enter the URL (e.g., `http://localhost:8000/question/addQuestion`) and include the Body as well.
     - Go to the **Body** tab.
     - Select **raw**.
     - Choose **JSON** as the format.
     - Enter the JSON data in this format:
     ```json
     {
-        "username": "testuser",
-        "email": "test@example.com"
+        "title": "How do I use Postman?",
+        "text": "I am trying to build an API using TypeScript, but I'm unable to test using Postman. How do I do this?",
+        "tags": [
+            {
+                "name": "Postman",
+                "description": "API testing tool that allows developers to send HTTP requests."
+            }
+        ],
+        "asked_by": "Pavan Kumar",
+        "ask_date_time": "2024-10-08T12:00:00.000Z",
+        "answers": [],
+        "views": 0,
+        "up_votes": [],
+        "down_votes": []
     }
     ```
-![Postman3](./assets/week1-installing-postman/Postman3.png)
+![Postman3](./assets/week1-apirequests-postman/Postman3.png)
 
 5. Click the **Send** button.
 
