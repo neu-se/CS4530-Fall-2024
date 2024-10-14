@@ -4,7 +4,7 @@ title: Continuous Deployment Pipeline for FakeStackOverFlow
 permalink: /activities/continuous-deployment
 nav_exclude: true
 ---
-# Activity 14: Continuous Deployment Pipeline for FakeStackOverFlow
+# Continuous Deployment Pipeline for FakeStackOverFlow
 
 In this activity, you will set up a continuous deployment pipeline using MongoDB Atlas and Render.com. The application will be deployed through Render.com, while the MongoDB database will be hosted in the cloud using MongoDB Atlas.
 
