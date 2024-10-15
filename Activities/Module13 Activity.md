@@ -53,14 +53,14 @@ You will first create the MongoDB database, and then setup the continuous deploy
 
 1. Navigate to your [MongoDB Account Profile](https://account.mongodb.com/account/profile/overview).
 2. Click on the "Visit MongoDB Atlas" button.
-3. Click on the "Create" button on the center of the screen. (If you don't see a "Create" button, make sure you in the "Overview" section on the left navigation and on the "Data Services" tab)
+3. Click on the "Create" button on the center of the screen. (If you don't see a "Create" button, make sure you are in the "Overview" section on the left navigation and on the "Data Services" tab)
 4. In the configuration options:
    1. Choose the "M0" free tier.
    2. For the Name, provide a name such as "db-cs4530-f24-XYY" (where XYY is your group number).
    3. Keep the Provider and Region the default values.
 5. Click on "Create Deployment".
 6. You will be prompted about connecting to your database. 
-   1. Copy the username and password that is automatically generated. You will need this later.
+   1. Copy the username and password that is automatically generated. You will need this later (you can also create an user after the database has been created).
    2. Click on "Create Database User".
    3. Click the "Close" button.
 7. Wait for your database cluster to complete creation. Once complete, click on the "Network Access" option in the left navigation.
@@ -70,13 +70,13 @@ You will first create the MongoDB database, and then setup the continuous deploy
    2.  Click on "Compass".
    3.  If you don't have Compass installed, follow the instructions to install MongoDB Compass and then connect.
    4.  Otherwise, switch to the "I have MongoDB Compass installed" tab and connect.
-10. After you have connected to the database on MongoDB Compass, check what collections are created by default.
+10. After you have connected to the database on MongoDB Compass, check what collections are created by default. Collections such as "admin", "config", and "local" should be present.
 11. Go to your project repository's server folder and run the `populate_db.ts` script.
 
 ```
 cd server
 
-npx ts-node populate_db.ts mongodb+srv://<username>:<password>@db-cs4530-f24-xxx.xxxxx.mongodb.net/
+npx ts-node populate_db.ts mongodb+srv://<username>:<password>@db-cs4530-f24-xxx.xxxxx.mongodb.net/fake_so
 ```
 
 Make sure you replace the username, password, and xxx values in the connection string. You can find the connection string in the instructions from step 9.
@@ -85,20 +85,22 @@ Make sure you replace the username, password, and xxx values in the connection s
 {: .note } 
 For simplicity, and since you're not handling sensitive data, the Network Access is set to allow connections from anywhere. However, for projects involving sensitive data, you should restrict access to only the necessary range of IP addresses.
 
-You can connect your locally deployed server to a cloud-hosted MongoDB database. This is useful when developing a feature and testing it before deployment. To do this, add an environment variable with the connection string before starting your server.
+You can connect your locally deployed server to a cloud-hosted MongoDB database. This is useful when developing a feature and testing it before deployment. To do this, update the `.env` created as [part of the IP2 setup](https://neu-se.github.io/CS4530-Fall-2024/assignments/ip2#task-0-setup-environment-variables).
 
 ```
-export MONGODB_URI="<connection string>"
+MONGODB_URI=<add your connection string here>
+CLIENT_URL=http://localhost:3000
+PORT=8000
 ```
 
-Note that if you don't save the environment variable in a `~/.bashrc` file or a similar configuration, it will be removed every time you close the terminal.
+
 
 ### Setup your Server
 
 1. Open the [Render Dashboard](https://dashboard.render.com/).
 2. Click on "Create new project", and create a new project with a name such as "cs4530-f24-XYY" (where XYY is your group number).
 3. From the top menu, click on the "+ New" button and click on "Web Service".
-   1. For the Source Code, choose your project repository. In case you do not see your project repository, re-connect your GitHub account and authorize access to your project repository.
+   1. For the Source Code, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.
    2. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY-api" (where XYY is your group number).
    3. For the Project, select the project created earlier. For the environment, select Production or any default value.
    4. For Language, select "Node".
@@ -118,7 +120,7 @@ Note that if you don't save the environment variable in a `~/.bashrc` file or a 
 
 1. Open the [Render Dashboard](https://dashboard.render.com/).
 2. From the top menu, click on the "+ New" button and click on "Static Site".
-   1. For the Git Provider, choose your project repository. In case you do not see your project repository, re-connect your GitHub account and authorize access to your project repository.
+   1. For the Git Provider, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.
    2. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY" (where XYY is your group number).
    3. For the Project, select the project created earlier. For the environment, select Production or any default value.
    4. For Branch, select "main".
