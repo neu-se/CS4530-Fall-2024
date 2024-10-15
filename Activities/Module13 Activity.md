@@ -93,8 +93,6 @@ CLIENT_URL=http://localhost:3000
 PORT=8000
 ```
 
-
-
 ### Setup your Server
 
 1. Open the [Render Dashboard](https://dashboard.render.com/).
@@ -110,11 +108,10 @@ PORT=8000
    8. For Build Command, type in "npm install && tsc".
    9. For Start Command, type in "npm run start:prod".
    10. For Instance Type, choose the "Free" option.
-   11. In the Environment Variables section, add a variable called `MONGODB_URL`. For the value, add the connection string of the MongoDB database created earlier.
+   11. In the Environment Variables section, add a variable called `MONGODB_URI`. For the value, add the connection string of the MongoDB database created earlier.
 4. Click "Deploy Web Service".
 5. Once the deployment is completed, visit the URL and check if you get a "hello world" response.
 6. Append "/question/getQuestion?order=newest&search=" to the URL and check if you get an successful response.
-
 
 ### Setup your Client
 
@@ -134,6 +131,3 @@ PORT=8000
 6. Click on the server's Web Service. Click on the "Environment" tab.
 7. Add a new environment variable called `CLIENT_URL`. For the value, add the client URL (make sure you are adding this env. variable in the server's settings, not the client's).
 8. Visit the client URl in your browser to view the application.
-
-
-
