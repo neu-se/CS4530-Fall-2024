@@ -105,13 +105,22 @@ PORT=8000
    5. For Branch, select "main".
    6. For Region, keep the default value.
    7. For Root Directory, type in "server".
-   8. For Build Command, type in "npm install && tsc".
-   9. For Start Command, type in "npm run start:prod".
+   8. For Build Command, type in "npm install".
+   9. For Start Command, type in "npm run start".
    10. For Instance Type, choose the "Free" option.
    11. In the Environment Variables section, add a variable called `MONGODB_URI`. For the value, add the connection string of the MongoDB database created earlier.
 4. Click "Deploy Web Service".
 5. Once the deployment is completed, visit the URL and check if you get a "hello world" response.
-6. Append "/question/getQuestion?order=newest&search=" to the URL and check if you get an successful response.
+6. Append "/question/getQuestion?order=newest&search=" to the URL and check if you get an successful response. A successful response should include the questions that are present in your MongoDB.
+7. You can check the server's logs by going to the "Logs" section.
+
+
+{: .note } 
+
+> `Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.`
+
+> You might see a warning like this after the server deployment. In case your server is is not responding to requests after a long period of inactivity, visit the URL and wait till you get a "hello world" response. If the server is still not responsive, then check the logs.
+
 
 ### Setup your Client
 
