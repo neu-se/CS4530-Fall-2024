@@ -116,9 +116,9 @@ PORT=8000
 
 
 {: .note } 
-
+>
 > `Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.`
-
+>
 > You might see a warning like this after the server deployment. In case your server is is not responding to requests after a long period of inactivity, visit the URL and wait till you get a "hello world" response. If the server is still not responsive, then check the logs.
 
 
