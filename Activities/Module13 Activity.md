@@ -70,25 +70,28 @@ You will first create the MongoDB database, and then setup the continuous deploy
    2.  Click on "Compass".
    3.  If you don't have Compass installed, follow the instructions to install MongoDB Compass and then connect.
    4.  Otherwise, switch to the "I have MongoDB Compass installed" tab and connect.
-10. After you have connected to the database on MongoDB Compass, check what collections are created by default. Collections such as "admin", "config", and "local" should be present.
-11. Go to your project repository's server folder and run the `populate_db.ts` script.
+10. Open up MongoDB Compass and see what connections are displayed.  You should see a connection to something like `<your repo name>.cvjdm.mongodb.net:27017` That connection should include databases such as such as "admin", "config", and "local".
+11. In Compass nav bar (on the left), select the connection you just created.  Mouse to the "..." and select "Copy Connection String".  Paste this connection string in some convenient place; you will need it later.
+12. Go to your project repository's server folder and run the `populate_db.ts` script.
 
 ```
 cd server
-
-npx ts-node populate_db.ts mongodb+srv://<username>:<password>@db-cs4530-f24-xxx.xxxxx.mongodb.net/fake_so
+npx ts-node populate_db.ts <your connection string>/fake_so
 ```
+You can find the connection string in the instructions from step 11.
 
-Make sure you replace the username, password, and xxx values in the connection string. You can find the connection string in the instructions from step 9.
+When you are done, go back to Compass and examine the connection you created.  When you open that connection, you should see a database named `fake_so`, and in that database you should see collections named `Answer`, `Comment`, `Question`, and `Tag` with several documents in each of them, much like you got when running `populate_db.ts` locally.
+
+You have now completed seeting up your MongoDB database.
 
 
 {: .note } 
 For simplicity, and since you're not handling sensitive data, the Network Access is set to allow connections from anywhere. However, for projects involving sensitive data, you should restrict access to only the necessary range of IP addresses.
 
-You can connect your locally deployed server to a cloud-hosted MongoDB database. This is useful when developing a feature and testing it before deployment. To do this, update the `.env` created as [part of the IP2 setup](https://neu-se.github.io/CS4530-Fall-2024/assignments/ip2#task-0-setup-environment-variables).
+You can connect your locally deployed server to the cloud-hosted MongoDB database. This is useful when developing a feature and testing it before deployment. To do this, update the `.env` created as [part of the IP2 setup](https://neu-se.github.io/CS4530-Fall-2024/assignments/ip2#task-0-setup-environment-variables).
 
 ```
-MONGODB_URI=<add your connection string here>
+MONGODB_URI=<add your connection string here, without the trailing slash>
 CLIENT_URL=http://localhost:3000
 PORT=8000
 ```
@@ -99,7 +102,7 @@ PORT=8000
 2. Click on "Create new project", and create a new project with a name such as "cs4530-f24-XYY" (where XYY is your group number).
 3. From the top menu, click on the "+ New" button and click on "Web Service".
    1. For the Source Code, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.
-   2. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY-api" (where XYY is your group number).
+   2. For the Name, you can EITHER choose an unique name OR use a name such as "cs4530-f24-XYY-API" or "cs4530-f24-XYY-backend"(where XYY is your group number). The "API" or "backend" in that name is important, because it will let you easily distinguish the "server" (what Render calls a "web service") from the "client" (what Render calls a "static site", which is the URL where you will find the user-facing application).
    3. For the Project, select the project created earlier. For the environment, select Production or any default value.
    4. For Language, select "Node".
    5. For Branch, select "main".
@@ -108,35 +111,36 @@ PORT=8000
    8. For Build Command, type in "npm install".
    9. For Start Command, type in "npm run start".
    10. For Instance Type, choose the "Free" option.
-   11. In the Environment Variables section, add a variable called `MONGODB_URI`. For the value, add the connection string of the MongoDB database created earlier.
-4. Click "Deploy Web Service".
-5. Once the deployment is completed, visit the URL and check if you get a "hello world" response.
-6. Append "/question/getQuestion?order=newest&search=" to the URL and check if you get an successful response. A successful response should include the questions that are present in your MongoDB.
-7. You can check the server's logs by going to the "Logs" section.
+   11. In the Environment Variables section, add a variable called `MONGODB_URI`. For the value, add the connection string of the MongoDB database created earlier. Make sure that you remove the trailing slash, if any.
+   12. If you need to change any of these, you can do so from the tab called "Settings" (or "Environment")
+4. Click "Deploy Web Service".  
+5. The URL of the backend service will be displayed in purple just below near the top of the window in the "Logs" section.  Make a copy of this; you will need it later.
+7. Once the deployment is completed, visit the URL and check if you get a "hello world" response. 
+8. Append `/question/getQuestion?order=newest&search=` to the URL and check if you get an successful response. A successful response should include the questions that are present in your MongoDB.  If you get something like ` MongoDB connection error:  MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017`, that indicates that your server is trying to connect to your local database.   Check your .env file and try again. 
+9. You can check the server's logs by going to the "Logs" section.
 
 
 {: .note } 
->
-> `Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.`
->
-> You might see a warning like this after the server deployment. In case your server is is not responding to requests after a long period of inactivity, visit the URL and wait till you get a "hello world" response. If the server is still not responsive, then check the logs.
+You might see a warning like this after the server deployment:
+```Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.```
+In case your server is is not responding to requests after a long period of inactivity, visit the URL and wait till you get a "hello world" response. If the server is still not responsive, then check the logs.
 
 
 ### Setup your Client
 
 1. Open the [Render Dashboard](https://dashboard.render.com/).
 2. From the top menu, click on the "+ New" button and click on "Static Site".
-   1. For the Git Provider, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.
-   2. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY" (where XYY is your group number).
-   3. For the Project, select the project created earlier. For the environment, select Production or any default value.
-   4. For Branch, select "main".
-   5. For Root Directory, type in "client".
-   6. For Build Command, type in "npm install && npm run build".
-   7. For Publish directory, type in "build".
-   8. In the Environment Variables section, add a variable called `REACT_APP_SERVER_URL`. For the value, add the server URL.
-3. Click "Deploy Static Site".
-4. Once the site is deployed, copy the client URL.
-5. Open the [Render Dashboard](https://dashboard.render.com/) again. Choose the project you have created.
-6. Click on the server's Web Service. Click on the "Environment" tab.
-7. Add a new environment variable called `CLIENT_URL`. For the value, add the client URL (make sure you are adding this env. variable in the server's settings, not the client's).
-8. Visit the client URl in your browser to view the application.
+3. For the Git Provider, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.
+4. For the Name, you can either choose an unique name OR use a name such as "cs4530-f24-XYY" (where XYY is your group number).  
+5. For the Project, select the project created earlier. For the environment, select Production or any default value.
+6. For Branch, select "main".
+7. For Root Directory, type in "client".
+8. For Build Command, type in "npm install && npm run build".
+9. For Publish directory, type in "build".
+10. In the Environment Variables section, add a variable called `REACT_APP_SERVER_URL`. For the value, add the server URL from step 5 above.   
+11. Click "Deploy Static Site".
+12. Once the site is deployed, copy the client URL. As before, you can find this in purple near the top of the "Logs" page.
+13. Open the [Render Dashboard](https://dashboard.render.com/) again. Choose the project you have created, and go back to service called "Web Service". 
+14. Click on the "Environment" tab.
+15. Add a new environment variable called `CLIENT_URL`. For the value, add the client URL (make sure you are adding this env. variable in the server's settings, not the client's). You should now have two environment variables for your server: `MONGDB_URI` and `CLIENT_URL`.
+16. Visit the client URL in your browser to run the application.
