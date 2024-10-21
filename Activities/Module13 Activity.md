@@ -82,7 +82,7 @@ You can find the connection string in the instructions from step 11.
 
 When you are done, go back to Compass and examine the connection you created.  When you open that connection, you should see a database named `fake_so`, and in that database you should see collections named `Answer`, `Comment`, `Question`, and `Tag` with several documents in each of them, much like you got when running `populate_db.ts` locally.
 
-You have now completed seeting up your MongoDB database.
+You have now completed setting up your MongoDB database.
 
 
 {: .note } 
@@ -116,7 +116,7 @@ PORT=8000
 4. Click "Deploy Web Service".  
 5. The URL of the backend service will be displayed in purple just below near the top of the window in the "Logs" section.  Make a copy of this; you will need it later.
 7. Once the deployment is completed, visit the URL and check if you get a "hello world" response. 
-8. Append `/question/getQuestion?order=newest&search=` to the URL and check if you get an successful response. A successful response should include the questions that are present in your MongoDB.  If you get something like ` MongoDB connection error:  MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017`, that indicates that your server is trying to connect to your local database.   Check your .env file and try again. 
+8. Append `/question/getQuestion?order=newest&search=` to the URL and check if you get an successful response. A successful response should include the questions that are present in your MongoDB.  If you get something like ` MongoDB connection error:  MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017`, that indicates that your server is trying to connect to your local database.   Check that the value of `MONGODB_URI` is set correctly in the Render environment section. 
 9. You can check the server's logs by going to the "Logs" section.
 
 
