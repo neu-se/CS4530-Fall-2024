@@ -16,11 +16,11 @@ Please note:
 Your presentation should include the following:
 - Description of feature(s) implemented [no more than 1 slide]
 - Short summary of overall contributions made by each member [no more than 1 slide with 1-2 sentences per member];
-- What percentage of overall contribution was made by each member (perhaps using weekly peer contribution scores) and What is the estimated number of hours spent on the {overall} project by each member excluding research tasks [no more than 1 slide];
-- Checklist of all user stories and COS (what was proposed vs what was implemented. Feel free to use percentages to show progress)
-- Discuss any deviations from the proposed plan? [no more than 1 slide]
+- What percentage of overall contribution was made by each member and what are the estimated number of hours spent on the {overall} project by each member excluding research tasks [no more than 1 slide];
+- Checklist of all user stories and COS (what was proposed vs what was implemented). Use percentages to show progress.
+- Discuss any challenges you faced and how did you resolve them. Also discuss any deviations from the proposed plan? [no more than 1 slide]
 
-During your presentation, you might want to consider the following order: introduction of project idea/user stories follow by live demo, then present the slides in the order they are listed above or in any order you find appropriate.
+During your presentation, you might want to consider the following order: introduction of project idea/user stories follow by live demo, then present the remaining slides in the order they are listed above or in any order you find appropriate.
 
 You might want to include your email address and other related info (i.e., github repo link, pictures, hosted site link, etc). You will also submit a copy of your presentation (pptx/pdf file, not link) on Canvas.
 
