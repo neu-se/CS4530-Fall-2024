@@ -30,6 +30,7 @@ From [Project Overview]({{ site.baseurl }}{% link Assignments/project-overview.m
 * Reports (20%)
   * 10% Final Report
   * 10% Poster and Demo
+* Individual Reflection (required to receive an 'A')
 
 This adds up to 100%; this sum is worth 40% of the course grade.
 
