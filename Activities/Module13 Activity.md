@@ -41,7 +41,7 @@ After you register you will be asked to verify your email. The steps on how to c
 
 Render.com is a cloud platform that simplifies deploying and hosting web applications, APIs, and databases. It automatically manages servers, scaling, and security, allowing developers to easily build, deploy, and run applications without worrying about infrastructure management.
 
-You can create a Render.com account [here]([https://](https://dashboard.render.com/register)). Clicking on the "GitHub" button and sign up using the **same GitHub account** as the one used to create the GitHub project repository.
+You can create a Render.com account [here](https://dashboard.render.com/register). Clicking on the "GitHub" button and sign up using the **same GitHub account** as the one used to create the GitHub project repository.
 
 After you register you will be asked to verify your email. You might be asked to authorize the Render app for the "neu-cs4530" organization - choose your repository using the "Only select repositories" option, DO NOT choose "All repositories".
 
