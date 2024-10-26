@@ -25,7 +25,7 @@ From [Project Overview]({{ site.baseurl }}{% link Assignments/project-overview.m
   * This also includes appropriate division of labor within the project.  For full credit, each member of the team must have at least 4 commits in the final delivered code.
 * Product (40%)
   * 20% Successful delivery of your Minimum Viable Product as defined in your project plan
-  * 10% Additional desirable and optional features
+  * 10% Additional desirable features
   * 10% Test suite of your features.
 * Reports (20%)
   * 10% Final Report
@@ -38,25 +38,25 @@ This adds up to 100%; this sum is worth 40% of the course grade.
 Here are the detailed rubrics for the final deliverables:
 
 ### Minimum Viable Product (20%) 
-### Additional Desirable and Optional Features (10%)
+### Additional Desirable Features (10%)
 We will grade each of these using the following rubric:
 
 #### Satisfactory:
 * Implemented features satisfy the conditions of satisfaction as proposed by the team and as agreed to by the course staff. If technical difficulties resulted in features being dropped, the project may still earn full marks on "delivered features," but these difficulties must have been documented with the course staff as you encountered them during development.
-* Implemented features are deployed to a publicly-accessible URL, using Render and/or Heroku for hosting (or as deployment instructions provided).
+* Implemented features are deployed to a publicly-accessible URL, using Render and/or Heroku for hosting (or as per deployement instructions provided).
 * Implemented features contain no ESLint warnings or errors; do not include any eslint-disable or ts-ignore flags
 
 #### Meets minimum requirements:
 * Implemented features largely satisfy acceptance criteria as proposed by the team, but may not meet the course staff’s interpretation of those criteria.
-* Implemented features are deployed to a publicly-accessible URL, using Render.com and/or Heroku for hosting (or as deployment instructions provided).
+* Implemented features are deployed to a publicly-accessible URL, using Render.com and/or Heroku for hosting (or as per deployement instructions provided).
 * The implementation may have some obvious flaws, but largely works without crashing.
 * Implemented features do not include any eslint-disable or ts-ignore flag
 
 ### Testing (10%)
-The project must include evidence of testing (both for front-end and back-end). Ideally, all new features will be accompanied by fully automated tests, but in some circumstances, this may not be feasible. If automated tests are not possible, include a discussion of your manual testing strategy. There is no explicit requirement to make use of any specific testing technology (e.g. mocks, spies, etc.).
+The project must include evidence of testing (both for front-end and back-end). Ideally, all new features will be accompanied by fully automated tests, but in some circumstances, this may not be feasible. If automated tests are not possible, include a discussion of your manual testing strategy, including a script that a future developer could use to manually test the feature. There is no explicit requirement to make use of any specific testing technology (e.g. mocks, spies, etc.).
 
 #### Satisfactory:
-* Any new or modified backend features include tests that validate that the feature works as intended. These tests cover the changed code, and also contain well-written assertions that thoroughly check the expected behaviors. A manual evaluation of the test suite indicates a good-faith effort to test the features.
+* Any new or modified backend features include tests that validate that the feature works as intended. These tests cover the changed code, and also contain well-written assertions that thoroughly check the expected behaviors.
 * Tests contains no ESLint warnings or errors; does not include any eslint-disable or ts-ignore flags
 
 #### Meets minimum requirements:
