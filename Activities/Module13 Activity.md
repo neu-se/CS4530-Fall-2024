@@ -110,8 +110,8 @@ Note: The .env file is not required for the Render.com setup. The above instruct
    5. For Branch, select "main".
    6. For Region, keep the default value.
    7. For Root Directory, type in "server".
-   8. For Build Command, type in "npm install".
-   9. For Start Command, type in "npm run start".
+   8. For Build Command, type in "npm install && tsc".
+   9. For Start Command, type in "npm run start:prod".
    10. For Instance Type, choose the "Free" option.
    11. In the Environment Variables section, add a variable called `MONGODB_URI`. For the value, add the connection string of the MongoDB database created earlier. Make sure that you remove the trailing slash, if any.
    12. If you need to change any of these, you can do so from the tab called "Settings" (or "Environment")
