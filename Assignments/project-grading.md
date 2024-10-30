@@ -53,14 +53,16 @@ We will grade each of these using the following rubric:
 * Implemented features do not include any eslint-disable or ts-ignore flag
 
 ### Testing (10%)
-The project must include evidence of testing (both for front-end and back-end). Ideally, all new features will be accompanied by fully automated tests, but in some circumstances, this may not be feasible. If automated tests are not possible, include a discussion of your manual testing strategy, including a script that a future developer could use to manually test the feature. There is no explicit requirement to make use of any specific testing technology (e.g. mocks, spies, etc.).
+The project must include evidence of testing (both for front-end and back-end). Ideally, all new features will be accompanied by fully automated tests, but in some circumstances, this may not be feasible. If automated tests are not possible, include a discussion of your manual testing strategy. There is no explicit requirement to make use of any specific testing technology (e.g. mocks, spies, etc.) or library (e.g., cypress).
 
 #### Satisfactory:
 * Any new or modified backend features include tests that validate that the feature works as intended. These tests cover the changed code, and also contain well-written assertions that thoroughly check the expected behaviors.
-* Tests contains no ESLint warnings or errors; does not include any eslint-disable or ts-ignore flags
+* Any new or modified frontend features should be thoroughly tested to validate that the feature works as intended. These tests may be manual.
+* Tests contains no ESLint warnings or errors; do not include any eslint-disable or ts-ignore flags
 
 #### Meets minimum requirements:
 * Any new or modified backend features include at least one test, which may or may not be an effective test.
+* Any new or modified frontend features should be minimally tested.
 * Tests may contain ESlint warnings (but no errors); does not include any eslint-disable or ts-ignore flags
 
 ### Process (20%)
@@ -97,7 +99,7 @@ The allocation of the 10% credit will be as follows: Overview and manual will be
 ### * Feature Overview and User Manual
 
 #### Satisfactory:
-* The Feature section contains sufficient documentation for a user to build and interact with your updated version of Covey.Town.
+* The Feature section contains sufficient documentation for a user to build and interact with your updated version of FakeStackOverFlow.
   * The documentation covers all the steps that a user would need to build a working version of your project.
   * The documentation includes a link to the deployed version of your project
 * The documentation covers all steps that the user would need to take to exercise all of your user stories.
@@ -107,7 +109,7 @@ The allocation of the 10% credit will be as follows: Overview and manual will be
 * The section is at most 4 pages (roughly 2,000 words maximum), NOT including figures. Fewer pages are absolutely acceptable; consider this a rough limit
 
 #### Meets minimum requirements:
-* The Feature contains documentation for a user to interact with your updated version of Covey.Town, but perhaps does not fully describe how.
+* The Feature contains documentation for a user to interact with your updated version of FakeStackOverFlow, but perhaps does not fully describe how.
 * The documentation includes at least one or two screenshots, but screenshots do not capture interactions with all of the user stories.
 * The course staff were able to figure out how to use it through trial and error.
 * URL of the deployed app.
@@ -115,14 +117,14 @@ The allocation of the 10% credit will be as follows: Overview and manual will be
 
 ### * Technical Overview
 #### Satisfactory:
-* Technical Overview contains a description of any substantive changes to the existing Covey.Town codebase, and of the architecture of your new code.
+* Technical Overview contains a description of any substantive changes to the existing FakeStackOverFlow codebase, and of the architecture of your new code.
 * When appropriate, it uses diagrams and/or figures to illustrate a design (there is no requirement to use a specific tool or format for this - students often use lucidchart, draw.io, [mermaid](https://mermaid.live) or even hand-drawn diagrams).
 * It provides a well-reasoned rationale for why this is the "right" design. 
 * It provides a table showing the status of all proposed user stories and conditions of satisfaction (proposed vs completed). The status could be fully implemented, partially implementted (feel free to add percentages), not completed.
 * The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) excluding the table. 
 
 #### Meets minimum requirements:
-* Technical Overview includes a description of all major changes to the code compared to our existing Covey.Town codebase.
+* Technical Overview includes a description of all major changes to the code compared to our existing FakeStackOverFlow codebase.
 * It provides a table showing the status of all proposed user stories and conditions of satisfaction (proposed vs completed). The status could be fully implemented, partially implementted (feel free to add percentages), not completed.
 * The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) excluding the table.
 
