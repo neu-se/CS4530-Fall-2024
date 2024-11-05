@@ -8,7 +8,7 @@ nav_order: 8
 
 # Specifications for Live Demos / Presentations (Sections 1, 2, 5, & 8 - Prof. Bhutta)
 
-Each group will present a live demo to show the feature that they have added to Covey.Town for the final project. The schedule of these demos will be discussed/finalized during the lecture. You will have 6 minutes maximum (5 minutes to setup and present. 1 minute for questions and everything else). You will lose points if your demo goes over 6 minutes. Please rehearse it and time yourself (best to keep it to 5 minutes or less). 
+Each group will present a live demo to show the feature that they have added for the final project. The schedule of these demos will be discussed/finalized during the lecture. You will have 6 minutes maximum (5 minutes to setup and present. 1 minute for questions and everything else). You will lose points if your demo goes over 6 minutes. Please rehearse it and time yourself (best to keep it to 5 minutes or less). 
 Please note:
 - The demo MUST be from hosted website, NOT from localhost. 
 - Attendance is REQUIRED for these demos. Please email the instructor if you have extenuating circumstances
