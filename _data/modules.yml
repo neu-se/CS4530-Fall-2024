@@ -76,8 +76,10 @@ guest-pm:
   name: Work on Project
 13b:
   name: Presentations
+  page: /assignments/sec-1258-demos
 14a:
   name: Presentations
+  page: /assignments/sec-9-demos
 pitch:
   name: Elevator Pitch
 posters:
