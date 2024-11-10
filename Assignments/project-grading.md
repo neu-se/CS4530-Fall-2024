@@ -140,7 +140,7 @@ The allocation of the 10% credit will be as follows: Overview and manual will be
 * The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
 
 ### Posters and Demo (10%)
-Each team will be required to submit a poster. In addition, some sections may have a demo (live in-person, via zoom or by recorded video). Each instructor will provide details regarding expectations for the demo and/or presentation. The schedule and manner of these demos might also vary from section to section. The specifications for the different sections are listed below:
+Each team is **required** to submit a poster. In addition, some sections may have a demo (live in-person, via zoom or by recorded video). Each instructor has provided details regarding expectations for the demo and/or presentation below. The schedule and manner of these demos might also vary from section to section. The specifications for the different sections are listed below:
 * [Sections 1, 2, 5, 8 - Prof. Bhutta]({{ site.baseurl }}{% link Assignments/demo-sec1258.md %})
 * [Section 9 - Prof. Wand]({{ site.baseurl }}{% link Assignments/demo-sec9.md %})
 
