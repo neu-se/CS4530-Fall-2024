@@ -51,7 +51,7 @@
   name: Midterm Exam
 9b:
   name: Security
-  page: 
+  page: /modules/15-security
 10a:
   name: Work on project
 10b:
@@ -84,6 +84,9 @@ posters:
   name: Poster Presentations
 advanced:
   name: Advanced Topics in SE
+dependency:
+  name: Dependency Management
+  page: /modules/16a-dependencies
 ip1:
   name: Individual Project 1
   type: deadline
