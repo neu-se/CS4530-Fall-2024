@@ -86,6 +86,9 @@ posters:
   name: Poster Presentations
 advanced:
   name: Advanced Topics in SE
+dependency:
+  name: Dependency Management
+  page: /modules/16a-dependencies
 ip1:
   name: Individual Project 1
   type: deadline
