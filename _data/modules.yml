@@ -58,13 +58,13 @@
   name: Technical Debt
   page: 
 guest-pm:
-  name: Product Management (with special guest, Prof Katie Stolee)
+  name: Special Topic
   page:
 11a:
   name: Work on Project
 11b:
   name: Open Source
-  page: 
+  page: /modules/16-open-source
 12a:
   name: Work on Project
 12b:
