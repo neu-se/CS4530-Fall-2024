@@ -183,7 +183,7 @@ In case your server is is not responding to requests after a long period of inac
 2. **Update Yaml file**
    * Once the client and server folders are separated into different repositories, update the .github\workflows\main.yml in each as the following:
 
-   # Server - GitHub Actions CI Workflow Configuration
+   # Client - GitHub Actions CI Workflow Configuration
 
       ```yaml
       name: FakeStackOverflow CI
@@ -213,11 +213,6 @@ In case your server is is not responding to requests after a long period of inac
             with:
                node-version: "20.x"
 
-            - name: Launch MongoDB Server
-            uses: supercharge/mongodb-github-action@1.11.0
-            with:
-               mongodb-version: "7.0"
-
             - name: Build and lint frontend
             if: ${{ always() }}
             env:
@@ -225,7 +220,7 @@ In case your server is is not responding to requests after a long period of inac
             run: cd client; npm ci && npm run build && npm run lint
       ```
    
-   # Client - GitHub Actions CI Workflow Configuration
+   # Server - GitHub Actions CI Workflow Configuration
 
       ```yaml
       name: FakeStackOverflow CI
