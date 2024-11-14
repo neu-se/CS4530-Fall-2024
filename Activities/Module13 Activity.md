@@ -333,6 +333,9 @@ In case your server is is not responding to requests after a long period of inac
      Key: MONGODB_URI
      Value: <your MongoDB connection string>
 
+     Key: PORT
+     Value: 8000
+
      Key: CLIENT_URL
      Value: <your Render Client URL>
      ```
