@@ -257,7 +257,7 @@ In case your server is is not responding to requests after a long period of inac
 
             - name: Build backend service
             if: ${{ always() }}
-            run: cd server; npm ci
+            run: npm ci
 
             - name: Test backend server
             if: ${{ always() }}
@@ -265,7 +265,6 @@ In case your server is is not responding to requests after a long period of inac
                # Pass the environmental variables for the backend tests to use
                MONGODB_URI: mongodb://localhost:27017
             run: |
-               cd server
 
                npm run start & sleep 10
 
@@ -279,7 +278,7 @@ In case your server is is not responding to requests after a long period of inac
 
             - name: Lint backend
             if: ${{ always() }}
-            run: cd server; npm run lint
+            run: npm run lint
       ```
 
 ### Step 4: Connect to GitHub for Continuous Deployment
@@ -331,7 +330,7 @@ In case your server is is not responding to requests after a long period of inac
    * Add your MongoDB connection string as a config var:
      ```
      Key: MONGODB_URI
-     Value: <your MongoDB connection string>
+     Value: <Your MongoDB connection string>
 
      Key: PORT
      Value: 8000
