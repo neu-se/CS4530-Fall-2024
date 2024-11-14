@@ -150,7 +150,7 @@ In case your server is is not responding to requests after a long period of inac
 
 ## Alternative Steps to Set Up Heroku Deployment for Your Backend Service
 
-## Step 1: Enroll in GitHub Student Developer Pack and Heroku for Students
+### Step 1: Enroll in GitHub Student Developer Pack and Heroku for Students
 
 1. **Enroll in GitHub Student Developer Pack**
    * Visit GitHub Education and select **"Get student benefits"**. Follow the instructions to apply. Approval can take up to 2 business days.
@@ -161,7 +161,7 @@ In case your server is is not responding to requests after a long period of inac
       * **Note**: You'll need to add a credit card for the platform credits that Heroku provides for student use.
    * After approval, you should see these credits in the billing section of your Heroku account within a few hours. **Wait to create an app until credits are available.**
 
-## Step 2: Create a New Application on Heroku
+### Step 2: Create a New Application on Heroku
 
 1. **Navigate to the Heroku Dashboard**
    * After logging into Heroku, go to your Dashboard.
@@ -173,17 +173,17 @@ In case your server is is not responding to requests after a long period of inac
 
    ![Create New App in Heroku](Module13Assets/CreateNewApp.png)
 
-## Step 3: Deploy the Server from a New Repository
+### Step 3: Deploy the Server from a New Repository
 
-1. **Create a New Repository**
-   * You must create a new Repository on Github which will contain only your server code.
-   * Crate a new Repository on Github and copy paste your server folder.
+1. **Create a New Private Repository**
+   * You must create a new Private Repository on Github which will contain only your server code.
+   * Create a new Private Repository on Github and copy paste your server folder.
    * Copy the .gitignore from the root of the original repository to the server repository.
 
 2. **Update Yaml file**
    * Once the client and server folders are separated into different repositories, update the .github\workflows\main.yml in each as the following:
 
-   # Client - GitHub Actions CI Workflow Configuration
+   **Client - GitHub Actions CI Workflow Configuration**
 
       ```yaml
       name: FakeStackOverflow CI
@@ -220,7 +220,7 @@ In case your server is is not responding to requests after a long period of inac
             run: cd client; npm ci && npm run build && npm run lint
       ```
    
-   # Server - GitHub Actions CI Workflow Configuration
+   **Server - GitHub Actions CI Workflow Configuration**
 
       ```yaml
       name: FakeStackOverflow CI
@@ -282,7 +282,7 @@ In case your server is is not responding to requests after a long period of inac
             run: cd server; npm run lint
       ```
 
-## Step 4: Connect to GitHub for Continuous Deployment
+### Step 4: Connect to GitHub for Continuous Deployment
 
 1. **Connect to GitHub Repository**
    * In your Heroku app dashboard, scroll to the **Deployment method** section and select **GitHub**.
@@ -297,7 +297,7 @@ In case your server is is not responding to requests after a long period of inac
      * Change the "start" script in your server/package.json from "ts-node server.ts" to "node dist/server.js".
      * Add a new script called "start:dev" with the value "ts-node server.ts". You can use this for your local development.
    * The package.json file should look something like this:
-     * [`package.json`](Module13Assets/package.json) - Contains required dependencies and scripts
+     * [`package.json`](Module13Assets/package.json) - Should contain required dependencies and scripts, along with the dependencies you have added
 
    * You need to make these changes to the tsconfig.json
      * Go to server/tsconfig.json and scroll to the end. Modify the "include" and "exclude" values, as specified in the tsconfig.json:
@@ -308,7 +308,7 @@ In case your server is is not responding to requests after a long period of inac
    * The tsconfig.json file should look something like this:
      * [`tsconfig.json`](Module13Assets/tsconfig.json) - TypeScript configuration
 
-## Step 4: Deploy the Code
+### Step 5: Deploy the Code
 
 1. **Manual Deployment**
    * Configure the Manual deploy option in Heroku. Everytime you push a change to your main branch, you will have to login to Heroku and click on the Deploy Branch button.
@@ -324,7 +324,7 @@ In case your server is is not responding to requests after a long period of inac
    * Choose the main (or preferred deployment) branch.
    * Click **Enable Automatic Deploys** to deploy your application automatically.
 
-## Step 5: Environment Variables
+### Step 6: Environment Variables
 
 1. **Set Up Environment Variables**
    * In your Heroku dashboard, go to **Settings -> Config Vars**
@@ -333,13 +333,12 @@ In case your server is is not responding to requests after a long period of inac
      Key: MONGODB_URI
      Value: <your MongoDB connection string>
 
-     Key: PORT
-     Value: 8000
+     Key: CLIENT_URL
+     Value: <your Render Client URL>
      ```
    * Make sure your MongoDB connection matches the URI in your Mongo Cloud.
-   * Another option is to add the .env file to your server repository.
 
-## Step 6: Update Client Environment Variables on Render.com
+### Step 7: Update Client Environment Variables on Render.com
 
 Update the server URL from the Render.com URL to the Heroku URL.
 
@@ -350,7 +349,7 @@ Update the server URL from the Render.com URL to the Heroku URL.
 5. After the client finishes re-deploying, check if the client is sending queries to the new Heroku server deployment successfully.
 6. *(Optional)* If the new Heroku server deployment is working correctly, delete the server deployment from Render.
 
-## Step 7: Update Dyno Type for Memory Issues
+### Step 8: *(Optional)* Update Dyno Type for Memory Issues
 
 In case you are still running into memory issues in the Heroku deployment, you can update the "Dynos" type.
 
