@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    Original dependencies and any other dependencies you may have added,
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    ...
+  },
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "start:dev": "ts-node server.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest -w=1 --coverage --detectOpenHandles",
+    "build": "tsc",
+    "start:prod": "node ./dist/server.js",
+    "stryker": "stryker run"
+  }
+}
