@@ -1,0 +1,870 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2024/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Fall-2024/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/CS4530-Fall-2024/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Individual Project 1 | CS4530, Fall 2024</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Individual Project 1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Fall-2024/assignments/ip1" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Fall-2024/assignments/ip1" />
+<meta property="og:site_name" content="CS4530, Fall 2024" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Individual Project 1" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand.","headline":"Individual Project 1","dateModified":"2024-11-19T23:52:55+00:00","url":"https://neu-se.github.io/CS4530-Fall-2024/assignments/ip1","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/CS4530-Fall-2024/" class="site-title lh-tight">
+  CS4530, Fall 2024
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Calendar category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/calendar/" class="nav-list-link">Calendar</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s1" class="nav-list-link">Section 1 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s2" class="nav-list-link">Section 2 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s5" class="nav-list-link">Section 5 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s8" class="nav-list-link">Section 8 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s9" class="nav-list-link">Section 9 - Calendar</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Modules category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/1-requirements-testing" class="nav-list-link">1 - Orientation & Requirements</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/2-requirements-to-code" class="nav-list-link">2 - From Requirements to Code</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/3-test-adequacy" class="nav-list-link">3 - Test Adequacy</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/4-code-level-design" class="nav-list-link">4 - Code-Level Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/5-interaction-level-design-patterns" class="nav-list-link">5 - Interaction-Level Design Patterns</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/6-concurrency-patterns-in-typescript" class="nav-list-link">6 - Concurrency Patterns in Typescript</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/7-software-process" class="nav-list-link">7 - Software Process</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/8-react" class="nav-list-link">8 - React</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/9-patterns-of-react" class="nav-list-link">9 - React Hooks</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/10-ds-1" class="nav-list-link">10 - Distributed Systems Architectures (Part 1)</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/11-distributed-systems-2" class="nav-list-link">11 - Distributed Systems (Part 2)</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/12-larger-tests" class="nav-list-link">12 - Tests With Larger Scope</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/13-continuous-development" class="nav-list-link">13 - Continuous Development</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/14-cloud-infrastructure" class="nav-list-link">14 - Cloud Infrastructure</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/15-security" class="nav-list-link">15 - Security</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/16-open-source" class="nav-list-link">16 - Open Source</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/17-ethics" class="nav-list-link">17 - Ethics and Equity in SE</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/16a-dependencies" class="nav-list-link">16A - Dependencies</a></li></ul></li><li class="nav-list-item active"><button class="nav-list-expander btn-reset" aria-label="toggle items in Assignments category" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item  active"><a href="/CS4530-Fall-2024/assignments/ip1" class="nav-list-link active">Individual Project 1</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/ip2" class="nav-list-link">Individual Project 2</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-plan" class="nav-list-link">Preliminary Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/revised-project-plan" class="nav-list-link">Revised Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-grading" class="nav-list-link">Final Project Grading</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorials category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-user-stories" class="nav-list-link">User Stories and Conditions of Satisfaction</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-mongodb-mongoose" class="nav-list-link">MongoDB and Mongoose</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-apirequests-postman" class="nav-list-link">Guide to API Requests and Installing Postman</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week4-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week5-socketio-basics" class="nav-list-link">Socket.IO Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week6-cypress" class="nav-list-link">UI Testing with Cypress</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Policies category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/policies/style/" class="nav-list-link">Code Style</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/policies/debugging/" class="nav-list-link">Debugging</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/resources/" class="nav-list-link">Other Resources</a></li></ul>
+
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Fall 2024" aria-label="Search CS4530, Fall 2024" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+  
+    <li class="breadcrumb-nav-list-item"><a href="/CS4530-Fall-2024/assignments/">Assignments</a></li>
+  <li class="breadcrumb-nav-list-item"><span>Individual Project 1</span></li>
+  </ol>
+</nav>
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h2 class="fs-6" id="individual-project-1">
+  
+  
+    <a href="#individual-project-1" class="anchor-heading" aria-labelledby="individual-project-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Individual Project 1
+    
+    <strong class="label label-red">Due Wednesday September 18, 2024 12:00pm EST (Noon)</strong>
+
+  
+  
+</h2>
+    
+
+
+<p>Welcome aboard to the Stack Overflow team! We’re glad that you’re here and ready to join our development team as a new software engineer.
+We’re building an interactive application for an online community to share their knowledge and experience, and are very happy to see that we have so many new developers who can help make this application a reality.
+By the end of the semester, you’ll be able to propose, design, implement, and test new features for our project.
+We understand that some of you may have some web development experience, but don’t expect that most of you do, and hence, we have created an individual project to help you get up to speed with our existing codebase and development environment.</p>
+
+<p>FakeStackOverFlow is a web application that consists of some code that runs in each client’s web browser, and also code that runs on a server.</p>
+
+<p>This implementation effort will be split across two deliverables. In this first deliverable, you will implement and test the core backend components for this feature, and in the second deliverable, you will implement and test the frontend components.</p>
+<h2 id="change-log">
+  
+  
+    <a href="#change-log" class="anchor-heading" aria-labelledby="change-log"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Change Log
+  
+  
+</h2>
+    
+<ul>
+  <li>9/6/2024: Added clarification to files required to modify in Task 1</li>
+  <li>9/6/2024: Added clarification/instruction for <code class="language-plaintext highlighter-rouge">getTagByName</code> in Task 2</li>
+  <li>9/7/2024: Moved tutorial on MongoDB and Mongoose to tutorials</li>
+  <li>9/9/2024: With reference to Piazza post @38: Update handout to fix mocking request body used with ‘supertest’ in <code class="language-plaintext highlighter-rouge">newQuestion.spec.ts</code>. Involves changes at 4 places: in line 86, replace <code class="language-plaintext highlighter-rouge">send(mockQuestion)</code> with <code class="language-plaintext highlighter-rouge">send({ ...mockQuestion, title: '' })</code>; in line 95, replace <code class="language-plaintext highlighter-rouge">send(mockQuestion)</code> with <code class="language-plaintext highlighter-rouge">send({ ...mockQuestion, text: '' })</code>; in line 104, replace <code class="language-plaintext highlighter-rouge">send(mockQuestion)</code> with <code class="language-plaintext highlighter-rouge">send({ ...mockQuestion, tags: [] })</code>; in line 113, replace <code class="language-plaintext highlighter-rouge">send(mockQuestion)</code> with <code class="language-plaintext highlighter-rouge">send({ ...mockQuestion, asked_by: '' })</code>;</li>
+  <li>9/12/2024: Updated typo regarding file to test for Task 1. Tests are to be added in <code class="language-plaintext highlighter-rouge">questions.spec.ts</code> instead of <code class="language-plaintext highlighter-rouge">question.spec.ts</code></li>
+  <li>9/18/2024: Updated typo in Task 3. <code class="language-plaintext highlighter-rouge">sortQuestionsByMostViewed</code> is the function to be added (NOT <code class="language-plaintext highlighter-rouge">getMostViewedQuestion</code>).</li>
+</ul>
+<h2 id="objectives-of-this-assignment">
+  
+  
+    <a href="#objectives-of-this-assignment" class="anchor-heading" aria-labelledby="objectives-of-this-assignment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Objectives of this assignment
+  
+  
+</h2>
+    
+
+<p>The objectives of this assignment are to:</p>
+
+<ul>
+  <li>Get you familiar with the basics of TypeScript, VSCode, and the project codebase</li>
+  <li>Learn how to read and write code in TypeScript</li>
+  <li>Translate high-level requirements into code</li>
+  <li>Learn how to write unit tests with Jest</li>
+</ul>
+<h2 id="getting-started-with-this-assignment">
+  
+  
+    <a href="#getting-started-with-this-assignment" class="anchor-heading" aria-labelledby="getting-started-with-this-assignment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Getting started with this assignment
+  
+  
+</h2>
+    
+
+<p>Start by accepting our <a href="https://classroom.github.com/a/tJB92sbe">invitation</a>. It will create a Github repository for you which will include the starter code for this assignment. In case you have enrolled in the course recently (after 9/3), you may not find your name in the list. Please create a piazza post to contact us and we will add you to the Github Classroom roster.</p>
+
+<p>If you are new to Git, you may want to review <a href="https://classroom.github.com/a/Tc-II7x4">this getting started page</a> first!</p>
+<h3 id="1-prerequisites">
+  
+  
+    <a href="#1-prerequisites" class="anchor-heading" aria-labelledby="1-prerequisites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. Prerequisites
+  
+  
+</h3>
+    
+<h4 id="11-install-nodejs-and-npm">
+  
+  
+    <a href="#11-install-nodejs-and-npm" class="anchor-heading" aria-labelledby="11-install-nodejs-and-npm"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1.1 Install Node.js and npm
+  
+  
+</h4>
+    
+
+<p>If you haven’t installed npm and node.js, follow the <a href="/CS4530-Fall-2024/tutorials/week1-getting-started">tutorial on setting up a development environment for this class</a></p>
+<h4 id="12-install-mongodb">
+  
+  
+    <a href="#12-install-mongodb" class="anchor-heading" aria-labelledby="12-install-mongodb"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1.2 Install MongoDB
+  
+  
+</h4>
+    
+
+<p>We use MongoDB as the NoSQL database to store data related to this application.</p>
+
+<ol>
+  <li>Follow the <a href="https://www.mongodb.com/docs/manual/administration/install-community/">instructions in the official MongoDB documentation</a> to install the free community edition.</li>
+  <li>Choose ‘Install on Linux’, ‘Install on macOS’, or ‘Install on Windows’, depending on your system. (the following steps are for Windows)</li>
+  <li>Scroll down to the section labeled ‘Install MongoDB Community Edition.’ and click on <a href="https://www.mongodb.com/try/download/community?tck=docs_server">MongoDB Download Center</a>.</li>
+  <li>For Windows, in the Package dropdown, select <code class="language-plaintext highlighter-rouge">msi</code>. Then download and run the installer.</li>
+  <li>On Windows, select the <em>“Install MongoDB as a Service”</em> checkbox and install. This will start MongoDB as a background service.</li>
+  <li>Install “MongoDB Compass” if prompted.</li>
+  <li>Verify if the MongoDB server is running using the Windows Services app.</li>
+</ol>
+
+<p>Mongo offers several methods of interacting with your Mongo databases.</p>
+
+<ul>
+  <li>
+    <p>MongoDB Compass is an interactive application for creating, modifying, and querying MongoDB connections. It should be started as part of the installation process, showing a connection to <code class="language-plaintext highlighter-rouge">mongodb://localhost:27017/</code>.</p>
+
+    <p>For Windows, install MongoDB Compass using the instructions above.</p>
+
+    <p>For Mac:</p>
+
+    <ul>
+      <li>Download the dmg file from https://www.mongodb.com/try/download/compass. Once the application starts:
+        <ol>
+          <li>Click on “Add new connection” in the left sidebar.</li>
+          <li>Make sure the URI field contains <code class="language-plaintext highlighter-rouge">mongodb://localhost:27017</code></li>
+          <li>Click on “Connect” - MongoDB will need to be running as a macOS service</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Mongo shell (<em>mongosh</em>) provides a command-line interface that can be used to interact with databases in MongoDB.</p>
+
+    <p>For Windows:</p>
+
+    <ul>
+      <li>Download it <a href="https://www.mongodb.com/try/download/shell">here</a> using the msi package. You can also use <em>mongosh</em> to see if the MongoDB server is running. Try the MongoDB Community Edition and the command <code class="language-plaintext highlighter-rouge">show dbs</code>; you should see a list of existing databases in your local instance.</li>
+    </ul>
+
+    <p>For Mac:</p>
+
+    <ul>
+      <li>Mongo shell is automatically installed with MongoDB through the Mac installation instructions. To use it, make sure MongoDB is running as a macOS service, then type <code class="language-plaintext highlighter-rouge">mongosh</code> into the terminal.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Last and most important, you can use the <a href="https://mongoosejs.com/docs/index.html">Mongoose api</a> to interact with MongoDB through your JavaScript or TypeScript programs. Mongoose will be installed as part of the installation process for the project starter code.</p>
+  </li>
+</ul>
+<h3 id="2-install-the-starter-code-and-its-dependencies">
+  
+  
+    <a href="#2-install-the-starter-code-and-its-dependencies" class="anchor-heading" aria-labelledby="2-install-the-starter-code-and-its-dependencies"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. Install the starter code and its dependencies
+  
+  
+</h3>
+    
+
+<p>The starter code package, of which this is a part, is divided into 3 main directories: <em>client</em>, <em>server</em>, and <em>testing</em>.</p>
+
+<ol>
+  <li>Navigate to the root directory of the repo.</li>
+  <li>Install the dependencies for each directory by running the following commands:</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>client/
+npm <span class="nb">install
+cd</span> ../server
+npm <span class="nb">install
+cd</span> ../testing
+npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Once you install the dependencies, you might see the following ESlint errors in some files. The linter error indicates that the code contains carriage return characters (\r, represented as ␍) at the end of each line and usually happens when the file has Windows-style line endings (\r\n) instead of Unix-style line endings (\n). To fix this, you can click on the “CRLF” icon on the lower right corner of VSCode and change it to “LF”. Note that this does not count as a linting error when grading.
+<img src="/CS4530-Fall-2024/Assignments/ip1/linter-errors.png" alt="image" /></p>
+<h3 id="3-populate-the-initial-database">
+  
+  
+    <a href="#3-populate-the-initial-database" class="anchor-heading" aria-labelledby="3-populate-the-initial-database"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. Populate the initial database
+  
+  
+</h3>
+    
+
+<ol>
+  <li>In the <code class="language-plaintext highlighter-rouge">server</code> directory, run <code class="language-plaintext highlighter-rouge">npx ts-node populate_db.ts mongodb://127.0.0.1:27017/fake_so</code> to populate the <code class="language-plaintext highlighter-rouge">fake_so</code> database with data that follows the schema definition.</li>
+</ol>
+
+<p>Note: Right now, you may run into errors regarding unknown properties. Once you finish implementing Task 2 and Task 4 and modify the schema, you should be able to populate the database correctly.</p>
+<h3 id="4-familiarize-yourself-with-project-dependencies">
+  
+  
+    <a href="#4-familiarize-yourself-with-project-dependencies" class="anchor-heading" aria-labelledby="4-familiarize-yourself-with-project-dependencies"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. Familiarize Yourself with Project Dependencies
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Ensure the following packages are installed: mongoose, express, jest, eslint, axios, cors, and nodemon.</li>
+  <li>Refer to the documentation for the following packages:</li>
+</ol>
+
+<ul>
+  <li>
+    <p><a href="https://expressjs.com/">Express</a> is a framework to write server-side code.</p>
+  </li>
+  <li>The <a href="https://mongoosejs.com/docs/index.html">mongoose data modeling library</a>. Mongoose provides JS/TS bindings to MongoDB, so we can manage and manipulate the data from our JS/TS programs.</li>
+  <li><a href="https://www.npmjs.com/package/nodemon">nodemon</a> accelerates the development by automatically restarting a node application when file changes in the directory are detected.</li>
+  <li>
+    <p>We use the <a href="https://axios-http.com/docs/intro">axios</a> library to send HTTP requests to our server from our client application.</p>
+  </li>
+  <li>
+    <p>We use <a href="https://www.npmjs.com/package/cors">cors</a> to regulate the permissible connections between the
+clients and the server. The current cors configuration allows all
+connections to the server for convenience. This is fine for a development environment. In a
+production environment where the application is deployed on a cloud service, the CORS policy needs to be specified more strictly. Read more about CORS <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a>.</p>
+  </li>
+  <li>We use <a href="https://github.com/alonronin/mockingoose">mockingoose</a> to mock Mongoose functions when testing.</li>
+</ul>
+<h3 id="5-explore-useful-resources">
+  
+  
+    <a href="#5-explore-useful-resources" class="anchor-heading" aria-labelledby="5-explore-useful-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 5. Explore Useful Resources
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Express Tutorial: <a href="https://expressjs.com/en/guide/routing.html">https://expressjs.com/en/guide/routing.html</a></li>
+  <li>MongoDB tutorial: <a href="/CS4530-Fall-2024/tutorials/week1-mongodb-mongoose">A mini tutorial</a>.</li>
+  <li>Mongoose Queries: <a href="https://mongoosejs.com/docs/queries.html">https://mongoosejs.com/docs/queries.html</a></li>
+  <li>Mongoose Documents: <a href="https://mongoosejs.com/docs/documents.html">https://mongoosejs.com/docs/documents.html</a></li>
+  <li>Jest Basics: <a href="https://jestjs.io/docs/getting-started">https://jestjs.io/docs/getting-started</a></li>
+  <li>Mocking in Jest: <a href="https://jestjs.io/docs/mock-functions">https://jestjs.io/docs/mock-functions</a></li>
+  <li>Mocking Mongoose functions: <a href="https://github.com/alonronin/mockingoose">https://github.com/alonronin/mockingoose</a></li>
+</ol>
+<h2 id="serverclient-architecture">
+  
+  
+    <a href="#serverclient-architecture" class="anchor-heading" aria-labelledby="serverclient-architecture"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Server/Client Architecture
+  
+  
+</h2>
+    
+
+<p>The schemas for the database are documented in the directory <code class="language-plaintext highlighter-rouge">server/models/schema</code>.
+A class diagram for the schema definition is
+shown below:</p>
+
+<p><img src="/CS4530-Fall-2024/Assignments/ip1/class-diagram.png" alt="image" /></p>
+
+<p>The starter code package, of which this is a part, is divided into 3 main directories: <em>client</em>, <em>server</em>, and <em>testing</em>.</p>
+<h3 id="client">
+  
+  
+    <a href="#client" class="anchor-heading" aria-labelledby="client"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Client
+  
+  
+</h3>
+    
+
+<p>Running <code class="language-plaintext highlighter-rouge">npm run start</code> will start a client on port 3000.
+The client code uses Axios to send HTTP method requests to the server. You should review the client code to understand
+how axios sends requests and how the response from the server is processed. You don’t need to make any changes to the client code.</p>
+<h3 id="server">
+  
+  
+    <a href="#server" class="anchor-heading" aria-labelledby="server"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Server
+  
+  
+</h3>
+    
+
+<p>The server is responsible for taking HTTP requests from the client and executing them on the database. The server code resides in the <code class="language-plaintext highlighter-rouge">server/</code> directory. The server is responsible for all the data that is sent back and forth to the database.</p>
+
+<p>The main server script is in <code class="language-plaintext highlighter-rouge">server/server.ts</code>. Running <code class="language-plaintext highlighter-rouge">npx ts-node server/server.ts</code>
+will start an HTTP server, which will take HTTP requests on <a href="https://localhost:8000/"><strong>https://localhost:8000</strong></a>, and execute them on the running database instance.</p>
+
+<p>You can send requests to the server using a tool like Postman, or by writing scripts that use axios to send requests to <code class="language-plaintext highlighter-rouge">localhost:8000</code>, as you did in the Async activity.</p>
+
+<p>When the server is terminated (using CTRL+C), the message <strong>“Server closed.”</strong> should be displayed. However, the MongoDB service will still be running (You can run <code class="language-plaintext highlighter-rouge">mongosh</code> to confirm)</p>
+<h3 id="testing">
+  
+  
+    <a href="#testing" class="anchor-heading" aria-labelledby="testing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Testing
+  
+  
+</h3>
+    
+
+<p>Unit tests for the server are in <code class="language-plaintext highlighter-rouge">server/tests/*.spec.ts</code>. These are written in Jest, which you are already familiar with.</p>
+
+<p>To run the entire set of server tests, go to the server directory and say <code class="language-plaintext highlighter-rouge">npm run test</code>. Please ensure that the MongoDB server is up and running for the tests to pass.</p>
+
+<p>If you want to run specific tests, we recommend that you install vsc-jest-runner in your VSC, and select the test or tests that you would like to run.</p>
+<h3 id="summary-of-the-default-hostport-settings">
+  
+  
+    <a href="#summary-of-the-default-hostport-settings" class="anchor-heading" aria-labelledby="summary-of-the-default-hostport-settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Summary of the default host/port settings
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Client Instance</td>
+      <td style="text-align: left"><a href="https://localhost:3000/">https://localhost:3000/</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Server Instance</td>
+      <td style="text-align: left"><a href="https://localhost:8000/">https://localhost:8000/</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Database Instance</td>
+      <td style="text-align: left">mongodb://127.0.0.1:27017/fake_so</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="recommendations-when-working-on-the-project">
+  
+  
+    <a href="#recommendations-when-working-on-the-project" class="anchor-heading" aria-labelledby="recommendations-when-working-on-the-project"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Recommendations when working on the project
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Open the client application in a browser and interact with it. While interacting, monitor
+the application tab in the browser’s developer tools. The application tab will give you
+information about the HTTP requests the client sends to the server. The HTTP requests
+will contain URIs in their headers. You can use this information to understand the
+endpoints in the server.</li>
+  <li>Read the Jest tests. The Jest tests list all the endpoints the server should have, and the
+types of HTTP method associated with them. Further, the tests also have information
+about the Mongoose functions that need to be invoked for the service to send a
+successful response.</li>
+  <li>Start by defining the schemas in the server/models/schema directory to ensure the data structure is consistent.</li>
+  <li>Ensure that you run all Jest tests. These tests are designed to catch issues early. Once all Jest tests pass, the Cypress tests should also pass, assuming no significant changes have been made to the client’s implementation.</li>
+  <li>Follow the <a href="https://neu-se.github.io/CS4530-Fall-2024/policies/debugging/">debugging policy</a> to help in the debugging process.</li>
+</ol>
+<h2 id="implementation-tasks">
+  
+  
+    <a href="#implementation-tasks" class="anchor-heading" aria-labelledby="implementation-tasks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Implementation Tasks
+  
+  
+</h2>
+    
+
+<p>This deliverable has four parts; each part will be graded on its own rubric. You should complete the assignment one part at a time, in the order presented here.</p>
+<h3 id="task-1-implement-filtering-by-asked_by-field">
+  
+  
+    <a href="#task-1-implement-filtering-by-asked_by-field" class="anchor-heading" aria-labelledby="task-1-implement-filtering-by-asked_by-field"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1: Implement Filtering by asked_by Field
+  
+  
+</h3>
+    
+
+<p>The <code class="language-plaintext highlighter-rouge">asked_by</code> field in the <code class="language-plaintext highlighter-rouge">questions</code> schema represents the username of the user who asked the question, essentially identifying the author of the question. The objective of this task is to enhance the current functionality by adding the capability to filter questions based on the <code class="language-plaintext highlighter-rouge">asked_by</code> field. This will allow users to retrieve questions posted by a specific user. Make sure you follow TDD, so work your way up by making sure your code passes the tests in <code class="language-plaintext highlighter-rouge">application.spec.ts</code>.</p>
+<h4 id="steps-to-achieve-this">
+  
+  
+    <a href="#steps-to-achieve-this" class="anchor-heading" aria-labelledby="steps-to-achieve-this"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Steps to Achieve This
+  
+  
+</h4>
+    
+
+<ol>
+  <li>
+    <p><strong>Add the <code class="language-plaintext highlighter-rouge">filterQuestionsByAskedBy</code> function</strong><br />
+Create a new function called <code class="language-plaintext highlighter-rouge">filterQuestionsByAskedBy</code> in the <code class="language-plaintext highlighter-rouge">application.ts</code> file. This function will accept a list of questions and the name of a user as arguments and filter the given list of questions, returning only those asked by the specified user.</p>
+  </li>
+  <li>
+    <p><strong>Update the <code class="language-plaintext highlighter-rouge">getQuestionsByFilter</code> function</strong><br />
+Modify the <code class="language-plaintext highlighter-rouge">getQuestionsByFilter</code> function within the questions controller (<code class="language-plaintext highlighter-rouge">question.ts</code>) to incorporate the new filtering functionality based on the <code class="language-plaintext highlighter-rouge">asked_by</code> field. This involves integrating the <code class="language-plaintext highlighter-rouge">filterQuestionsByAskedBy</code> function to ensure that the questions are filtered by the specified user before any other filtering operations.</p>
+
+    <p>Hint: you may need to look into <code class="language-plaintext highlighter-rouge">FindQuestionRequest</code> and make necessary changes.</p>
+  </li>
+  <li>
+    <p><strong>Testing the implementation</strong><br />
+After implementing these changes, it’s crucial to thoroughly test the new functionality. Ensure that questions are correctly filtered by the <code class="language-plaintext highlighter-rouge">asked_by</code> field and that the existing filtering mechanisms (by search keywords and tags) remain unaffected. To ensure accuracy in your implementation, please add additional tests to <code class="language-plaintext highlighter-rouge">application.spec.ts</code> and <code class="language-plaintext highlighter-rouge">questions.spec.ts</code> and make sure that the code coverage is as comprehensive as possible for the chunks of code you have added or updated as part of this feature.</p>
+  </li>
+</ol>
+
+<p>Grading for implementation tasks:</p>
+
+<ul>
+  <li>Adding <code class="language-plaintext highlighter-rouge">filterQuestionsByAskedBy</code>: 5 points</li>
+  <li>Updating <code class="language-plaintext highlighter-rouge">getQuestionsByFilter</code>: 5 points</li>
+  <li>Testing: 3 points</li>
+</ul>
+<h3 id="task-2-enhancing-the-tags-model-by-adding-a-description-field">
+  
+  
+    <a href="#task-2-enhancing-the-tags-model-by-adding-a-description-field" class="anchor-heading" aria-labelledby="task-2-enhancing-the-tags-model-by-adding-a-description-field"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 2: Enhancing the Tags Model by Adding a Description Field
+  
+  
+</h3>
+    
+
+<p>The goal of this task is to enhance the existing <code class="language-plaintext highlighter-rouge">Tags</code> model by introducing a <code class="language-plaintext highlighter-rouge">description</code> field. Tags appear as attributes below questions, acting as labels or keywords used to organize and identify information.</p>
+
+<p>For example, the question “How to navigate using React Router?” might have tags like “REACT” and “JAVASCRIPT” to emphasize the languages and frameworks used.</p>
+
+<p>This new field will provide users with a descriptive overview of each tag, improving the user experience by clarifying the meaning of tags. For instance, a tag like “ROUTER” might have different meanings depending on the context, such as “a hardware device” or “a file to organize website navigation links.”</p>
+
+<p>The following steps outline the modifications required in the server to accommodate this new field.</p>
+<h4 id="steps-to-achieve-this-1">
+  
+  
+    <a href="#steps-to-achieve-this-1" class="anchor-heading" aria-labelledby="steps-to-achieve-this-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Steps to Achieve This
+  
+  
+</h4>
+    
+
+<ol>
+  <li>
+    <p><strong>Update the <code class="language-plaintext highlighter-rouge">getTags</code> Function</strong><br />
+The current <code class="language-plaintext highlighter-rouge">getTags</code> function in <code class="language-plaintext highlighter-rouge">application.ts</code> accepts an array of tag objects, which is only defined to have <code class="language-plaintext highlighter-rouge">_id</code> and <code class="language-plaintext highlighter-rouge">name</code>. You will first need to change <code class="language-plaintext highlighter-rouge">Tag</code> to also include <code class="language-plaintext highlighter-rouge">description</code>.</p>
+
+    <p>Then, this function needs to be modified to do the following:</p>
+
+    <ol>
+      <li>Remove duplicate tags, ensuring that if the incoming array of tag objects contains objects with the same name, only the first tag object is used and others are discarded.</li>
+      <li>Check the database for existing tags.</li>
+      <li>Create new tags if they do not already exist.</li>
+      <li>Return the modified tags.</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Create the <code class="language-plaintext highlighter-rouge">getTagByName</code> Function and Endpoint</strong><br />
+You need to create a new function <code class="language-plaintext highlighter-rouge">getTagByName</code> in <code class="language-plaintext highlighter-rouge">server/controller/tag.ts</code>. Its expected behavior can be found in <code class="language-plaintext highlighter-rouge">server/tests/newTags.spec.ts</code>. You need to ensure that your implementation passes the tests.</p>
+
+    <p>Hint: see <code class="language-plaintext highlighter-rouge">getQuestionById</code> in <code class="language-plaintext highlighter-rouge">server/controller/question.ts</code> and <code class="language-plaintext highlighter-rouge">addTag</code> in <code class="language-plaintext highlighter-rouge">application.ts</code> for how some of the behaviors can be achieved.</p>
+  </li>
+  <li>
+    <p><strong>Test the Implementation</strong><br />
+To ensure the accuracy of your implementation, conduct the following tests:</p>
+
+    <ul>
+      <li>Test the <code class="language-plaintext highlighter-rouge">getTags</code> function correctly handles the creation of new tags, removal of duplicates, and retrieval of existing tags.</li>
+      <li>Test the <code class="language-plaintext highlighter-rouge">getTagByName</code> function to ensure it accurately returns the correct tag data based on the provided name. Consider the case where it cannot find a tag given the name.</li>
+    </ul>
+
+    <p>Your implementation needs to pass existing tests. If existing tests are not fully covering every case of your implementation, you need to add additional tests to achieve full coverage in the coverage report.</p>
+  </li>
+</ol>
+
+<p>Grading for implementation tasks:</p>
+
+<ul>
+  <li>Update <code class="language-plaintext highlighter-rouge">getTags</code>: 3 points</li>
+  <li>Create <code class="language-plaintext highlighter-rouge">getTagByName</code> 4 points</li>
+  <li>Testing: 3 points</li>
+</ul>
+<h3 id="task-3-implement-sorting-by-most-views">
+  
+  
+    <a href="#task-3-implement-sorting-by-most-views" class="anchor-heading" aria-labelledby="task-3-implement-sorting-by-most-views"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 3: Implement Sorting by Most Views
+  
+  
+</h3>
+    
+
+<p>As part of this task, you will be working on a function to retrieve questions based on their view count. You are provided with the <code class="language-plaintext highlighter-rouge">getQuestionsByOrder</code> function, which is currently designed to fetch questions from a database and sort them based on the specified order. The function currently supports fetching active, unanswered, and newest questions. Your task is to implement the logic for fetching the most viewed questions. Make sure you follow TDD, so work your way up by understanding and making sure your code passes the tests in <code class="language-plaintext highlighter-rouge">application.spec.ts</code>.</p>
+<h4 id="steps-to-achieve-this-2">
+  
+  
+    <a href="#steps-to-achieve-this-2" class="anchor-heading" aria-labelledby="steps-to-achieve-this-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Steps to Achieve This
+  
+  
+</h4>
+    
+
+<ol>
+  <li>
+    <p><strong>Add the <code class="language-plaintext highlighter-rouge">sortQuestionsByMostViewed</code> Function</strong><br />
+Create a new function called <code class="language-plaintext highlighter-rouge">sortQuestionsByMostViewed</code> in the <code class="language-plaintext highlighter-rouge">application.ts</code> file. This function should take a list of questions as input and return the questions sorted by their view count in descending order.</p>
+  </li>
+  <li>
+    <p><strong>Update the <code class="language-plaintext highlighter-rouge">getQuestionsByOrder</code> Function</strong><br />
+Modify the <code class="language-plaintext highlighter-rouge">getQuestionsByOrder</code> function within the same file (<code class="language-plaintext highlighter-rouge">application.ts</code>) to incorporate the new sorting functionality. This involves utilizing the function implemented in Step 1.</p>
+  </li>
+  <li>
+    <p><strong>Testing the Implementation</strong><br />
+After implementing these changes, it’s crucial to thoroughly test the new functionality. Ensure that questions are correctly sorted by most views, and that the existing sorting features (active, unanswered, and newest) remain unaffected. To ensure your implementation is accurate, please add tests in <code class="language-plaintext highlighter-rouge">application.spec.ts</code> and ensure the code coverage is as thorough as possible for the portions of code you have added or updated as part of this feature.</p>
+  </li>
+</ol>
+
+<p>Grading for implementation tasks:</p>
+
+<ul>
+  <li>Add <code class="language-plaintext highlighter-rouge">sortQuestionsByMostViewed</code>: 5 points</li>
+  <li>Update <code class="language-plaintext highlighter-rouge">getQuestionsByOrder</code>: 5 points</li>
+  <li>Testing: 3 points</li>
+</ul>
+<h3 id="task-4-implement-upvoting-and-downvoting-functionality">
+  
+  
+    <a href="#task-4-implement-upvoting-and-downvoting-functionality" class="anchor-heading" aria-labelledby="task-4-implement-upvoting-and-downvoting-functionality"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 4: Implement Upvoting and Downvoting Functionality
+  
+  
+</h3>
+    
+
+<p>Upvoting and downvoting features allow users to express their opinions on questions by adding or removing their votes. This functionality is crucial for a community-driven platform where user engagement and feedback are important. Make sure you follow TDD, so work your way up by understanding and making sure your code passes the tests in <code class="language-plaintext highlighter-rouge">application.spec.ts</code> and <code class="language-plaintext highlighter-rouge">question.spec.ts</code>.</p>
+<h4 id="upvoting-a-question">
+  
+  
+    <a href="#upvoting-a-question" class="anchor-heading" aria-labelledby="upvoting-a-question"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Upvoting a Question
+  
+  
+</h4>
+    
+
+<p>When a user upvotes a question, the following actions take place:</p>
+
+<ul>
+  <li><strong>Update Upvotes List:</strong> The user’s username is added to the <code class="language-plaintext highlighter-rouge">up_votes</code> field of the question. This field is an array that tracks all the users who have upvoted the question.</li>
+  <li><strong>Remove Downvote (if present):</strong> If the user had previously downvoted the question, their username is removed from the <code class="language-plaintext highlighter-rouge">down_votes</code> list to prevent contradictory actions by the same user.</li>
+  <li><strong>Success and Cancellation:</strong> If the user has already upvoted the question, their vote is cancelled, which involves removing their username from the <code class="language-plaintext highlighter-rouge">up_votes</code> list.</li>
+</ul>
+<h4 id="downvoting-a-question">
+  
+  
+    <a href="#downvoting-a-question" class="anchor-heading" aria-labelledby="downvoting-a-question"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Downvoting a Question
+  
+  
+</h4>
+    
+
+<p>Similarly, when a user downvotes a question:</p>
+
+<ul>
+  <li><strong>Update Downvotes List:</strong> The user’s username is added to the <code class="language-plaintext highlighter-rouge">down_votes</code> field of the question. This field is an array that records all the users who have downvoted the question.</li>
+  <li><strong>Remove Upvote (if present):</strong> If the user had previously upvoted the question, their username is removed from the <code class="language-plaintext highlighter-rouge">up_votes</code> list.</li>
+  <li><strong>Success and Cancellation:</strong> If the user has already downvoted the question, their vote is cancelled, which involves removing their username from the <code class="language-plaintext highlighter-rouge">down_votes</code> list.</li>
+</ul>
+<h4 id="key-points">
+  
+  
+    <a href="#key-points" class="anchor-heading" aria-labelledby="key-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Key Points
+  
+  
+</h4>
+    
+
+<ul>
+  <li>Each question maintains two separate lists: <code class="language-plaintext highlighter-rouge">up_votes</code> and <code class="language-plaintext highlighter-rouge">down_votes</code>, which are updated based on user interactions.</li>
+  <li>Users can toggle their vote on a question, which means they can switch from upvoting to downvoting or vice versa.</li>
+  <li>Proper error handling ensures that issues like missing fields in requests or database errors are managed appropriately, providing a smooth user experience.</li>
+</ul>
+<h4 id="steps-to-achieve-this-3">
+  
+  
+    <a href="#steps-to-achieve-this-3" class="anchor-heading" aria-labelledby="steps-to-achieve-this-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Steps to Achieve This
+  
+  
+</h4>
+    
+
+<ol>
+  <li>
+    <p><strong>Add Upvote and Downvote Functions</strong><br />
+Implement two functions, <code class="language-plaintext highlighter-rouge">addUpvoteToQuestion</code> and <code class="language-plaintext highlighter-rouge">addDownvoteToQuestion</code>, in <code class="language-plaintext highlighter-rouge">server/models/application.ts</code> to handle upvoting and downvoting of questions. These functions will:</p>
+
+    <ul>
+      <li>Check if the question exists.</li>
+      <li>Add or remove the user’s vote (upvote or downvote) as appropriate.</li>
+      <li>Update the question’s upvote and downvote counts.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Update Routes to Handle Voting</strong><br />
+Add two new routes, <code class="language-plaintext highlighter-rouge">"/upvoteQuestion"</code> and <code class="language-plaintext highlighter-rouge">"/downvoteQuestion"</code>, in <code class="language-plaintext highlighter-rouge">server/controller/question.ts</code> to handle upvote and downvote requests. These routes will use the newly created functions to update the question’s votes.</p>
+  </li>
+  <li>
+    <p><strong>Test the Voting Functionality</strong><br />
+To verify the behavior of the upvote and downvote features, make sure your code passes the tests in <code class="language-plaintext highlighter-rouge">application.spec.ts</code> and <code class="language-plaintext highlighter-rouge">question.spec.ts</code> files. For your reference, test the following functionalities:</p>
+
+    <ul>
+      <li>Successful upvoting and downvoting.</li>
+      <li>Cancelling an upvote or downvote.</li>
+      <li>Handling edge cases such as missing parameters in requests. Specifically, ensure the functionality handles scenarios where a user who previously upvoted now intends to downvote. The expected behavior in this case is that the user should be removed from the <code class="language-plaintext highlighter-rouge">up_votes</code> array and added to the <code class="language-plaintext highlighter-rouge">down_votes</code> array. Additionally, consider the reverse scenario where a user who previously downvoted now intends to upvote.</li>
+    </ul>
+
+    <p>Ensure that the code coverage is as thorough as possible for the portions of code you have added or updated as part of this feature.</p>
+  </li>
+</ol>
+
+<p>Grading for implementation tasks:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">addUpvoteToQuestion</code> and <code class="language-plaintext highlighter-rouge">addDownvoteToQuestion</code>: 30 points</li>
+  <li>Updating routes: 20 points</li>
+  <li>Testing: 4 points</li>
+</ul>
+<h2 id="submission-instructions--grading">
+  
+  
+    <a href="#submission-instructions--grading" class="anchor-heading" aria-labelledby="submission-instructions--grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions &amp; Grading
+  
+  
+</h2>
+    
+
+<p>You will submit your assignment using GitHub Classroom.</p>
+
+<p>This submission will be scored out of 100 points, 90 of which will be awarded for implementation of tasks and accompanying tests, and the remaining 10 for following style guidelines.</p>
+<h4 id="testing-1">
+  
+  
+    <a href="#testing-1" class="anchor-heading" aria-labelledby="testing-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Testing
+  
+  
+</h4>
+    
+
+<p>You will be provided with starter code that includes a set of tests. Your task is to ensure that all existing tests pass and to create additional tests to cover any new functionality or edge cases.</p>
+
+<p>Your code will be evaluated for linting errors and warnings. Submissions that have <em>any</em> linter errors will automatically receive a grade of 0. <strong>Do not wait to run the linter until the last minute</strong>. To check for linter errors, run the command <code class="language-plaintext highlighter-rouge">npm run lint</code> from the terminal. The handout contains the same ESlint configuration that is used by our grading script.</p>
+<h4 id="manual-grading">
+  
+  
+    <a href="#manual-grading" class="anchor-heading" aria-labelledby="manual-grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Manual Grading
+  
+  
+</h4>
+    
+
+<p>Your code will be manually evaluated for conformance to our <a href="/CS4530-Fall-2024/policies/style/">course style guide</a>. This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:</p>
+
+<p>To receive all 10 points:</p>
+
+<ul>
+  <li>All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide</li>
+  <li>There are no unused local variables</li>
+  <li>All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describe what the property/method does, as defined in our style guide</li>
+  <li>The code and tests that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.</li>
+</ul>
+
+<p>We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.</p>
+<h4 id="debugging-">
+  
+  
+    <a href="#debugging-" class="anchor-heading" aria-labelledby="debugging-"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Debugging :
+  
+  
+</h4>
+    
+
+<p>If you need help troubleshooting a problem, be sure to follow all the steps outlined in the course’s <a href="/CS4530-Fall-2024/policies/debugging/">debugging policy</a>. This will ensure you have exhausted all initial debugging strategies before reaching out for assistance from the TAs.</p>
+
+          
+
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2024 Adeel Bhutta and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

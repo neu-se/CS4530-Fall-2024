@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2024/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Fall-2024/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/CS4530-Fall-2024/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Guide to API Requests and Installing Postman | CS4530, Fall 2024</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Guide to API Requests and Installing Postman" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Fall-2024/tutorials/week1-apirequests-postman" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Fall-2024/tutorials/week1-apirequests-postman" />
+<meta property="og:site_name" content="CS4530, Fall 2024" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Guide to API Requests and Installing Postman" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand.","headline":"Guide to API Requests and Installing Postman","dateModified":"2024-11-19T23:52:55+00:00","url":"https://neu-se.github.io/CS4530-Fall-2024/tutorials/week1-apirequests-postman","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/CS4530-Fall-2024/" class="site-title lh-tight">
+  CS4530, Fall 2024
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Calendar category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/calendar/" class="nav-list-link">Calendar</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s1" class="nav-list-link">Section 1 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s2" class="nav-list-link">Section 2 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s5" class="nav-list-link">Section 5 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s8" class="nav-list-link">Section 8 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s9" class="nav-list-link">Section 9 - Calendar</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Modules category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/1-requirements-testing" class="nav-list-link">1 - Orientation & Requirements</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/2-requirements-to-code" class="nav-list-link">2 - From Requirements to Code</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/3-test-adequacy" class="nav-list-link">3 - Test Adequacy</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/4-code-level-design" class="nav-list-link">4 - Code-Level Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/5-interaction-level-design-patterns" class="nav-list-link">5 - Interaction-Level Design Patterns</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/6-concurrency-patterns-in-typescript" class="nav-list-link">6 - Concurrency Patterns in Typescript</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/7-software-process" class="nav-list-link">7 - Software Process</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/8-react" class="nav-list-link">8 - React</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/9-patterns-of-react" class="nav-list-link">9 - React Hooks</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/10-ds-1" class="nav-list-link">10 - Distributed Systems Architectures (Part 1)</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/11-distributed-systems-2" class="nav-list-link">11 - Distributed Systems (Part 2)</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/12-larger-tests" class="nav-list-link">12 - Tests With Larger Scope</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/13-continuous-development" class="nav-list-link">13 - Continuous Development</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/14-cloud-infrastructure" class="nav-list-link">14 - Cloud Infrastructure</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/15-security" class="nav-list-link">15 - Security</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/16-open-source" class="nav-list-link">16 - Open Source</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/17-ethics" class="nav-list-link">17 - Ethics and Equity in SE</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/16a-dependencies" class="nav-list-link">16A - Dependencies</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Assignments category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/ip1" class="nav-list-link">Individual Project 1</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/ip2" class="nav-list-link">Individual Project 2</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-plan" class="nav-list-link">Preliminary Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/revised-project-plan" class="nav-list-link">Revised Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-grading" class="nav-list-link">Final Project Grading</a></li></ul></li><li class="nav-list-item active"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorials category" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-user-stories" class="nav-list-link">User Stories and Conditions of Satisfaction</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-mongodb-mongoose" class="nav-list-link">MongoDB and Mongoose</a></li><li class="nav-list-item  active"><a href="/CS4530-Fall-2024/tutorials/week1-apirequests-postman" class="nav-list-link active">Guide to API Requests and Installing Postman</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week4-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week5-socketio-basics" class="nav-list-link">Socket.IO Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week6-cypress" class="nav-list-link">UI Testing with Cypress</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Policies category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/policies/style/" class="nav-list-link">Code Style</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/policies/debugging/" class="nav-list-link">Debugging</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/resources/" class="nav-list-link">Other Resources</a></li></ul>
+
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Fall 2024" aria-label="Search CS4530, Fall 2024" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+  
+    <li class="breadcrumb-nav-list-item"><a href="/CS4530-Fall-2024/tutorials/">Tutorials</a></li>
+  <li class="breadcrumb-nav-list-item"><span>Guide to API Requests and Installing Postman</span></li>
+  </ol>
+</nav>
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <div class="fs-1 text-right fw-300">Last updated: Nov 19, 24 23:52 UTC | <a href="/CS4530-Fall-2024/tutorials/week1-apirequests-postman">Permalink</a></div>
+<h1 id="tutorial-guide-to-api-requests-and-installing-postman">
+  
+  
+    <a href="#tutorial-guide-to-api-requests-and-installing-postman" class="anchor-heading" aria-labelledby="tutorial-guide-to-api-requests-and-installing-postman"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tutorial: Guide to API Requests and Installing Postman
+  
+  
+</h1>
+    
+<h2 id="contents">
+  
+  
+    <a href="#contents" class="anchor-heading" aria-labelledby="contents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Contents
+  
+  
+</h2>
+    
+<ul>
+  <li><a href="#introduction-to-api-requests-and-postman">Introduction to API Requests and Postman</a></li>
+  <li><a href="#breakdown-of-an-api-request">Breakdown of an API Request</a></li>
+  <li><a href="#steps-to-install-postman">Steps to Install Postman</a></li>
+  <li><a href="#using-postman-basic-steps">Using Postman: Basic Steps</a></li>
+  <li><a href="#saving-api-requests-and-using-history">Saving API Requests and Using History</a></li>
+  <li><a href="#organizing-requests-into-collections">Organizing Requests into Collections</a></li>
+  <li><a href="#recommended-tools">Recommended Tools</a></li>
+</ul>
+<h2 id="introduction-to-api-requests-and-postman">
+  
+  
+    <a href="#introduction-to-api-requests-and-postman" class="anchor-heading" aria-labelledby="introduction-to-api-requests-and-postman"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction to API Requests and Postman
+  
+  
+</h2>
+    
+
+<p>APIs (Application Programming Interfaces) are essential tools that allow different software applications to communicate with each other. As developers, it’s crucial to understand how to interact with APIs, which involves making API requests. API requests are structured interactions where one software sends a request to retrieve or send data to another.</p>
+
+<p>Postman is a popular API testing tool that allows developers to build, test, and modify APIs quickly and easily. It provides an interface to interact with APIs and simplifies API development. Postman supports making requests like <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong>, <strong>DELETE</strong>, and more.</p>
+
+<p>With this guide, you can:</p>
+<ul>
+  <li><strong>Understand the basics of API requests</strong>, including the different types (GET, POST, PUT, DELETE).</li>
+  <li><strong>Learn how to use Postman</strong> to send requests and test APIs.</li>
+  <li><strong>Test API responses</strong> to ensure that they return the expected results.</li>
+</ul>
+<h3 id="types-of-api-requests">
+  
+  
+    <a href="#types-of-api-requests" class="anchor-heading" aria-labelledby="types-of-api-requests"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Types of API Requests:
+  
+  
+</h3>
+    
+<ul>
+  <li><strong>GET</strong>: Retrieves data from an API. It’s commonly used when you want to fetch information without making any changes.
+    <ul>
+      <li><em>Example</em>: Use a GET request to retrieve a list of videos related to the one you’re currently watching on a streaming platform (e.g., <code class="language-plaintext highlighter-rouge">GET /videos/related</code>).</li>
+    </ul>
+  </li>
+  <li><strong>POST</strong>: Submits new data to an API to create a resource. It’s used when you need to send data to the server to create something new.
+    <ul>
+      <li><em>Example</em>: Use a POST request to save a newly uploaded video on a platform (e.g., <code class="language-plaintext highlighter-rouge">POST /videos</code>).</li>
+    </ul>
+  </li>
+  <li><strong>PUT</strong>: Updates an existing resource on the API. It’s used when you want to modify an existing item or data.
+    <ul>
+      <li><em>Example</em>: Use a PUT request to update the details of an existing video, like changing its title or description (e.g., <code class="language-plaintext highlighter-rouge">PUT /videos/{id}</code>).</li>
+    </ul>
+  </li>
+  <li><strong>DELETE</strong>: Removes a resource from an API. It’s used when you need to delete something from the server.
+    <ul>
+      <li><em>Example</em>: Use a DELETE request to remove a video you’ve uploaded from the platform (e.g., <code class="language-plaintext highlighter-rouge">DELETE /videos/{id}</code>).</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Each of these request types serves a specific purpose in API interactions, and Postman allows you to easily switch between them to test and build your APIs.</p>
+<h2 id="breakdown-of-an-api-request">
+  
+  
+    <a href="#breakdown-of-an-api-request" class="anchor-heading" aria-labelledby="breakdown-of-an-api-request"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Breakdown of an API Request
+  
+  
+</h2>
+    
+
+<p>Each API request has key components:</p>
+<h3 id="1-url">
+  
+  
+    <a href="#1-url" class="anchor-heading" aria-labelledby="1-url"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. <strong>URL</strong>
+  
+  
+</h3>
+    
+<p>For this URL -&gt; <code class="language-plaintext highlighter-rouge">https://localhost:8000/api/users</code></p>
+
+<p>The URL defines the location of the API you’re interacting with:</p>
+<ul>
+  <li><strong>Protocol</strong> (<code class="language-plaintext highlighter-rouge">https://</code>)</li>
+  <li><strong>Domain</strong> (<code class="language-plaintext highlighter-rouge">localhost</code>)</li>
+  <li><strong>Port</strong> (<code class="language-plaintext highlighter-rouge">8000</code>)</li>
+  <li><strong>Endpoint</strong> (<code class="language-plaintext highlighter-rouge">/api/users</code>)</li>
+</ul>
+<h3 id="2-method">
+  
+  
+    <a href="#2-method" class="anchor-heading" aria-labelledby="2-method"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. <strong>Method</strong>
+  
+  
+</h3>
+    
+<p>Defines the action type:</p>
+<ul>
+  <li><strong>GET</strong>: Retrieves data</li>
+  <li><strong>POST</strong>: Submits new data</li>
+  <li><strong>PUT</strong>: Updates data</li>
+  <li><strong>DELETE</strong>: Deletes data</li>
+</ul>
+<h3 id="3-parameters-get-vs-body-post">
+  
+  
+    <a href="#3-parameters-get-vs-body-post" class="anchor-heading" aria-labelledby="3-parameters-get-vs-body-post"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. <strong>Parameters (GET) vs. Body (POST)</strong>
+  
+  
+</h3>
+    
+<ul>
+  <li>
+    <p><strong>GET</strong> sends data as <strong>query parameters</strong> in the URL:
+https://api.example.com/users?age=25
+In this example, <code class="language-plaintext highlighter-rouge">age=25</code> is a query parameter used to filter the list of users.</p>
+  </li>
+  <li>
+    <p><strong>POST</strong> sends data in the <strong>body</strong> (usually JSON):</p>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newuser"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newuser@example.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+<h3 id="4-headers">
+  
+  
+    <a href="#4-headers" class="anchor-heading" aria-labelledby="4-headers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. <strong>Headers</strong>
+  
+  
+</h3>
+    
+<p>Headers provide additional information about the request or the client making it. They help the server understand the request. Some common headers include:</p>
+
+<ul>
+  <li><strong>Content-Type</strong>: Specifies the format of the request body (e.g., <code class="language-plaintext highlighter-rouge">application/json</code> for JSON data).</li>
+  <li><strong>Authorization</strong>: Contains credentials like API keys or tokens required to access certain endpoints.
+    <ul>
+      <li><em>Example</em>:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Authorization: Bearer &lt;your-api-token&gt;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Accept</strong>: Specifies the format in which the client expects the server to return the response (e.g., <code class="language-plaintext highlighter-rouge">application/json</code>).
+    <ul>
+      <li><em>Example</em>:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/json
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="5-response">
+  
+  
+    <a href="#5-response" class="anchor-heading" aria-labelledby="5-response"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 5. <strong>Response</strong>
+  
+  
+</h3>
+    
+<p>After the server processes the request, it sends back a <strong>response</strong>. The response typically includes:</p>
+
+<ul>
+  <li><strong>Status Code</strong>: A number indicating the result of the request.
+    <ul>
+      <li>Common status codes:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">200 OK</code>: The request was successful.</li>
+          <li><code class="language-plaintext highlighter-rouge">201 Created</code>: The resource was successfully created (used for POST requests).</li>
+          <li><code class="language-plaintext highlighter-rouge">400 Bad Request</code>: There was an error in the request.</li>
+          <li><code class="language-plaintext highlighter-rouge">404 Not Found</code>: The resource could not be found.</li>
+          <li><code class="language-plaintext highlighter-rouge">500 Internal Server Error</code>: An error occurred on the server.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Response Body</strong>: Contains the data returned by the API, usually in JSON format. For example, when creating a new user, the server might return a response like this:
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newuser"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newuser@example.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Mozilla documentation for reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</p>
+<h2 id="steps-to-install-postman">
+  
+  
+    <a href="#steps-to-install-postman" class="anchor-heading" aria-labelledby="steps-to-install-postman"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Steps to Install Postman
+  
+  
+</h2>
+    
+<h3 id="step-1-download-postman">
+  
+  
+    <a href="#step-1-download-postman" class="anchor-heading" aria-labelledby="step-1-download-postman"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1: Download Postman
+  
+  
+</h3>
+    
+<ol>
+  <li>Open your web browser and navigate to the official Postman website: <a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a>.</li>
+  <li>Select the version that is compatible with your operating system (Windows/macOS). If you’re using a Mac, be sure to download the version that corresponds to your system’s chip (Intel or Apple).</li>
+  <li>Click the “Download” button.</li>
+</ol>
+<h3 id="step-2-install-postman">
+  
+  
+    <a href="#step-2-install-postman" class="anchor-heading" aria-labelledby="step-2-install-postman"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2: Install Postman
+  
+  
+</h3>
+    
+<h4 id="for-windows">
+  
+  
+    <a href="#for-windows" class="anchor-heading" aria-labelledby="for-windows"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For Windows:
+  
+  
+</h4>
+    
+<ol>
+  <li>Once the download is complete, find the setup file in your downloads folder (typically named <code class="language-plaintext highlighter-rouge">Postman-win64-setup.exe</code>).</li>
+  <li>Double-click the file to start the installation.</li>
+  <li>Follow the on-screen instructions to complete the installation. Postman will install automatically and open once the process is finished.</li>
+</ol>
+<h4 id="for-macos">
+  
+  
+    <a href="#for-macos" class="anchor-heading" aria-labelledby="for-macos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For macOS:
+  
+  
+</h4>
+    
+<ol>
+  <li>Open the downloaded <code class="language-plaintext highlighter-rouge">.dmg</code> file.</li>
+  <li>Drag the Postman app icon into the “Applications” folder.</li>
+  <li>Once copied, go to your Applications folder and double-click the Postman icon to launch the app.</li>
+</ol>
+<h3 id="step-3-create-an-account-optional-but-recommended">
+  
+  
+    <a href="#step-3-create-an-account-optional-but-recommended" class="anchor-heading" aria-labelledby="step-3-create-an-account-optional-but-recommended"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3: Create an Account (Optional but Recommended)
+  
+  
+</h3>
+    
+<p>Once Postman is installed:</p>
+<ol>
+  <li>Open the Postman application.</li>
+  <li>You will be prompted to sign in or create a Postman account.</li>
+</ol>
+<h2 id="using-postman-basic-steps">
+  
+  
+    <a href="#using-postman-basic-steps" class="anchor-heading" aria-labelledby="using-postman-basic-steps"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using Postman: Basic Steps
+  
+  
+</h2>
+    
+<h3 id="step-0-ensure-your-backend-is-running">
+  
+  
+    <a href="#step-0-ensure-your-backend-is-running" class="anchor-heading" aria-labelledby="step-0-ensure-your-backend-is-running"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 0: Ensure your backend is running
+  
+  
+</h3>
+    
+<h3 id="step-1-launch-postman">
+  
+  
+    <a href="#step-1-launch-postman" class="anchor-heading" aria-labelledby="step-1-launch-postman"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1: Launch Postman
+  
+  
+</h3>
+    
+<p>After installation, launch Postman. You’ll see a workspace where you can start creating requests.</p>
+<h3 id="step-2-make-your-first-api-request">
+  
+  
+    <a href="#step-2-make-your-first-api-request" class="anchor-heading" aria-labelledby="step-2-make-your-first-api-request"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2: Make Your First API Request
+  
+  
+</h3>
+    
+<ol>
+  <li>Click on the “New” button at the top-left and select <strong>HTTP</strong>.</li>
+</ol>
+
+<p><img src="./assets/week1-apirequests-postman/Postman1.png" alt="Postman1" /></p>
+
+<ol>
+  <li>In the request window, choose the type of request method (GET, POST, PUT, DELETE) from the dropdown menu (default is GET).</li>
+  <li>Enter the URL of the API you want to test in the input field (e.g., <code class="language-plaintext highlighter-rouge">http://localhost:8000/question/getQuestionById/67062b6dd9d59b115c559096</code>). Ensure that the ID is valid and belongs to one of the questions in the database.</li>
+</ol>
+
+<p><img src="./assets/week1-apirequests-postman/Postman2.png" alt="Postman2" /></p>
+
+<ol>
+  <li>To send a POST request you need to enter the URL (e.g., <code class="language-plaintext highlighter-rouge">http://localhost:8000/question/addQuestion</code>) and include the Body as well.
+    <ul>
+      <li>Go to the <strong>Body</strong> tab.</li>
+      <li>Select <strong>raw</strong>.</li>
+      <li>Choose <strong>JSON</strong> as the format.</li>
+      <li>Enter the JSON data in this format:
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How do I use Postman?"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I am trying to build an API using TypeScript, but I'm unable to test using Postman. How do I do this?"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Postman"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API testing tool that allows developers to send HTTP requests."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"asked_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pavan Kumar"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ask_date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-10-08T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"up_votes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"down_votes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+        <p><img src="./assets/week1-apirequests-postman/Postman3.png" alt="Postman3" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Click the <strong>Send</strong> button.</li>
+</ol>
+<h3 id="step-3-view-the-response">
+  
+  
+    <a href="#step-3-view-the-response" class="anchor-heading" aria-labelledby="step-3-view-the-response"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3: View the Response
+  
+  
+</h3>
+    
+<ul>
+  <li>After clicking “Send,” Postman will display the API response below the request window.</li>
+  <li>You will see the <strong>Status Code</strong>, <strong>Response Body</strong>, <strong>Headers</strong>, and <strong>Cookies</strong> (if applicable).</li>
+</ul>
+<h2 id="saving-api-requests-and-using-history">
+  
+  
+    <a href="#saving-api-requests-and-using-history" class="anchor-heading" aria-labelledby="saving-api-requests-and-using-history"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Saving API Requests and Using History
+  
+  
+</h2>
+    
+
+<p>One of Postman’s key features is the ability to <strong>save API requests</strong> for future use. This can save you time when testing or working on multiple endpoints. Additionally, Postman keeps track of your request history, allowing you to quickly revisit previous requests without re-entering all the details.</p>
+
+<p>To learn more about using Postman’s history, visit: <a href="https://learning.postman.com/docs/getting-started/basics/navigating-postman/#history">Postman History</a>.</p>
+<h2 id="organizing-requests-into-collections">
+  
+  
+    <a href="#organizing-requests-into-collections" class="anchor-heading" aria-labelledby="organizing-requests-into-collections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Organizing Requests into Collections
+  
+  
+</h2>
+    
+
+<p>Postman also allows you to save and organize requests into <strong>collections</strong>. A collection is essentially a folder where you can store multiple requests, making it easier to manage large projects and share API workflows with your team.</p>
+
+<p>For more information on creating and using collections, refer to the Postman documentation: <a href="https://learning.postman.com/docs/sending-requests/intro-to-collections/">Postman Collections</a>.</p>
+
+<p>These features enhance your ability to efficiently manage, organize, and track your API development process within Postman.</p>
+<h2 id="recommended-tools">
+  
+  
+    <a href="#recommended-tools" class="anchor-heading" aria-labelledby="recommended-tools"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Recommended Tools
+  
+  
+</h2>
+    
+
+<p>In addition to using the Postman desktop app, you can also integrate Postman with Visual Studio Code through the Postman extension. This extension allows you to send API requests directly from your code editor.</p>
+
+<p>You can find the extension and its documentation here: <a href="https://learning.postman.com/docs/getting-started/basics/about-vs-code-extension/">Postman VS Code Extension</a>.</p>
+
+          
+
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2024 Adeel Bhutta and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

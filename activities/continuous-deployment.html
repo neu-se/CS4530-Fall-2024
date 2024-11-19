@@ -1,0 +1,738 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2024/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Fall-2024/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/CS4530-Fall-2024/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Continuous Deployment Pipeline for FakeStackOverFlow | CS4530, Fall 2024</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Continuous Deployment Pipeline for FakeStackOverFlow" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Fall-2024/activities/continuous-deployment" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Fall-2024/activities/continuous-deployment" />
+<meta property="og:site_name" content="CS4530, Fall 2024" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Continuous Deployment Pipeline for FakeStackOverFlow" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2024. Professors Adeel Bhutta and Mitch Wand.","headline":"Continuous Deployment Pipeline for FakeStackOverFlow","dateModified":"2024-11-19T23:52:55+00:00","url":"https://neu-se.github.io/CS4530-Fall-2024/activities/continuous-deployment","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/CS4530-Fall-2024/" class="site-title lh-tight">
+  CS4530, Fall 2024
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Calendar category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/calendar/" class="nav-list-link">Calendar</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s1" class="nav-list-link">Section 1 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s2" class="nav-list-link">Section 2 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s5" class="nav-list-link">Section 5 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s8" class="nav-list-link">Section 8 - Calendar</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/calendar/s9" class="nav-list-link">Section 9 - Calendar</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Modules category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/1-requirements-testing" class="nav-list-link">1 - Orientation & Requirements</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/2-requirements-to-code" class="nav-list-link">2 - From Requirements to Code</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/3-test-adequacy" class="nav-list-link">3 - Test Adequacy</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/4-code-level-design" class="nav-list-link">4 - Code-Level Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/5-interaction-level-design-patterns" class="nav-list-link">5 - Interaction-Level Design Patterns</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/6-concurrency-patterns-in-typescript" class="nav-list-link">6 - Concurrency Patterns in Typescript</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/7-software-process" class="nav-list-link">7 - Software Process</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/8-react" class="nav-list-link">8 - React</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/9-patterns-of-react" class="nav-list-link">9 - React Hooks</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/10-ds-1" class="nav-list-link">10 - Distributed Systems Architectures (Part 1)</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/11-distributed-systems-2" class="nav-list-link">11 - Distributed Systems (Part 2)</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/12-larger-tests" class="nav-list-link">12 - Tests With Larger Scope</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/13-continuous-development" class="nav-list-link">13 - Continuous Development</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/14-cloud-infrastructure" class="nav-list-link">14 - Cloud Infrastructure</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/15-security" class="nav-list-link">15 - Security</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/16-open-source" class="nav-list-link">16 - Open Source</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/17-ethics" class="nav-list-link">17 - Ethics and Equity in SE</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/modules/16a-dependencies" class="nav-list-link">16A - Dependencies</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Assignments category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/ip1" class="nav-list-link">Individual Project 1</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/ip2" class="nav-list-link">Individual Project 2</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-plan" class="nav-list-link">Preliminary Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/revised-project-plan" class="nav-list-link">Revised Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/assignments/project-grading" class="nav-list-link">Final Project Grading</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorials category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-user-stories" class="nav-list-link">User Stories and Conditions of Satisfaction</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-mongodb-mongoose" class="nav-list-link">MongoDB and Mongoose</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week1-apirequests-postman" class="nav-list-link">Guide to API Requests and Installing Postman</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week4-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week5-socketio-basics" class="nav-list-link">Socket.IO Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/tutorials/week6-cypress" class="nav-list-link">UI Testing with Cypress</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Policies category" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button><a href="/CS4530-Fall-2024/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Fall-2024/policies/style/" class="nav-list-link">Code Style</a></li><li class="nav-list-item "><a href="/CS4530-Fall-2024/policies/debugging/" class="nav-list-link">Debugging</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2024/resources/" class="nav-list-link">Other Resources</a></li></ul>
+
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Fall 2024" aria-label="Search CS4530, Fall 2024" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <div class="fs-1 text-right fw-300">Last updated: Nov 19, 24 23:52 UTC | <a href="/CS4530-Fall-2024/activities/continuous-deployment">Permalink</a></div>
+<h1 id="continuous-deployment-pipeline-for-fakestackoverflow">
+  
+  
+    <a href="#continuous-deployment-pipeline-for-fakestackoverflow" class="anchor-heading" aria-labelledby="continuous-deployment-pipeline-for-fakestackoverflow"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Continuous Deployment Pipeline for FakeStackOverFlow
+  
+  
+</h1>
+    
+
+<p>In this activity, you will set up a continuous deployment pipeline using MongoDB Atlas and Render.com. The application will be deployed through Render.com, while the MongoDB database will be hosted in the cloud using MongoDB Atlas.</p>
+
+<p>Only one member of each team needs to complete these steps, as the resulting deployment will be shared with the entire team. However, if preferred, the team can work together to deploy the application.</p>
+
+<p class="note">In this activity, we will focus on building a continuous deployment pipeline, but what about continuous integration? There are many ways to use continuous integration in your projects. For example, you can use GitHub Actions to automatically run tests after pushing a commit. FakeStackOverflow has a continuous integration setup for running tests, and you can find the workflow in <code class="language-plaintext highlighter-rouge">.github/workflows/main.yml</code>.</p>
+<h2 id="pre-requisites">
+  
+  
+    <a href="#pre-requisites" class="anchor-heading" aria-labelledby="pre-requisites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pre-Requisites
+  
+  
+</h2>
+    
+
+<p>There are three pre-requisites for this activity.</p>
+<h3 id="github-repository">
+  
+  
+    <a href="#github-repository" class="anchor-heading" aria-labelledby="github-repository"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> GitHub Repository
+  
+  
+</h3>
+    
+
+<p>Your team’s deployment must take place within a private GitHub repository in our GitHub Classroom. To create your repository, each member of your team should follow these instructions:</p>
+
+<ol>
+  <li>
+    <p>Sign in to GitHub.com, and then use <a href="https://classroom.github.com/a/L65hxlBf">our invitation</a> to create a repository with the FakeStackOverflow codebase. Check to see if one of your groupmates has created a group already - if so, select it to join it. Otherwise, create a repo using the following format fall24-team-project-group-xyy where you should enter your group number (e.g. “Group-XYY”) as the name where X is your section number and YY is your group number.</p>
+  </li>
+  <li>
+    <p>Check your email for the invitation to join the repo. After that, refresh the page, and it will show a link to your new repository, for example: https://github.com/neu-cs4530/fall24-team-project-group-xyy. Click the link to navigate to your new repository. This is the repository you will use for the project.</p>
+  </li>
+</ol>
+
+<p>This repository will be private, and visible only to your team and the course staff. After the semester ends, you are welcome to make it public - you have complete administrative control of the repository.</p>
+
+<p>If you run into the error “refusing to allow an OAuth App to create or update workflow” when trying to push to GitHub, the fix is to update your saved authentication credentials for GitHub. For instance, you can follow <a href="https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain">these instructions</a> to update your credentials in the MacOS Keychain. If all else fails, you can connect to GitHub with <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">SSH instead of HTTPS</a>, which will also solve this problem. This error seems to only occur when pushing a change to the GitHub Actions configuration file, so you could also side-step the problem by having a team mate push this change to GitHub instead (who may not run into this issue).</p>
+<h3 id="mongodb-account">
+  
+  
+    <a href="#mongodb-account" class="anchor-heading" aria-labelledby="mongodb-account"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> MongoDB Account
+  
+  
+</h3>
+    
+
+<p>MongoDB Atlas is a cloud-based service that provides fully managed MongoDB databases. It allows you to easily deploy, manage, and scale MongoDB clusters without needing to handle server infrastructure, security, backups, or updates, making database management simpler and more efficient.</p>
+
+<p>To use MongoDB Atlas, create a MongoDB account <a href="https://account.mongodb.com/account/register">here</a>.</p>
+
+<p>After you register you will be asked to verify your email. The steps on how to create a MongoDB database and configure are provided below.</p>
+<h3 id="rendercom-account">
+  
+  
+    <a href="#rendercom-account" class="anchor-heading" aria-labelledby="rendercom-account"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Render.com Account
+  
+  
+</h3>
+    
+
+<p>Render.com is a cloud platform that simplifies deploying and hosting web applications, APIs, and databases. It automatically manages servers, scaling, and security, allowing developers to easily build, deploy, and run applications without worrying about infrastructure management.</p>
+
+<p>You can create a Render.com account <a href="https://dashboard.render.com/register">here</a>. Clicking on the “GitHub” button and sign up using the <strong>same GitHub account</strong> as the one used to create the GitHub project repository.</p>
+
+<p>After you register you will be asked to verify your email. You might be asked to authorize the Render app for the “neu-cs4530” organization - choose your repository using the “Only select repositories” option, DO NOT choose “All repositories”.</p>
+<h2 id="steps">
+  
+  
+    <a href="#steps" class="anchor-heading" aria-labelledby="steps"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Steps
+  
+  
+</h2>
+    
+
+<p>You will first create the MongoDB database, and then setup the continuous deployment pipeline for the server and the client.</p>
+<h3 id="setup-your-mongodb-database">
+  
+  
+    <a href="#setup-your-mongodb-database" class="anchor-heading" aria-labelledby="setup-your-mongodb-database"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Setup your MongoDB Database
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Navigate to your <a href="https://account.mongodb.com/account/profile/overview">MongoDB Account Profile</a>.</li>
+  <li>Click on the “Visit MongoDB Atlas” button.</li>
+  <li>Click on the “Create” button on the center of the screen. (If you don’t see a “Create” button, make sure you are in the “Overview” section on the left navigation and on the “Data Services” tab)</li>
+  <li>In the configuration options:
+    <ol>
+      <li>Choose the “M0” free tier.</li>
+      <li>For the Name, provide a name such as “db-cs4530-f24-XYY” (where XYY is your group number).</li>
+      <li>Keep the Provider and Region the default values.</li>
+    </ol>
+  </li>
+  <li>Click on “Create Deployment”.</li>
+  <li>You will be prompted about connecting to your database.
+    <ol>
+      <li>Copy the username and password that is automatically generated. You will need this later (you can also create an user after the database has been created).</li>
+      <li>Click on “Create Database User”.</li>
+      <li>Click the “Close” button.</li>
+    </ol>
+  </li>
+  <li>Wait for your database cluster to complete creation. Once complete, click on the “Network Access” option in the left navigation.</li>
+  <li>Your current public IP address will be automatically present. Click the “EDIT” button, and then click “ALLOW ACCESS FROM ANYWHERE”. Click the “Confirm” button.</li>
+  <li>Click on the “Database” option in the left navigation. Then, click on the “Connect” button.
+    <ol>
+      <li>Click on “Choose a connection method”.</li>
+      <li>Click on “Compass”.</li>
+      <li>If you don’t have Compass installed, follow the instructions to install MongoDB Compass and then connect.</li>
+      <li>Otherwise, switch to the “I have MongoDB Compass installed” tab and connect.</li>
+    </ol>
+  </li>
+  <li>Open up MongoDB Compass and see what connections are displayed.  You should see a connection to something like <code class="language-plaintext highlighter-rouge">&lt;your repo name&gt;.cvjdm.mongodb.net:27017</code> That connection should include databases such as such as “admin”, “config”, and “local”.</li>
+  <li>In Compass nav bar (on the left), select the connection you just created.  Mouse to the “…” and select “Copy Connection String”.  Paste this connection string in some convenient place; you will need it later.</li>
+  <li>Go to your project repository’s server folder and run the <code class="language-plaintext highlighter-rouge">populate_db.ts</code> script.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd server
+npx ts-node populate_db.ts &lt;your connection string&gt;/fake_so
+</code></pre></div></div>
+<p>You can find the connection string in the instructions from step 11.</p>
+
+<p>When you are done, go back to Compass and examine the connection you created.  When you open that connection, you should see a database named <code class="language-plaintext highlighter-rouge">fake_so</code>, and in that database you should see collections named <code class="language-plaintext highlighter-rouge">Answer</code>, <code class="language-plaintext highlighter-rouge">Comment</code>, <code class="language-plaintext highlighter-rouge">Question</code>, and <code class="language-plaintext highlighter-rouge">Tag</code> with several documents in each of them, much like you got when running <code class="language-plaintext highlighter-rouge">populate_db.ts</code> locally.</p>
+
+<p>You have now completed setting up your MongoDB database.</p>
+
+<p class="note">For simplicity, and since you’re not handling sensitive data, the Network Access is set to allow connections from anywhere. However, for projects involving sensitive data, you should restrict access to only the necessary range of IP addresses.</p>
+
+<p>You can connect your locally deployed server to the cloud-hosted MongoDB database. This is useful when developing a feature and testing it before deployment. To do this, update the <code class="language-plaintext highlighter-rouge">.env</code> created as <a href="https://neu-se.github.io/CS4530-Fall-2024/assignments/ip2#task-0-setup-environment-variables">part of the IP2 setup</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MONGODB_URI=&lt;add your connection string here, without the trailing slash&gt;
+CLIENT_URL=http://localhost:3000
+PORT=8000
+</code></pre></div></div>
+
+<p>Note: The .env file is not required for the Render.com setup. The above instructions are only if you want to connect the cloud MongoDB to your local (laptop) server.</p>
+<h3 id="setup-your-server">
+  
+  
+    <a href="#setup-your-server" class="anchor-heading" aria-labelledby="setup-your-server"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Setup your Server
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Open the <a href="https://dashboard.render.com/">Render Dashboard</a>.</li>
+  <li>Click on “Create new project”, and create a new project with a name such as “cs4530-f24-XYY” (where XYY is your group number).</li>
+  <li>From the top menu, click on the “+ New” button and click on “Web Service”.
+    <ol>
+      <li>For the Source Code, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.</li>
+      <li>For the Name, you can EITHER choose an unique name OR use a name such as “cs4530-f24-XYY-API” or “cs4530-f24-XYY-backend”(where XYY is your group number). The “API” or “backend” in that name is important, because it will let you easily distinguish the “server” (what Render calls a “web service”) from the “client” (what Render calls a “static site”, which is the URL where you will find the user-facing application).</li>
+      <li>For the Project, select the project created earlier. For the environment, select Production or any default value.</li>
+      <li>For Language, select “Node”.</li>
+      <li>For Branch, select “main”.</li>
+      <li>For Region, keep the default value.</li>
+      <li>For Root Directory, type in “server”.</li>
+      <li>For Build Command, type in “npm install &amp;&amp; tsc”.</li>
+      <li>For Start Command, type in “npm run start:prod”.</li>
+      <li>For Instance Type, choose the “Free” option.</li>
+      <li>In the Environment Variables section, add a variable called <code class="language-plaintext highlighter-rouge">MONGODB_URI</code>. For the value, add the connection string of the MongoDB database created earlier. Make sure that you remove the trailing slash, if any.</li>
+      <li>If you need to change any of these, you can do so from the tab called “Settings” (or “Environment”)</li>
+    </ol>
+  </li>
+  <li>Click “Deploy Web Service”.</li>
+  <li>The URL of the backend service will be displayed in purple just below near the top of the window in the “Logs” section.  Make a copy of this; you will need it later.</li>
+  <li>Once the deployment is completed, visit the URL and check if you get a “hello world” response.</li>
+  <li>Append <code class="language-plaintext highlighter-rouge">/question/getQuestion?order=newest&amp;search=</code> to the URL and check if you get an successful response. A successful response should include the questions that are present in your MongoDB.  If you get something like ` MongoDB connection error:  MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017<code class="language-plaintext highlighter-rouge">, that indicates that your server is trying to connect to your local database.   Check that the value of </code>MONGODB_URI` is set correctly in the Render environment section.</li>
+  <li>You can check the server’s logs by going to the “Logs” section.</li>
+</ol>
+
+<p class="note">You might see a warning like this after the server deployment:
+<code class="language-plaintext highlighter-rouge">Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.</code>
+In case your server is is not responding to requests after a long period of inactivity, visit the URL and wait till you get a “hello world” response. If the server is still not responsive, then check the logs.</p>
+<h3 id="setup-your-client">
+  
+  
+    <a href="#setup-your-client" class="anchor-heading" aria-labelledby="setup-your-client"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Setup your Client
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Open the <a href="https://dashboard.render.com/">Render Dashboard</a>.</li>
+  <li>From the top menu, click on the “+ New” button and click on “Static Site”.</li>
+  <li>For the Git Provider, choose your project repository. In case you do not see your project repository, go to your GitHub account and authorize access to your project repository.</li>
+  <li>For the Name, you can either choose an unique name OR use a name such as “cs4530-f24-XYY” (where XYY is your group number).</li>
+  <li>For the Project, select the project created earlier. For the environment, select Production or any default value.</li>
+  <li>For Branch, select “main”.</li>
+  <li>For Root Directory, type in “client”.</li>
+  <li>For Build Command, type in “npm install &amp;&amp; npm run build”.</li>
+  <li>For Publish directory, type in “build”.</li>
+  <li>In the Environment Variables section, add a variable called <code class="language-plaintext highlighter-rouge">REACT_APP_SERVER_URL</code>. For the value, add the server URL from <strong>Setup your Server</strong> Step 5.</li>
+  <li>Click “Deploy Static Site”.</li>
+  <li>Once the site is deployed, copy the client URL. As before, you can find this in purple near the top of the “Logs” page.</li>
+  <li>Open the <a href="https://dashboard.render.com/">Render Dashboard</a> again. Choose the project you have created, and go back to service called “Web Service”.</li>
+  <li>Click on the “Environment” tab.</li>
+  <li>Add a new environment variable called <code class="language-plaintext highlighter-rouge">CLIENT_URL</code>. For the value, add the client URL (make sure you are adding this env. variable in the server’s settings, not the client’s). You should now have two environment variables for your server: <code class="language-plaintext highlighter-rouge">MONGDB_URI</code> and <code class="language-plaintext highlighter-rouge">CLIENT_URL</code>.</li>
+  <li>Visit the client URL in your browser to run the application.</li>
+</ol>
+<h2 id="alternative-steps-to-set-up-heroku-deployment-for-your-backend-service">
+  
+  
+    <a href="#alternative-steps-to-set-up-heroku-deployment-for-your-backend-service" class="anchor-heading" aria-labelledby="alternative-steps-to-set-up-heroku-deployment-for-your-backend-service"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Alternative Steps to Set Up Heroku Deployment for Your Backend Service
+  
+  
+</h2>
+    
+<h3 id="step-1-enroll-in-github-student-developer-pack-and-heroku-for-students">
+  
+  
+    <a href="#step-1-enroll-in-github-student-developer-pack-and-heroku-for-students" class="anchor-heading" aria-labelledby="step-1-enroll-in-github-student-developer-pack-and-heroku-for-students"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1: Enroll in GitHub Student Developer Pack and Heroku for Students
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong>Enroll in GitHub Student Developer Pack</strong>
+    <ul>
+      <li>Visit GitHub Education and select <strong>“Get student benefits”</strong>. Follow the instructions to apply. Approval can take up to 2 business days.</li>
+    </ul>
+  </li>
+  <li><strong>Set Up Heroku for Students</strong>
+    <ul>
+      <li>Go to Heroku.com and create an account (use the same email as your GitHub account).</li>
+      <li>Enroll in the Heroku for Students offer, which requires the GitHub Student Developer Pack.
+        <ul>
+          <li><strong>Note</strong>: You’ll need to add a credit card for the platform credits that Heroku provides for student use.</li>
+        </ul>
+      </li>
+      <li>After approval, you should see these credits in the billing section of your Heroku account within a few hours. <strong>Wait to create an app until credits are available.</strong></li>
+    </ul>
+  </li>
+</ol>
+<h3 id="step-2-create-a-new-application-on-heroku">
+  
+  
+    <a href="#step-2-create-a-new-application-on-heroku" class="anchor-heading" aria-labelledby="step-2-create-a-new-application-on-heroku"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2: Create a New Application on Heroku
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong>Navigate to the Heroku Dashboard</strong>
+    <ul>
+      <li>After logging into Heroku, go to your Dashboard.</li>
+    </ul>
+  </li>
+  <li><strong>Create a New App</strong>
+    <ul>
+      <li>Select <strong>New -&gt; Create New App</strong>.</li>
+      <li>Choose a descriptive app name (this will form part of your app’s URL).</li>
+      <li>Click <strong>Create App</strong> to proceed.</li>
+    </ul>
+
+    <p><img src="Module13Assets/CreateNewApp.png" alt="Create New App in Heroku" /></p>
+  </li>
+</ol>
+<h3 id="step-3-deploy-the-server-from-a-new-repository">
+  
+  
+    <a href="#step-3-deploy-the-server-from-a-new-repository" class="anchor-heading" aria-labelledby="step-3-deploy-the-server-from-a-new-repository"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3: Deploy the Server from a New Repository
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong>Create a New Private Repository</strong>
+    <ul>
+      <li>You must create a new Private Repository on Github which will contain only your server code.</li>
+      <li>Create a new Private Repository on Github and copy paste your server folder.</li>
+      <li>Copy the .gitignore from the root of the original repository to the server repository.</li>
+    </ul>
+  </li>
+  <li><strong>Update Yaml file</strong>
+    <ul>
+      <li>Once the client and server folders are separated into different repositories, update the .github\workflows\main.yml in each as the following:</li>
+    </ul>
+
+    <p><strong>Client - GitHub Actions CI Workflow Configuration</strong></p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="na">name</span><span class="pi">:</span> <span class="s">FakeStackOverflow CI</span>
+   <span class="na">on</span><span class="pi">:</span> <span class="c1"># Controls when the action will run.</span>
+   <span class="c1"># Triggers the workflow on push or pull request events but only for the master branch. If you want to trigger the action on other branches, add here</span>
+   <span class="na">push</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+   <span class="na">pull_request</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+
+   <span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+   <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+   <span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+   <span class="na">jobs</span><span class="pi">:</span>
+   <span class="na">build-and-test</span><span class="pi">:</span> <span class="c1">#</span>
+      <span class="c1"># The type of runner that the job will run on</span>
+      <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-20.04</span>
+
+      <span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+      <span class="na">steps</span><span class="pi">:</span>
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Git Checkout</span>
+         <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js 20.x</span>
+         <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v4</span>
+         <span class="na">with</span><span class="pi">:</span>
+            <span class="na">node-version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">20.x"</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build and lint frontend</span>
+         <span class="na">if</span><span class="pi">:</span> <span class="s">$</span>
+         <span class="na">env</span><span class="pi">:</span>
+            <span class="na">REACT_APP_SERVER_URL</span><span class="pi">:</span> <span class="s">http://localhost:8000</span>
+         <span class="na">run</span><span class="pi">:</span> <span class="s">cd client; npm ci &amp;&amp; npm run build &amp;&amp; npm run lint</span>
+</code></pre></div>    </div>
+
+    <p><strong>Server - GitHub Actions CI Workflow Configuration</strong></p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="na">name</span><span class="pi">:</span> <span class="s">FakeStackOverflow CI</span>
+   <span class="na">on</span><span class="pi">:</span> <span class="c1"># Controls when the action will run.</span>
+   <span class="c1"># Triggers the workflow on push or pull request events but only for the master branch. If you want to trigger the action on other branches, add here</span>
+   <span class="na">push</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+   <span class="na">pull_request</span><span class="pi">:</span>
+      <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+
+   <span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+   <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+   <span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+   <span class="na">jobs</span><span class="pi">:</span>
+   <span class="na">build-and-test</span><span class="pi">:</span> <span class="c1">#</span>
+      <span class="c1"># The type of runner that the job will run on</span>
+      <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-20.04</span>
+
+      <span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+      <span class="na">steps</span><span class="pi">:</span>
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Git Checkout</span>
+         <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js 20.x</span>
+         <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v4</span>
+         <span class="na">with</span><span class="pi">:</span>
+            <span class="na">node-version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">20.x"</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Launch MongoDB Server</span>
+         <span class="na">uses</span><span class="pi">:</span> <span class="s">supercharge/mongodb-github-action@1.11.0</span>
+         <span class="na">with</span><span class="pi">:</span>
+            <span class="na">mongodb-version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">7.0"</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build backend service</span>
+         <span class="na">if</span><span class="pi">:</span> <span class="s">$</span>
+         <span class="na">run</span><span class="pi">:</span> <span class="s">npm ci</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Test backend server</span>
+         <span class="na">if</span><span class="pi">:</span> <span class="s">$</span>
+         <span class="na">env</span><span class="pi">:</span>
+            <span class="c1"># Pass the environmental variables for the backend tests to use</span>
+            <span class="na">MONGODB_URI</span><span class="pi">:</span> <span class="s">mongodb://localhost:27017</span>
+         <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+
+            <span class="s">npm run start &amp; sleep 10</span>
+
+            <span class="s">echo "Checking if the server is running..."</span>
+            <span class="s">curl --fail 'http://localhost:8000/question/getQuestion?order=newest&amp;search=' || (echo "Server failed to start" &amp;&amp; killall node &amp;&amp; exit 1)</span>
+
+            <span class="s">echo "Server started successfully. Now stopping..."</span>
+            <span class="s">killall node</span>
+
+            <span class="s">npm run test</span>
+
+         <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Lint backend</span>
+         <span class="na">if</span><span class="pi">:</span> <span class="s">$</span>
+         <span class="na">run</span><span class="pi">:</span> <span class="s">npm run lint</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+<h3 id="step-4-connect-to-github-for-continuous-deployment">
+  
+  
+    <a href="#step-4-connect-to-github-for-continuous-deployment" class="anchor-heading" aria-labelledby="step-4-connect-to-github-for-continuous-deployment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 4: Connect to GitHub for Continuous Deployment
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong>Connect to GitHub Repository</strong>
+    <ul>
+      <li>In your Heroku app dashboard, scroll to the <strong>Deployment method</strong> section and select <strong>GitHub</strong>.</li>
+      <li>Click <strong>Connect to GitHub</strong> and search for your repository.</li>
+      <li>Select the repository containing your backend service code.</li>
+    </ul>
+
+    <p><img src="Module13Assets/ConnectToGithub.png" alt="Connect to your Repo" /></p>
+  </li>
+  <li><strong>Configure Required Files</strong>
+    <ul>
+      <li>You need to make these changes to the package.json
+        <ul>
+          <li>Move “dotenv” from the “devDependecies” to “dependencies”.</li>
+          <li>Change the “start” script in your server/package.json from “ts-node server.ts” to “node dist/server.js”.</li>
+          <li>Add a new script called “start:dev” with the value “ts-node server.ts”. You can use this for your local development.</li>
+        </ul>
+      </li>
+      <li>The package.json file should look something like this:
+        <ul>
+          <li><a href="Module13Assets/package.json"><code class="language-plaintext highlighter-rouge">package.json</code></a> - Should contain required dependencies and scripts, along with the dependencies you have added</li>
+        </ul>
+      </li>
+      <li>You need to make these changes to the tsconfig.json
+        <ul>
+          <li>Go to server/tsconfig.json and scroll to the end. Modify the “include” and “exclude” values, as specified in the tsconfig.json:
+            <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"./**/*.ts"</span><span class="p">]</span><span class="err">,</span><span class="w">
+ </span><span class="nl">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dist"</span><span class="p">]</span><span class="w">
+</span></code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+      <li>The tsconfig.json file should look something like this:
+        <ul>
+          <li><a href="Module13Assets/tsconfig.json"><code class="language-plaintext highlighter-rouge">tsconfig.json</code></a> - TypeScript configuration</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+<h3 id="step-5-deploy-the-code">
+  
+  
+    <a href="#step-5-deploy-the-code" class="anchor-heading" aria-labelledby="step-5-deploy-the-code"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 5: Deploy the Code
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong>Manual Deployment</strong>
+    <ul>
+      <li>Configure the Manual deploy option in Heroku. Everytime you push a change to your main branch, you will have to login to Heroku and click on the Deploy Branch button.</li>
+      <li>In Heroku, scroll to the <strong>Manual deploy</strong> section.</li>
+      <li>Choose the main (or preferred deployment) branch.</li>
+      <li>Click <strong>Deploy Branch</strong> to deploy your application manually.</li>
+    </ul>
+
+    <p><img src="Module13Assets/ManualDeployment.png" alt="Manual Deploy" /></p>
+  </li>
+  <li><strong>Automatic Deployment Option</strong>
+    <ul>
+      <li>Configure the Automatic deploy option in Heroku. Everytime you push a change to your main branch, Heroku will automatically publish your changes.</li>
+      <li>In Heroku, scroll to the <strong>Automatic deploys</strong> section.</li>
+      <li>Choose the main (or preferred deployment) branch.</li>
+      <li>Click <strong>Enable Automatic Deploys</strong> to deploy your application automatically.</li>
+    </ul>
+  </li>
+</ol>
+<h3 id="step-6-environment-variables">
+  
+  
+    <a href="#step-6-environment-variables" class="anchor-heading" aria-labelledby="step-6-environment-variables"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 6: Environment Variables
+  
+  
+</h3>
+    
+
+<ol>
+  <li><strong>Set Up Environment Variables</strong>
+    <ul>
+      <li>In your Heroku dashboard, go to <strong>Settings -&gt; Config Vars</strong></li>
+      <li>Add your MongoDB connection string as a config var:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Key: MONGODB_URI
+Value: &lt;Your MongoDB connection string&gt;
+
+Key: PORT
+Value: 8000
+
+Key: CLIENT_URL
+Value: &lt;your Render Client URL&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>Make sure your MongoDB connection matches the URI in your Mongo Cloud.</li>
+    </ul>
+  </li>
+</ol>
+<h3 id="step-7-update-client-environment-variables-on-rendercom">
+  
+  
+    <a href="#step-7-update-client-environment-variables-on-rendercom" class="anchor-heading" aria-labelledby="step-7-update-client-environment-variables-on-rendercom"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 7: Update Client Environment Variables on Render.com
+  
+  
+</h3>
+    
+
+<p>Update the server URL from the Render.com URL to the Heroku URL.</p>
+
+<ol>
+  <li><strong>Open the Render Dashboard.</strong></li>
+  <li>Choose the project you have created and go back to the service with type “Static Site” (your client deployment).</li>
+  <li>Click on the <strong>Environment</strong> tab.</li>
+  <li>Change the value of the <code class="language-plaintext highlighter-rouge">REACT_APP_SERVER_URL</code> environment variable to the Heroku URL (you can find this in your Heroku app’s <strong>Settings</strong> page, under the <strong>Domains</strong> section).</li>
+  <li>After the client finishes re-deploying, check if the client is sending queries to the new Heroku server deployment successfully.</li>
+  <li><em>(Optional)</em> If the new Heroku server deployment is working correctly, delete the server deployment from Render.</li>
+</ol>
+<h3 id="step-8-optional-update-dyno-type-for-memory-issues">
+  
+  
+    <a href="#step-8-optional-update-dyno-type-for-memory-issues" class="anchor-heading" aria-labelledby="step-8-optional-update-dyno-type-for-memory-issues"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 8: <em>(Optional)</em> Update Dyno Type for Memory Issues
+  
+  
+</h3>
+    
+
+<p>In case you are still running into memory issues in the Heroku deployment, you can update the “Dynos” type.</p>
+
+<ol>
+  <li>Follow the steps from <a href="https://help.heroku.com/XX3MKY2E/how-do-i-change-the-dyno-types-for-my-application">Heroku Help - Change Dyno Types</a> to adjust the dyno type for your application.</li>
+  <li><strong>Choose the type carefully</strong> as selecting a higher type will result in a higher cost, which will reduce your Platform Credits.</li>
+</ol>
+
+<p><img src="Module13Assets/DynoTypes.png" alt="Screenshot of choosing a higher Dyno type" /></p>
+
+<p><img src="Module13Assets/DynoTypes2.png" alt="Screenshot of choosing a higher Dyno type 2" /></p>
+
+          
+
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2024 Adeel Bhutta and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
